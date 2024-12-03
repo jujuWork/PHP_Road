@@ -22,8 +22,9 @@ try {
 
     echo "Signup Sucessful!"; // Output a success message upon insertion into database
 
-    header("Location: login.php");
-    
 } catch (PDOException $e) {
     echo "Sign up error: " . $e->getMessage();
 }
+
+header("Location: ../../login.php");
+exit;

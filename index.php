@@ -10,13 +10,13 @@
 <body>
     
     <div id="bodyForm">
-            <form action="php/signup.php" method="post">
+            <form action="/signUp/php/signup.php" method="post">
                 <label for="username">Username:</label>
-                    <input type="text" name="username" placeholder="Enter Username">
+                    <input type="text" name="username" placeholder="Username">
                 <label for="password">Password:</label>
-                    <input type="password" name="password" placeholder="Enter Password">
+                    <input type="password" name="password" placeholder="Password">
                 <label for="email">Email:</label>
-                    <input type="email" name="email" placeholder="Enter Email">
+                    <input type="email" name="email" placeholder="Email">
 
                 <button type="submit" class="btnSubmit">Submit</button>
             </form>

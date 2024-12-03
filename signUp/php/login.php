@@ -1,11 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <p>WELCOME</p>
-</body>
-</html>
+<?php
+
+    // Database Configuration
+$host = '127.0.0.1';
+$port = '8889';
+$dbname = 'db_users';
+$username = 'root';
+$password = 'root';
+
+try {
+    //code...
+} catch (PDOException $e) {
+    echo "Login Error: " . $e->getMessage();
+}

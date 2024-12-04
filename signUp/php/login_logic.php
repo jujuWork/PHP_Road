@@ -16,20 +16,12 @@ try {
 
             // Handle form submission
         if ($_SERVER['REQUEST_METHOD'] === "POST") {
-                // Debugging: Check if the form is submitted
-            if (empty($_POST)) {
-                $message = "No data received from the form";
-                return;
-            }
+            // echo "Form submit successfully"; // Debugging output
+            
+            $inputUsername = $_POST['username'] ?? ''; // Retrieve the entered username
+            $inputPassword = $_POST['password'] ?? ''; // Retrieve the entered password
 
-            $inputUsername = $_POST['username']; // Retrieve the entered username
-            $inputPassword = $_post['password']; // Retrieve the entered password
-
-                // Debugging: Verify formm data
-            if (empty($inputUsername) || empty($inputPassword)) {
-                $message = "Please fill in both username and password.";
-                return;
-            }
+        // var_dump($inputUsername, $inputPassword); // Debugging output
 
             // Prepare a SQL query to fetch the user details
         $sql = "SELECT username, password FROM users WHERE username = :username";   
@@ -50,10 +42,9 @@ try {
         } else {
             $message = "User does not exist.";
         }
+            echo "Message: " . $message;
 
         }
-    // header("Location: ../../welcome.php");
-    // exit;
 
 } catch (PDOException $e) {
     $message = "Login Error: " . $e->getMessage();

@@ -1,4 +1,4 @@
-<?php include 'signUp/php/login_logic.php'; ?>
+<?php include 'php/login_logic.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -28,12 +28,9 @@
             </form>
         <div class="signUpFooter">
             <p>Don't have an account?</p>
-            <a href="index.php" class="noAccount"><p>Sign Up Now</p></a>
+            <a href="signup.php" class="noAccount"><p>Sign Up Now</p></a>
         </div>
     </main>
 
-    <footer>
-        
-    </footer>
 </body>
 </html>

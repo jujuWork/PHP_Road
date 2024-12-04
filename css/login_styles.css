@@ -42,12 +42,14 @@ main {
     width: 100%;
     box-sizing: inherit;
     text-align: center;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
 input {
     width: 70%;
     border: none;
-    border-radius: 50px;
+    border-radius: 10px;
     height: 30px;
     margin-top: 10px;
 }
@@ -63,8 +65,8 @@ main .forgot {
     margin-top: 20px;
     margin-bottom: 10px;
     border: none;
-    border-radius: 50px;
-    height: 30px;
+    border-radius: 10px;
+    height: 40px;
     background-color: rgb(136, 171, 142);
     font-size: 1.1em;
     letter-spacing: 1.5px;

@@ -13,16 +13,19 @@
         <?php if(!empty($message)): ?>
             <p><?php echo htmlspecialchars($message); ?></p>
         <?php endif ?>
+    
+    <header>
+        <h1>Login</h1>
+    </header>
 
-    <div id="bodyForm">
-        <form action="signUp/php/login_logic.php" method="post">
-            <label for="username">Username:</label>
+    <main id="bodyForm">
+            <form action="signUp/php/login_logic.php" method="post">
+                
                 <input type="text" name="username" placeholder="Enter Username">
-
-            <label for="password">Password:</label>
                 <input type="password" name="password" placeholder="Enter Password">
-            <button type="submit" class="btnSubmit">Login</button>
-        </form>
-    </div>
+              
+                <button type="submit" class="btnSubmit">Login</button>
+            </form>
+    </main>
 </body>
 </html>

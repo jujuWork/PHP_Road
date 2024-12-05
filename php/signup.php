@@ -11,13 +11,15 @@ try {
     $pdo = new PDO ("mysql:host=$host;port=$port;dbname=$dbname", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $sql = "INSERT INTO users (username, password, email) VALUES (:username, :password, :email) ";
+    $sql = "INSERT INTO users (first_name, last_name, username, password, email, address, contact_number) 
+            VALUES (:first_name, :last_name, :username, :password, :email, :address, :contact_number)";
     $stmt = $pdo->prepare($sql);
 
     $stmt->execute([
         ':username' => $_POST['username'], // users name
         ':password' => password_hash($_POST['password'], PASSWORD_BCRYPT), // users password
         ':email' => $_POST['email'], // users email
+        ':'
     ]);
 
     echo "Signup Sucessful!"; // Output a success message upon insertion into database

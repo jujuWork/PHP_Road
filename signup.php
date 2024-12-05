@@ -13,7 +13,7 @@
     </header>
     <main>
         <div id="bodyForm">
-                <form action="/signUp/php/signup.php" method="post">
+                <form action="php/signup.php" method="post">
                     <input type="text" name="firstName" placeholder="First Name">    
 
                     <input type="text" name="lastName" placeholder="Last Name">

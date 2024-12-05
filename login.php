@@ -10,9 +10,7 @@
     <link rel="stylesheet" href="css/login_styles.css">
 </head>
 <body>
-        <?php if(!empty($message)): ?>
-            <p><?php echo htmlspecialchars($message); ?></p>
-        <?php endif ?>
+ 
     
     <header>
         <h1>Login</h1>

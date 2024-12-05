@@ -7,7 +7,7 @@ $dbname = 'db_users';
 $username = 'root';
 $password = 'root';
 
-$message = "";
+// $message = "";
 
 try {
             // Establish database connection
@@ -24,9 +24,13 @@ try {
         // var_dump($inputUsername, $inputPassword); // Debugging output
 
             // Prepare a SQL query to fetch the user details
-        $sql = "SELECT username, password FROM users WHERE username = :username";   
+        $sql = "SELECT * FROM users WHERE username = :username";
+        
         $stmt = $pdo->prepare($sql);
-        $stmt->execute([':username' => $inputUsername]);
+        $stmt->bindParam(':username', $inputUsername);
+        // $stmt->bindParam(':password', $inputPassword);
+        $stmt->execute();
+        // $stmt->execute([':username' => $inputUsername]);
             
             // Fetch the result
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -35,17 +39,17 @@ try {
         if ($user) { 
                 // Verify password
             if (password_verify($inputPassword, $user['password'])) {
-                $message = "Login Successful, " . htmlspecialchars($user['username']) . ".";
+                echo "Login Successful.";
             } else {
-                $message = "Invalid password.";
+                echo "Invalid password.";
             } 
         } else {
-            $message = "User does not exist.";
+            echo "User does not exist.";
         }
-            echo "Message: " . $message;
+            // echo "Message: " . $message;
 
         }
 
 } catch (PDOException $e) {
-    $message = "Login Error: " . $e->getMessage();
+    echo "Login Error: " . $e->getMessage();
 }

@@ -5,21 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
 
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/signup_styles.css">
 </head>
 <body>
-    
-    <div id="bodyForm">
-            <form action="/signUp/php/signup.php" method="post">
-                <label for="username">Username:</label>
+    <header>
+        <h1>Sign Up</h1>
+    </header>
+    <main>
+        <div id="bodyForm">
+                <form action="/signUp/php/signup.php" method="post">
+                    <input type="text" name="firstName" placeholder="First Name">    
+
+                    <input type="text" name="lastName" placeholder="Last Name">
+
                     <input type="text" name="username" placeholder="Username">
-                <label for="password">Password:</label>
+                
                     <input type="password" name="password" placeholder="Password">
-                <label for="email">Email:</label>
+                    
                     <input type="email" name="email" placeholder="Email">
 
-                <button type="submit" class="btnSubmit">Submit</button>
-            </form>
-    </div>
+                    <textarea name="address" placeholder="Address"></textarea>
+                
+                    <input type="number" name="contactNumber" placeholder="Contact Number">
+
+                    <button type="submit" class="btnSubmit">Submit</button>
+                </form>
+        </div>
+    </main>
 </body>
 </html>

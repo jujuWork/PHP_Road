@@ -1,4 +1,4 @@
-<?php include 'php/login_logic.php'; ?>
+<?php require_once 'php/login_logic.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,10 +11,20 @@
 </head>
 <body>
  
-    
     <header>
         <h1>Login</h1>
     </header>
+
+    <!-- Display Error or Success Messages -->
+    <?php if (isset($_SESSION['error'])): ?>
+        <p style="color: red;"><?php echo htmlspecialchars($_SESSION['error']); ?></p>
+        <?php unset($_SESSION['error']); // Clear the error after displaying ?>
+    <?php endif; ?>
+
+    <?php if (isset($_SESSION['success'])): ?>
+        <p style="color: green;"><?php echo htmlspecialchars($_SESSION['success']); ?></p>
+        <?php unset($_SESSION['success']); // Clear the success message ?>
+    <?php endif; ?>
 
     <main id="bodyForm">
             <form action="php/login_logic.php" method="post">

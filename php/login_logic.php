@@ -38,8 +38,7 @@ try {
                     $stmt->bindParam(':username', $inputUsername);
                     // $stmt->bindParam(':password', $inputPassword);
                     $stmt->execute();
-                    // $stmt->execute([':username' => $inputUsername]);
-                        
+       
                         // Fetch the result
                     $user = $stmt->fetch(PDO::FETCH_ASSOC);
                 
@@ -52,12 +51,9 @@ try {
                 } else {
                     // $error = "Invalid password.";
                     $_SESSION['error'] = "Invalid Password";
-                } 
-            } else {
-                // $error = "User does not exist.";
-                $_SESSION['error'] = "User does not exist.";
+                }
             }
-                // echo "Message: " . $message;
+
             header("Location: ../../login.php");
             exit;
     }

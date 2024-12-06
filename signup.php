@@ -1,3 +1,15 @@
+<?php
+session_start();
+if (isset($_SESSION['error'])) {
+    echo "<p style='color:red'>" . $_SESSION['error'] . "</p>";
+    unset($_SESSION['error']);
+}
+if (isset($_SESSION['success'])) {
+    echo "<p style='color:green'>" . $_SESSION['success'] . "</p>";
+    unset($_SESSION['success']);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,25 +23,26 @@
     <header>
         <h1>Sign Up</h1>
     </header>
+
     <main>
         <div id="bodyForm">
                 <form action="php/signup.php" method="post">
 
-                    <input type="text" name="username" placeholder="Username">
+                    <input type="text" name="username" placeholder="    Username">
                 
-                    <input type="password" name="password" placeholder="Password">
+                    <input type="password" name="password" placeholder="    Password">
                     
-                    <input type="email" name="email" placeholder="Email">
+                    <input type="email" name="email" placeholder="    E-mail">
 
-                    <input type="text" name="firstName" placeholder="First Name">    
+                    <input type="text" name="firstName" placeholder="    First Name">    
 
-                    <input type="text" name="lastName" placeholder="Last Name">
+                    <input type="text" name="lastName" placeholder="    Last Name">
 
-                    <input type="number" name="contactNumber" placeholder="Contact Number">
+                    <input type="number" name="contactNumber" placeholder="    Contact Number">
 
 
 
-                    
+
                     <button type="submit" class="btnSubmit">Submit</button>
                 </form>
         </div>

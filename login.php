@@ -1,4 +1,8 @@
-<?php require_once 'php/login_logic.php'; ?>
+<?php 
+
+require_once 'php/login_logic.php'; 
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">

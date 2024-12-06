@@ -1,5 +1,7 @@
 <?php
 
+$session_start();
+
     // Database connection
 $host = '127.0.0.1';
 $port = '8889';
@@ -21,9 +23,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $lastName = htmlspecialchars($_POST['lastName']);
         $contactNumber = htmlspecialchars($_POST['contactNumber']);
 
+        if (empty($username) || empty($password) || empty($email) || empty($firstName) || empty($lastName) || empty($contactNumber)) {
+            $_SESSION['error'] = "All fields are required";
+            header("Location: ../../signup.php");
+            exit;
+        }
+
+        // var_dump($firstName, $lastName, $username, $password, $email, $contactNumber);
+        // exit;
+
             // Inserting data to MYSQL
         $sql = "INSERT INTO users (username, password, email, first_name, last_name, contact_number) 
-                VALUES (:username, :password, :email, :first_name, :last_name, :contact_number)";
+                VALUES (:username, :password, :email, :firstName, :lastName, :contactNumber)";
 
         $stmt = $pdo->prepare($sql);
 
@@ -36,7 +47,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->bindParam(':contactNumber', $contactNumber);
 
             // Execute query
-        $stmt->execute();        
+        $stmt->execute();    
+        
+        if ($user) {
+            $_SESSION['success'] = 'Sign up Successfull.';
+        } else {
+            $_SESSIOn['error'] = 'Sign up failed.';
+        }
 
         echo "Signup Sucessful!"; // Output a success message upon insertion into database
 
@@ -44,5 +61,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "Sign up error: " . $e->getMessage();
     }
 }
-header("Location: ../../login.php");
-exit;
+// header("Location: ../../login.php");
+// exit;

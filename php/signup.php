@@ -7,26 +7,42 @@ $dbname = 'db_users';
 $username = 'root';
 $password = 'root';
 
-try {
-    $pdo = new PDO ("mysql:host=$host;port=$port;dbname=$dbname", $username, $password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    // Check if form is submitted
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    try {
+        $pdo = new PDO ("mysql:host=$host;port=$port;dbname=$dbname", $username, $password);
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $sql = "INSERT INTO users (first_name, last_name, username, password, email, address, contact_number) 
-            VALUES (:first_name, :last_name, :username, :password, :email, :address, :contact_number)";
-    $stmt = $pdo->prepare($sql);
+            // Collect and sanitize form data
+        $username = htmlspecialchars($_POST['username']);
+        $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+        $email = htmlspecialchars($_POST['email']);
+        $firstName = htmlspecialchars($_POST['firstName']);
+        $lastName = htmlspecialchars($_POST['lastName']);
+        $contactNumber = htmlspecialchars($_POST['contactNumber']);
 
-    $stmt->execute([
-        ':username' => $_POST['username'], // users name
-        ':password' => password_hash($_POST['password'], PASSWORD_BCRYPT), // users password
-        ':email' => $_POST['email'], // users email
-        ':'
-    ]);
+            // Inserting data to MYSQL
+        $sql = "INSERT INTO users (username, password, email, first_name, last_name, contact_number) 
+                VALUES (:username, :password, :email, :first_name, :last_name, :contact_number)";
 
-    echo "Signup Sucessful!"; // Output a success message upon insertion into database
+        $stmt = $pdo->prepare($sql);
 
-} catch (PDOException $e) {
-    echo "Sign up error: " . $e->getMessage();
+            // Bind parameters to the prepared statement
+        $stmt->bindParam(':username', $username);
+        $stmt->bindParam(':password', $password);
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':firstName', $firstName);
+        $stmt->bindParam(':lastName', $lastName);
+        $stmt->bindParam(':contactNumber', $contactNumber);
+
+            // Execute query
+        $stmt->execute();        
+
+        echo "Signup Sucessful!"; // Output a success message upon insertion into database
+
+    } catch (PDOException $e) {
+        echo "Sign up error: " . $e->getMessage();
+    }
 }
-
 header("Location: ../../login.php");
 exit;

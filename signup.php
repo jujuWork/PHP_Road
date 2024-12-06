@@ -14,9 +14,6 @@
     <main>
         <div id="bodyForm">
                 <form action="php/signup.php" method="post">
-                    <input type="text" name="firstName" placeholder="First Name">    
-
-                    <input type="text" name="lastName" placeholder="Last Name">
 
                     <input type="text" name="username" placeholder="Username">
                 
@@ -24,10 +21,15 @@
                     
                     <input type="email" name="email" placeholder="Email">
 
-                    <textarea name="address" placeholder="Address"></textarea>
-                
+                    <input type="text" name="firstName" placeholder="First Name">    
+
+                    <input type="text" name="lastName" placeholder="Last Name">
+
                     <input type="number" name="contactNumber" placeholder="Contact Number">
 
+
+
+                    
                     <button type="submit" class="btnSubmit">Submit</button>
                 </form>
         </div>

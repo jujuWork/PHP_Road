@@ -30,7 +30,7 @@ session_start();
 ?>
     <main>
         <div id="bodyForm">
-                <form action="php/signup.php" method="post">
+                <form action="php/signup_logic.php" method="post">
 
                     <input type="text" name="username" placeholder="    Username">
                 

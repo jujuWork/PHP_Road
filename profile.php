@@ -14,24 +14,7 @@
         <h2>Hello</h2>
     </header>
 
-    
-    <!-- <main>
-                <div class="profile_tag">
-                    <p><strong>User ID:</strong> <br></p>
-                    <p><strong>Username:</strong> <br></p>
-                    <p><strong>First Name:</strong> <br></p>
-                    <p><strong>Last Name:</strong> <br></p>
-                    <p><strong>Email:</strong> <br></p>
-                    <p><strong>Contact Number:</strong></p>
-                </div>
-                <div class="profile_info">
-                    <p>infoscwacadwa</p>
-                </div>
-        </div>
-    </main> -->
-
     <table>
-        <tr>tags</tr>
             <th><strong>User ID:</strong>
                 <td>wjaoidjawo</td>
             </th>

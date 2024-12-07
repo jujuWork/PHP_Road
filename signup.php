@@ -1,13 +1,7 @@
 <?php
+
 session_start();
-if (isset($_SESSION['error'])) {
-    echo "<p style='color:red'>" . $_SESSION['error'] . "</p>";
-    unset($_SESSION['error']);
-}
-if (isset($_SESSION['success'])) {
-    echo "<p style='color:green'>" . $_SESSION['success'] . "</p>";
-    unset($_SESSION['success']);
-}
+
 ?>
 
 <!DOCTYPE html>
@@ -24,6 +18,16 @@ if (isset($_SESSION['success'])) {
         <h1>Sign Up</h1>
     </header>
 
+    <?php if (isset($_SESSION['error'])) {
+    echo "<p style='color:red'>" . $_SESSION['error'] . "</p>";
+    unset($_SESSION['error']);
+    }
+    if (isset($_SESSION['success'])) {
+        echo "<p style='color:green'>" . $_SESSION['success'] . "</p>";
+        unset($_SESSION['success']);
+    }
+
+?>
     <main>
         <div id="bodyForm">
                 <form action="php/signup.php" method="post">
@@ -45,6 +49,12 @@ if (isset($_SESSION['success'])) {
 
                     <button type="submit" class="btnSubmit">Submit</button>
                 </form>
+
+        <div class="loginfooter">
+            <a href="../../login.php">
+                <p>Back to Login</p>
+            </a>
+        </div>  
         </div>
     </main>
 </body>

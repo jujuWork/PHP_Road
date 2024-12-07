@@ -1,6 +1,6 @@
 <?php
 
-$session_start();
+session_start();
 
     // Database connection
 $host = '127.0.0.1';
@@ -47,19 +47,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->bindParam(':contactNumber', $contactNumber);
 
             // Execute query
-        $stmt->execute();    
-        
-        if ($user) {
-            $_SESSION['success'] = 'Sign up Successfull.';
-        } else {
-            $_SESSIOn['error'] = 'Sign up failed.';
-        }
+        $stmt->execute();
 
-        echo "Signup Sucessful!"; // Output a success message upon insertion into database
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($user) {
+            $_SESSION['success'] = 'Sign up successfull.';
+        }
+        
+        header("Location: ../../signup.php");
+        exit;
+
+        // echo "Signup Sucessful!"; // Output a success message upon insertion into database
 
     } catch (PDOException $e) {
         echo "Sign up error: " . $e->getMessage();
     }
 }
-// header("Location: ../../login.php");
-// exit;

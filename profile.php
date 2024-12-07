@@ -11,27 +11,54 @@
     
     <header>
         <h1>My Profile</h1>
+        <h2>Hello</h2>
     </header>
 
-    <main>
-        <div class="profile_header">
-            <h2>Hello</h2>
-
+    
+    <!-- <main>
                 <div class="profile_tag">
-                <p>
-                    <strong>User ID:</strong> <br>
-                    <strong>Username:</strong> <br>
-                    <strong>First Name:</strong> <br>
-                    <strong>Last Name:</strong> <br>
-                    <strong>Email:</strong> <br>
-                    <strong>Contact Number:</strong>
-                </p>
+                    <p><strong>User ID:</strong> <br></p>
+                    <p><strong>Username:</strong> <br></p>
+                    <p><strong>First Name:</strong> <br></p>
+                    <p><strong>Last Name:</strong> <br></p>
+                    <p><strong>Email:</strong> <br></p>
+                    <p><strong>Contact Number:</strong></p>
                 </div>
                 <div class="profile_info">
                     <p>infoscwacadwa</p>
                 </div>
         </div>
-    </main>
+    </main> -->
+
+    <table>
+        <tr>tags</tr>
+            <th><strong>User ID:</strong>
+                <td>wjaoidjawo</td>
+            </th>
+        <tr>
+            <th><strong>Username:</strong> 
+                <td>duhauw</td>
+            </th>
+        </tr>
+        <tr>
+            <th><strong>First Name:</strong>
+                <td>dwadwa</td>
+            </th> 
+        </tr>
+            <th><strong>Last Name:</strong> 
+                <td>dwadwadwa</td>
+            </th>
+        <tr>
+            <th><strong>Email:</strong>
+                <td>dwadwa</td>
+            </th>
+        </tr>
+        <tr>
+            <th><strong>Contact Number:</strong>
+                <td>dwadadaw</td>
+            </th>
+        </tr>
+    </table>
 
 </body>
 </html>

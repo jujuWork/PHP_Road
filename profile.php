@@ -16,16 +16,20 @@
     <main>
         <div class="profile_header">
             <h2>Hello</h2>
-        </div>
-        <div class="profile_info">
-            <p>
-                <strong>User ID:</strong>
-                <strong>Username:</strong>
-                <strong>First Name:</strong>
-                <strong>Last Name:</strong>
-                <strong>Email:</strong>
-                <strong>Contact Number:</strong>
-            </p>
+
+                <div class="profile_tag">
+                <p>
+                    <strong>User ID:</strong> <br>
+                    <strong>Username:</strong> <br>
+                    <strong>First Name:</strong> <br>
+                    <strong>Last Name:</strong> <br>
+                    <strong>Email:</strong> <br>
+                    <strong>Contact Number:</strong>
+                </p>
+                </div>
+                <div class="profile_info">
+                    <p>infoscwacadwa</p>
+                </div>
         </div>
     </main>
 

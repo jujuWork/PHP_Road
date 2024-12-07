@@ -8,9 +8,9 @@ html, body {
 }
 
 body {
-    display: flex;
+    /* display: flex; */
     /* justify-content: center; */
-    flex-direction: column;
+    /* flex-direction: column; */
     margin-top: 10rem;
     width: 100%;
     height: 100%;
@@ -28,8 +28,24 @@ header {
 
 /* ---------     MAIN   -------------- */
 
+main {
+    display: flex;
+    margin-top: 2rem;
+}
+
 main .profile_header {
     border-bottom: 1px solid black;
-    margin-top: 50px;
     font-size: 1.5rem;
+    width: 100%;
+}
+
+main .profile_tag {
+    border: 1px solid red;
+    /* position: relative;
+    display: flex;
+    flex-direction: column; */
+}
+
+main .profile_info {
+    border: 1px solid red;
 }

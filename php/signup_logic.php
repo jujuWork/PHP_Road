@@ -9,6 +9,8 @@ $dbname = 'db_users';
 $username = 'root';
 $password = 'root';
 
+$message = "";
+
     // Check if form is submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
@@ -25,10 +27,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if (empty($username) || empty($password) || empty($email) || empty($firstName) || empty($lastName) || empty($contactNumber)) {
             $_SESSION['error'] = "All fields are required";
-            header("Location: ../../signup.php");
-            exit;
-        }
-
+            // header("Location: ../../signup.php");
+            // exit;
+        } else {
+            
         // var_dump($firstName, $lastName, $username, $password, $email, $contactNumber);
         // exit;
 
@@ -48,19 +50,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             // Execute query
         $stmt->execute();
+        $_SESSION['success'] = "Sign up successful.";
 
-        $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        if ($user) {
-            $_SESSION['success'] = 'Sign up successfull.';
         }
-        
-        header("Location: ../../signup.php");
-        exit;
-
-        // echo "Signup Sucessful!"; // Output a success message upon insertion into database
 
     } catch (PDOException $e) {
-        echo "Sign up error: " . $e->getMessage();
+        $_SESSION['error'] = "Sign up error: " . $e->getMessage();
     }
 }

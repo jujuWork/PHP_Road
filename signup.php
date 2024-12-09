@@ -18,7 +18,9 @@ session_start();
         <h1>Sign Up</h1>
     </header>
 
-    <?php if (isset($_SESSION['error'])) {
+    <?php 
+    
+    if (isset($_SESSION['error'])) {
     echo "<p style='color:red'>" . $_SESSION['error'] . "</p>";
     unset($_SESSION['error']);
     }
@@ -27,7 +29,8 @@ session_start();
         unset($_SESSION['success']);
     }
 
-?>
+    ?>
+
     <main>
         <div id="bodyForm">
                 <form action="php/signup_logic.php" method="post">

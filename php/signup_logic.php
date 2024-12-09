@@ -9,8 +9,6 @@ $dbname = 'db_users';
 $username = 'root';
 $password = 'root';
 
-$message = "";
-
     // Check if form is submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {

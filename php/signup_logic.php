@@ -48,9 +48,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             // Execute query
         $stmt->execute();
+        
         $_SESSION['success'] = "Sign up successful.";
 
         }
+
+        header("Location: ../../signup.php");
+        exit;
 
     } catch (PDOException $e) {
         $_SESSION['error'] = "Sign up error: " . $e->getMessage();

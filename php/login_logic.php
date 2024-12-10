@@ -47,7 +47,7 @@ try {
                     // Verify password
                 if (password_verify($inputPassword, $user['password'])) {
                     // echo "Login Successful.";
-                    $_SESSION['success'] = "Login Successfull.";
+                    $_SESSION['success'] = "Login Successful.";
                 } else {
                     // $error = "Invalid password.";
                     $_SESSION['error'] = "Invalid Password";

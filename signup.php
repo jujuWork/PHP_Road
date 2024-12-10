@@ -1,6 +1,7 @@
 <?php
 
-require_once 'php/signup_logic.php';
+session_start();
+// require_once 'php/signup_logic.php';
 
 ?>
 
@@ -38,7 +39,7 @@ require_once 'php/signup_logic.php';
 
     <main>
         <div id="bodyForm">
-                <form action="" method="post">
+                <form action="php/signup_logic.php" method="post">
 
                     <input type="text" name="username" placeholder="    Username">
                 

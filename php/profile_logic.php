@@ -1,13 +1,16 @@
 <?php
 
 session_start();
+echo "<pre>";
+print_r($_SESSION);
+echo "</pre>";
 
     // Redirect to login if user is not logeed in
-if (!isset($_SESSION['user_id'])) {
-    $_SESSION['error'] = "Please login to access your profile.";
-    header("Location: ../../login.php");
-    exit;
-}
+// if (!isset($_SESSION['user_id'])) {
+//     $_SESSION['error'] = "Please login to access your profile.";
+//     header("Location: ../../login.php");
+//     exit;
+// }
 
     // Database Configuration
 $host = '127.0.0.1';

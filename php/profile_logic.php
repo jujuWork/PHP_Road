@@ -3,7 +3,7 @@
 session_start();
 
     // Redirect to login if user is not logeed in
-if (!isset($_SESSION['id'])) {
+if (!isset($_SESSION['user_id'])) {
     $_SESSION['error'] = "Please login to access your profile.";
     header("Location: ../../login.php");
     exit;
@@ -24,7 +24,7 @@ try {
         // Fetch logged-in user's data
     $sql = "SELECT * FROM users WHERE id = :id";
     $stmt = $pdo->prepare($sql);
-    $stmt->bindParam(':id', $_SESSION['id'], PDO::PARAM_INT);
+    $stmt->bindParam(':id', $_SESSION['user_id'], PDO::PARAM_INT);
     $stmt->execute();
 
     $user = $stmt->fetch(PDO::FETCH_ASSOC);

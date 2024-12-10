@@ -47,15 +47,21 @@ try {
                     // Verify password
                 if (password_verify($inputPassword, $user['password'])) {
                     // echo "Login Successful.";
+                    $_SESSION['user_id'] = $user['id']; // Set the logged-in user;s ID
                     $_SESSION['success'] = "Login Successful.";
+                    header("Location: ../../profile.php");
                 } else {
                     // $error = "Invalid password.";
-                    $_SESSION['error'] = "Invalid Password";
+                    $_SESSION['error'] = "Invalid password.";
+                    error_log("Password mismatch for user: $inputUsername");
+                    header("Location: ../../login.php");
                 }
+            } else {
+                $_SESSION['error'] = "Username not found.";
+                error_log("Username not found: $inputUsername");
+                header("Location: ../../login.php");
             }
 
-            header("Location: ../../login.php");
-            exit;
     }
             
 

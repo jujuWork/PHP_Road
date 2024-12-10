@@ -1,6 +1,7 @@
 <?php 
 
-require_once 'php/login_logic.php'; 
+require_once 'php/login_logic.php';
+// require_once 'php/profile_logic.php';
 
 ?>
 
@@ -31,7 +32,7 @@ require_once 'php/login_logic.php';
     <?php endif; ?>
 
     <main id="bodyForm">
-            <form action="php/login_logic.php" method="post">
+            <form action="php/profile_logic.php" method="post">
                 
                 <input type="text" name="username" placeholder="    Username">
                 <input type="password" name="password" placeholder="    Password">

@@ -1,5 +1,7 @@
 <?php
 
+require_once 'db/db.php';
+
 
 session_start();
 
@@ -10,13 +12,13 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 
-include 'db/db.php';
-
-$query = "SELECT * FROM users";
+$query = "SELECT * FROM users WHERE id = :user_id";
 $stmt = $pdo->prepare($query);
+$stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
 $stmt->execute();
 
-$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$user = $stmt->fetch(PDO::FETCH_ASSOC);
+
 
 ?>
 
@@ -37,40 +39,40 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </header>
 
     <main>
-        <?php if ($results): ?>
+        <?php if ($user): ?>
+
             <table>
-                <?php foreach ($results as $row): ?>
-                        <th><strong>User ID:</strong>
-                            <td><?= htmlspecialchars($row('id')) ?></td>
+                <th><strong>User ID:</strong>
+                   <td><?= htmlspecialchars($user['id']) ?></td>
                         </th>
                     <tr>
                         <th><strong>Username:</strong> 
-                            <td><?= htmlspecialchars($row('username')) ?></td>
+                            <td><?= htmlspecialchars($user['username']) ?></td>
                         </th>
                     </tr>
                     <tr>
                         <th><strong>First Name:</strong>
-                            <td><?= htmlspecialchars($row('firstName')) ?></td>
-                        </th> 
+                            <td><?= htmlspecialchars($user['first_name']) ?></td>
+                        </th>
                     </tr>
                         <th><strong>Last Name:</strong> 
-                            <td><?= htmlspecialchars($row('lastName')) ?></td>
+                            <td><?= htmlspecialchars($user['last_name']) ?></td>
                         </th>
                     <tr>
                         <th><strong>Email:</strong>
-                            <td><?= htmlspecialchars($row('email')) ?></td>
+                            <td><?= htmlspecialchars($user['email']) ?></td>
                         </th>
                     </tr>
                     <tr>
                         <th><strong>Contact Number:</strong>
-                            <td><?= htmlspecialchars($row('contactNumber')) ?></td>
+                            <td><?= htmlspecialchars($user['contact_number']) ?></td>
                         </th>
                     </tr>
-                <?php endforeach; ?>
             </table>
                     <?php else: ?>
                         <p>No data found in the database.</p>
         <?php endif; ?>
     </main>
+
 </body>
 </html>

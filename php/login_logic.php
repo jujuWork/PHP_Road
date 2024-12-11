@@ -20,10 +20,10 @@ try {
         if ($_SERVER['REQUEST_METHOD'] === "POST") {
                 // echo "Form submit successfully"; // Debugging output
                 
-            $inputUsername = $_POST['username'] ?? ''; // Retrieve the entered username
+            $inputUsername = trim($_POST['username'] ?? ''); // Retrieve / Sanitize the entered username
             $inputPassword = $_POST['password'] ?? ''; // Retrieve the entered password
 
-            // var_dump($inputUsername, $inputPassword); // Debugging output
+            error_log("Input Username: " . $inputUsername);
 
             if (empty($inputUsername) || empty($inputPassword)) {
                 $_SESSION['error'] = "Username and password are required.";
@@ -32,7 +32,7 @@ try {
                 } 
 
                         // Prepare a SQL query to fetch the user details
-                    $sql = "SELECT * FROM users WHERE username = :username";
+                    $sql = "SELECT * FROM users WHERE LOWER(username) = LOWER(:username)";
                     
                     $stmt = $pdo->prepare($sql);
                     $stmt->bindParam(':username', $inputUsername);

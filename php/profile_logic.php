@@ -1,9 +1,9 @@
 <?php
 
 session_start();
-echo "<pre>";
-print_r($_SESSION);
-echo "</pre>";
+// echo "<pre>";
+// print_r($_SESSION);
+// echo "</pre>";
 
     // Redirect to login if user is not logeed in
 // if (!isset($_SESSION['user_id'])) {
@@ -32,15 +32,28 @@ try {
 
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    if (!$user) {
+    if (!isset($user)) {
+        error_log(("User not found for username: " . $inputUsername));
         $_SESSION['error'] = "User not found.";
         header("Location: ../../login.php");
         exit;
     }
 
+    // if(!isset($user)) {
+    //     $_SESSION['success'] = "Login Sucessful.";
+    //     header("Location: ../../profile.php");
+    //     exit;
+    // } else {
+    //     $_SESSION['error'] = "User not found.";
+    //     header("Location: ../../login.php");
+    //     exit;
+    //     }
+    
 } catch (PDOException $e) {
     echo ("Database error: " . $e->getMessage());
+    header("Location: ../../profile.php");
+    exit;
 }
 
-    // Include the HTML
-include '../../profile.php';
+//     // Include the HTML
+// include_once '../../profile.php';

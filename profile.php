@@ -11,7 +11,7 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
-
+$userId = $_SESSION['user_id'];
 $query = "SELECT * FROM users WHERE id = :user_id";
 $stmt = $pdo->prepare($query);
 $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
@@ -35,7 +35,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
     
     <header>
         <h1>My Profile</h1>
-        <h2>Hello</h2>
+
     </header>
 
     <main>

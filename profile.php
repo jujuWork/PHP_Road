@@ -35,19 +35,31 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
     
     <header>
         <h1>My Profile</h1>
-
     </header>
+
+    <section class="logout">
+        <p>
+            <a href="logout.php">Logout</a>
+        </p>
+    </section>
 
     <main>
         <?php if ($user): ?>
 
             <table>
-                <th><strong>User ID:</strong>
-                   <td><?= htmlspecialchars($user['id']) ?></td>
+                        <th><strong>User ID:</strong>
+                            <td><?= htmlspecialchars($user['id']) ?></td>
                         </th>
                     <tr>
                         <th><strong>Username:</strong> 
                             <td><?= htmlspecialchars($user['username']) ?></td>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th><strong>Password:</strong> 
+                            <td>
+                                <?= str_repeat('*', strlen(htmlspecialchars(substr($user['password'], 0, 10)))) ?>
+                            </td>
                         </th>
                     </tr>
                     <tr>

@@ -1,4 +1,6 @@
 <?php
+
+
 session_start();
 
 if (!isset($_SESSION['user_id'])) {
@@ -6,6 +8,15 @@ if (!isset($_SESSION['user_id'])) {
     header("Location: ../../login.php");
     exit;
 }
+
+
+include 'db/db.php';
+
+$query = "SELECT * FROM users";
+$stmt = $pdo->prepare($query);
+$stmt->execute();
+
+$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
@@ -26,34 +37,40 @@ if (!isset($_SESSION['user_id'])) {
     </header>
 
     <main>
-        <table>
-                <th><strong>User ID:</strong>
-                    <td>wjaoidjawo</td>
-                </th>
-            <tr>
-                <th><strong>Username:</strong> 
-                    <td>duhauw</td>
-                </th>
-            </tr>
-            <tr>
-                <th><strong>First Name:</strong>
-                    <td>dwadwa</td>
-                </th> 
-            </tr>
-                <th><strong>Last Name:</strong> 
-                    <td>dwadwadwa</td>
-                </th>
-            <tr>
-                <th><strong>Email:</strong>
-                    <td>dwadwa</td>
-                </th>
-            </tr>
-            <tr>
-                <th><strong>Contact Number:</strong>
-                    <td>dwadadaw</td>
-                </th>
-            </tr>
-        </table>
+        <?php if ($results): ?>
+            <table>
+                <?php foreach ($results as $row): ?>
+                        <th><strong>User ID:</strong>
+                            <td><?= htmlspecialchars($row('id')) ?></td>
+                        </th>
+                    <tr>
+                        <th><strong>Username:</strong> 
+                            <td><?= htmlspecialchars($row('username')) ?></td>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th><strong>First Name:</strong>
+                            <td><?= htmlspecialchars($row('firstName')) ?></td>
+                        </th> 
+                    </tr>
+                        <th><strong>Last Name:</strong> 
+                            <td><?= htmlspecialchars($row('lastName')) ?></td>
+                        </th>
+                    <tr>
+                        <th><strong>Email:</strong>
+                            <td><?= htmlspecialchars($row('email')) ?></td>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th><strong>Contact Number:</strong>
+                            <td><?= htmlspecialchars($row('contactNumber')) ?></td>
+                        </th>
+                    </tr>
+                <?php endforeach; ?>
+            </table>
+                    <?php else: ?>
+                        <p>No data found in the database.</p>
+        <?php endif; ?>
     </main>
 </body>
 </html>

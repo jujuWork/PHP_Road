@@ -28,9 +28,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // header("Location: ../../signup.php");
             // exit;
         } else {
-            
-        // var_dump($firstName, $lastName, $username, $password, $email, $contactNumber);
-        // exit;
 
             // Inserting data to MYSQL
         $sql = "INSERT INTO users (username, password, email, first_name, last_name, contact_number) 

@@ -32,16 +32,17 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="css/profile_style.css">
 </head>
 <body>
+  
+    <!-- <section>
+        <form action="logout.php" method="post">
+            <button type="submit" class="btn_logout">Logout</button>
+            <button>Portfolio</button>
+        </form>
+    </section> -->
     
     <header>
         <h1>My Profile</h1>
     </header>
-
-    <section class="logout">
-        <p>
-            <a href="logout.php">Logout</a>
-        </p>
-    </section>
 
     <main>
         <?php if ($user): ?>

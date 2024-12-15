@@ -31,16 +31,17 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
     <link rel="stylesheet" href="css/profile_style.css">
 </head>
+
 <body>
-  
-    <section class="topbar">
-        <ul>
-            <li><a href="portfolio.php">Portfolio</a></li>
-            <li><a href="logout.php">Logout</a></li>
-        </ul>
-    </section>
-    
+
     <header>
+        <section class="topbar">
+            <ul>
+                <li><a href="portfolio.php">Portfolio</a></li>
+                <li><a href="logout.php">Logout</a></li>
+            </ul>
+        </section>
+
         <h1>My Profile</h1>
     </header>
 

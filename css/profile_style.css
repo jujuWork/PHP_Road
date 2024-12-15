@@ -2,15 +2,15 @@ html, body {
     margin: 0 auto;
     padding: 0;
     box-sizing: border-box;
-    max-width: 800px;
+    max-width: 600px;
     width: 100%;
+    background-color: #F2F1EB;
 }
 
 body {
     margin-top: 1rem;
     width: 100%;
     height: 100%;
-    background-color: rgb(242, 241, 235);
 }
 
 a {
@@ -21,55 +21,61 @@ a {
 
 header h1 {
     text-align: center;
+    border: 1px solid #88AB8E;
+    border-radius: 10px;
     letter-spacing: 5px;
-    border: 0.5px solid rgb(151, 146, 146);
-    border-radius: 5px;
-    padding: 20px 0 20px 0;
-}
-
-header h2 {
-    letter-spacing: 5px;
-    border-bottom: 1px solid rgb(151, 146, 146);
-    padding: 10px 0 30px 0;
+    padding: 15px 0 15px 0;
 }
 
 /* -----------  Links  ---------------- */
 
 .topbar {
     display: flex;
+    padding: 0;
 }
 
 .topbar ul {
     width: 100%;
-    height: 2vw;
+    height: 1vw;
     list-style: none;
     display: flex;
     justify-content: flex-end;
-    align-items: center;
     gap: 1.5rem;
+    padding-right: 10px;
 }
 
 /* ---------     MAIN (TABLE)   -------------- */
 
-table {
+main {
+    border-radius: 10px;
+    width: 100%;
     margin: 0 auto;
-    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+
+table {
+    width: 100%;
     margin-top: 2rem;
     padding-bottom: 2rem;
-    border-bottom: 1px solid rgb(151, 146, 146);
+    border-bottom: 1px solid #88AB8E;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 th {
-    width: 10vw;
+    width: 100%;
     text-align: left;
     height: 2rem;
+    padding-right: 20px;
 }
 
 td {
-    width: 10vw;
+    width: 100%;
     text-align: left;
-    border: 0.5px solid rgb(151, 146, 146);
+    border: 0.5px solid #88AB8E;
+    border-radius: 3px;
+    padding-left: 10px;
 }

@@ -33,6 +33,12 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
 </head>
 <body>
   
+    <section class="links">
+        <ul>
+            <li>Logout</li>
+            <li>Portfolio</li>
+        </ul>
+    </section>
     <!-- <section>
         <form action="logout.php" method="post">
             <button type="submit" class="btn_logout">Logout</button>

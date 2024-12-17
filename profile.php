@@ -37,7 +37,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
     <header>
         <section class="topbar">
             <ul>
-                <li><a href="portfolio.php">Portfolio</a></li>
+                <li><a href="editprofile.php">Edit Profile</a></li>
                 <li><a href="logout.php">Logout</a></li>
             </ul>
         </section>
@@ -81,6 +81,18 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
                         <th><strong>Contact Number:</strong>
                             <td><?= htmlspecialchars($user['contact_number']) ?></td>
                         </th>
+                    </tr>
+                    <tr>
+                        <th><strong>Prefecture:</strong></th>
+                            <td><?= htmlspecialchars($user['prefecture']) ?></td>
+                    </tr>
+                    <tr>
+                        <th><strong>City:</strong></th>
+                            <td><?= htmlspecialchars($user['city']) ?></td>
+                    </tr>
+                    <tr>
+                        <th><strong>Town/Street:</strong></th>
+                            <td><?= htmlspecialchars($user['town'])?></td>
                     </tr>
             </table>
                     <?php else: ?>

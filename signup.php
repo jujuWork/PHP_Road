@@ -53,8 +53,13 @@ session_start();
 
                     <input type="number" name="contactNumber" placeholder="    Contact Number">
 
+                    <input type="text" name="prefecture" placeholder="    Prefecture">
 
+                    <input type="text" name="city" placeholder="    City">
 
+                    <input type="text" name="town" placeholder="    Town/Street">
+
+                    
 
                     <button type="submit" class="btnSubmit">Submit</button>
                 </form>

@@ -76,8 +76,7 @@ th {
 td {
     width: 100%;
     text-align: left;
-    border: 0.5px solid #88AB8E;
-    border-radius: 3px;
     padding: 0 5px 0 5px;
     gap: 5px;
+    border-bottom: 0.5px solid #88AB8E;
 }

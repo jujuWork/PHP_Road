@@ -22,16 +22,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $firstName = htmlspecialchars($_POST['firstName']);
         $lastName = htmlspecialchars($_POST['lastName']);
         $contactNumber = htmlspecialchars($_POST['contactNumber']);
+        $prefecture = htmlspecialchars($_POST['prefecture']);
+        $city = htmlspecialchars($_POST['city']);
+        $town = htmlspecialchars($_POST['town']);
 
-        if (empty($username) || empty($password) || empty($email) || empty($firstName) || empty($lastName) || empty($contactNumber)) {
+        if (
+                empty($username) || 
+                empty($password) || 
+                empty($email) || 
+                empty($firstName) || 
+                empty($lastName) || 
+                empty($contactNumber) ||
+                empty($prefecture) ||
+                empty($city) ||
+                empty($town)
+            )
+
+            {
             $_SESSION['error'] = "All fields are required";
             // header("Location: ../../signup.php");
             // exit;
         } else {
 
             // Inserting data to MYSQL
-        $sql = "INSERT INTO users (username, password, email, first_name, last_name, contact_number) 
-                VALUES (:username, :password, :email, :firstName, :lastName, :contactNumber)";
+        $sql = "INSERT INTO users (username, password, email, first_name, last_name, contact_number, prefecture, city, town) 
+                VALUES (:username, :password, :email, :firstName, :lastName, :contactNumber, :prefecture, :city, :town)";
 
         $stmt = $pdo->prepare($sql);
 
@@ -42,6 +57,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->bindParam(':firstName', $firstName);
         $stmt->bindParam(':lastName', $lastName);
         $stmt->bindParam(':contactNumber', $contactNumber);
+        $stmt->bindParam(':prefecture' , $prefecture);
+        $stmt->bindParam(':city' , $city);
+        $stmt->bindParam(':town' , $town);
 
             // Execute query
         $stmt->execute();

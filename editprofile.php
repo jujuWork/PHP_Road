@@ -1,5 +1,5 @@
 <?php
-require_once 'php/editprofile_logic.php';
+include_once 'php/editprofile_logic.php';
 ?>
 
 <!DOCTYPE html>

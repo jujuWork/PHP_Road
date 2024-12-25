@@ -8,6 +8,8 @@ require_once 'php/editprofile_logic.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Profile</title>
+
+    <link rel="stylesheet" href="css/edit_profile.css">
 </head>
 <body>
     
@@ -25,28 +27,31 @@ require_once 'php/editprofile_logic.php';
             <p><?= $success ?></p>
         <?php endif; ?>
 
-        <form action="php/editprofile_logic.php" method="post">
-            <input type="password" name="password" placeholder="New Password">
+        <div id="bodyForm">
+            <form action="php/editprofile_logic.php" method="post">
 
-            <input type="text" name="firstName" placeholder="Enter First Name">
+                <input type="password" name="password" placeholder="    New Password">
 
-            <input type="text" name="lastName" placeholder="Enter Last Name">
+                <input type="text" name="firstName" placeholder="   Enter First Name">
 
-            <input type="email" name="email" placeholder="Enter Email">
+                <input type="text" name="lastName" placeholder="   Enter Last Name">
 
-            <input type="text" name="contactNumber" placeholder="Enter Contact Number">
+                <input type="email" name="email" placeholder="   Enter Email">
 
-            <input type="text" name="prefecture" placeholder="Enter Prefecture">
+                <input type="text" name="contactNumber" placeholder="   Enter Contact Number">
 
-            <input type="text" name="city" placeholder="Enter City">
+                <input type="text" name="prefecture" placeholder="   Enter Prefecture">
 
-            <input type="text" name="town" placeholder="Enter Town/Street">
+                <input type="text" name="city" placeholder="    Enter City">
 
-            <button type="submit" class="btnSave">Save Changes</button>
+                <input type="text" name="town" placeholder="    Enter Town/Street">
 
-            <p><a href="../../profile.php">Back</a></p>
-            
-        </form>
+                <button type="submit" class="btnSave">Save Changes</button>
+
+                <p><a href="../../profile.php">Back</a></p>
+                
+            </form>
+        </div>
         
     </main>
 </body>

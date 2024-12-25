@@ -1,5 +1,7 @@
 <?php
 
+// require_once 'db/db.php';
+
 session_start();
 // echo "<pre>";
 // print_r($_SESSION);

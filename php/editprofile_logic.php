@@ -70,6 +70,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $updateStmt->bindParam(':town', $town, PDO::PARAM_STR);
         $updateStmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
 
+        if ($password) {
+            $updateStmt->bindParam(':password', $password, PDO::PARAM_STR);
+        }
+
+            // EXECUTE QUERY AND CHECK
+        if ($updateStmt->execute()) {
+            $success = "Profile has beend updated successfully!";
+            header("Location: ../../profile.php");
+            exit;
+        } else {
+            $error = "Error updating profile.";
+        }
+
 
     } catch (PDOException $e) {
         $error = "Database error: " . $e->getMessage();

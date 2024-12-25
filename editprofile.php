@@ -1,5 +1,5 @@
 <?php
-require_once 'editprofile_logic.php';
+require_once 'php/editprofile_logic.php';
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +17,15 @@ require_once 'editprofile_logic.php';
 
     <main>
 
-        <form action="editprofile.php" method="post">
+        <?php if ($error): ?>
+            <p><?= $error ?></p>
+        <?php endif; ?>
+
+        <?php if ($success): ?>
+            <p><?= $success ?></p>
+        <?php endif; ?>
+
+        <form action="php/editprofile_logic.php" method="post">
             <input type="password" name="password" placeholder="New Password">
 
             <input type="text" name="firstName" placeholder="Enter First Name">
@@ -32,9 +40,11 @@ require_once 'editprofile_logic.php';
 
             <input type="text" name="city" placeholder="Enter City">
 
-            <input type="text" name="town" id="Enter Town/Street">
+            <input type="text" name="town" placeholder="Enter Town/Street">
 
             <button type="submit" class="btnSave">Save Changes</button>
+
+            <p><a href="../../profile.php">Back</a></p>
             
         </form>
         

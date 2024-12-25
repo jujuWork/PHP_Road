@@ -1,15 +1,15 @@
 <?php
 
-require_once 'db/db.php';
+// require_once 'db/db.php';
 
 session_start();
 
     // Database Configuration
-// $host = '127.0.0.1';
-// $port = '8889';
-// $dbname = 'db_users';
-// $username = 'root';
-// $password = 'root';
+$host = '127.0.0.1';
+$port = '8889';
+$dbname = 'db_users';
+$username = 'root';
+$password = 'root';
 
 // $message = "";
 

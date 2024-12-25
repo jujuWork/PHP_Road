@@ -19,12 +19,21 @@ include_once 'php/editprofile_logic.php';
 
     <main>
 
-        <?php if ($error): ?>
-            <p><?= $error ?></p>
+    <?php if (!empty($_SESSION['error'])): ?>
+            <div style="color: red;">
+                <?php
+                    echo $_SESSION['error'];
+                    unset($_SESSION['error']); // CLear the error message
+                ?>
+            </div>
         <?php endif; ?>
-
-        <?php if ($success): ?>
-            <p><?= $success ?></p>
+    <?php if (!empty($_SESSION['success'])): ?>
+            <div style="color: green;">
+                <?php
+                    echo $_SESSION['success'];
+                    unset($_SESSION['success']);
+                ?>
+            </div>
         <?php endif; ?>
 
         <div id="bodyForm">

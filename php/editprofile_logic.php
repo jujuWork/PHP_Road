@@ -1,6 +1,6 @@
 <?php
 
-require_once '/db/db.php';
+require_once __DIR__ . '/../db/db.php';
 
 session_start();
 
@@ -11,8 +11,8 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 $userID = $_SESSION['user_id'];
-$error = "";
-$success = "";
+// $error = "";
+// $success = "";
 
     // FETCH current user data
 $query = "SELECT * FROM users WHERE id = :user_id";
@@ -21,17 +21,36 @@ $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
 $stmt->execute();
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
+
     // PROCESS from submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
     // COLLECT INPUT FIELDS
-    $firstName = htmlspecialchars($_POST['first_name']);
-    $lastName = htmlspecialchars($_POST['last_name']);
+    $firstName = htmlspecialchars($_POST['firstName']);
+    $lastName = htmlspecialchars($_POST['lastName']);
     $email = htmlspecialchars($_POST['email']);
-    $contactNumber = htmlspecialchars($_POST['contact_number']);
+    $contactNumber = htmlspecialchars($_POST['contactNumber']);
     $prefecture = htmlspecialchars($_POST['prefecture']);
     $city = htmlspecialchars($_POST['city']);
     $town = htmlspecialchars($_POST['town']);
     $password = !empty($_POST['password']) ? password_hash($_POST['password'], PASSWORD_BCRYPT) : null;
+
+    if (
+        empty($firstName) ||
+        empty($lastName) ||
+        empty($email) ||
+        empty($contactNumber) ||
+        empty($prefecture) ||
+        empty($city) ||
+        empty($town) ||
+        empty($password)
+        )
+    
+    {
+        $_SESSION['error'] = "All fields are required except for password";
+        header("Location: ../../editprofile.php");
+        exit;
+    }
 
     try {
             // UPDATE QUERY (EXCLUDE PASSWORD IF EMPTY)
@@ -48,6 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             WHERE id = :user_id
                             ";
         } else {
+            // IF PASSWORD IS NOT PROVIDED
             $updateQuery = "UPDATE users SET
                             first_name = :first_name,
                             last_name = :last_name,
@@ -55,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             contact_number = :contact_number,
                             prefecture = :prefecture,
                             city = :city,
-                            town = :town,
+                            town = :town
                             WHERE id = :user_id
                             ";
         }
@@ -70,21 +90,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $updateStmt->bindParam(':town', $town, PDO::PARAM_STR);
         $updateStmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
 
+
         if ($password) {
             $updateStmt->bindParam(':password', $password, PDO::PARAM_STR);
         }
 
             // EXECUTE QUERY AND CHECK
         if ($updateStmt->execute()) {
-            $success = "Profile has beend updated successfully!";
-            header("Location: ../../profile.php");
+            $_SESSION ['success'] = "Profile has beend updated successfully!";
+            header("Location: ../../editprofile.php");
             exit;
         } else {
-            $error = "Error updating profile.";
+            $_SESSION ['error'] = "Error updating profile.";
+            print_r($updateStmt->errorInfo());
+            // header("Location: ../../editprofile.php");
+            // exit;
         }
 
 
     } catch (PDOException $e) {
-        $error = "Database error: " . $e->getMessage();
+        $_SESSION ['error'] = "Database error: " . $e->getMessage();
+        header("Location: ../../editprofile.php");
+        exit;
     }
 }

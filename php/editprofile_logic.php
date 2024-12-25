@@ -22,3 +22,14 @@ $stmt->execute();
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
     // PROCESS from submission
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // COLLECT INPUT FIELDS
+    $password = htmlspecialchars($_POST['password']) ? password_hash($_POST['password'], PASSWORD_BCRYPT) : null;
+    $firstName = htmlspecialchars($_POST['first_name']);
+    $lastName = htmlspecialchars($_POST['last_name']);
+    $email = htmlspecialchars($_POST['email']);
+    $contactNumber = htmlspecialchars($_POST['contact_number']);
+    $prefecture = htmlspecialchars($_POST['prefecture']);
+    $city = htmlspecialchars($_POST['city']);
+    $town = htmlspecialchars($_POST['town']);
+}

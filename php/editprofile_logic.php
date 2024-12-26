@@ -64,8 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             city = :city,
                             town = :town,
                             password = :password 
-                            WHERE id = :user_id
-                            ";
+                            WHERE id = :user_id";
         } else {
             // IF PASSWORD IS NOT PROVIDED
             $updateQuery = "UPDATE users SET
@@ -76,8 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             prefecture = :prefecture,
                             city = :city,
                             town = :town
-                            WHERE id = :user_id
-                            ";
+                            WHERE id = :user_id";
         }
             // PREPARE and BIND PARAMETERS
         $updateStmt = $pdo->prepare($updateQuery);

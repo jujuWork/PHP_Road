@@ -1,5 +1,6 @@
 <?php
 include_once 'php/editprofile_logic.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -37,7 +38,7 @@ include_once 'php/editprofile_logic.php';
         <?php endif; ?>
 
         <div id="bodyForm">
-            <form action="php/editprofile_logic.php" method="post">
+            <form action="php/editprofile_logic.php" method="POST">
 
                 <input type="password" name="password" placeholder="    New Password">
 

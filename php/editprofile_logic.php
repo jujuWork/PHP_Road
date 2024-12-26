@@ -89,14 +89,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $updateStmt->bindParam(':town', $town, PDO::PARAM_STR);
         $updateStmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
 
-        if ($updateStmt->execute()) {
-            echo "Profile updated successfully!";
-            exit; // Stop execution for testing
-        } else {
-            echo "Failed to update profile.<br>";
-            print_r($updateStmt->errorInfo()); // Output SQL error details
-            exit;
-        }
+        // if ($updateStmt->execute()) {
+        //     echo "Profile updated successfully!";
+        //     exit; // Stop execution for testing
+        // } else {
+        //     echo "Failed to update profile.<br>";
+        //     print_r($updateStmt->errorInfo()); // Output SQL error details
+        //     exit;
+        // }
 
 
         if ($password) {
@@ -112,7 +112,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION ['error'] = "Error updating profile.";
             print_r($updateStmt->errorInfo());
             // header("Location: ../../editprofile.php");
-            // exit;
+            exit;
         }
 
 

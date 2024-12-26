@@ -79,6 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
             // PREPARE and BIND PARAMETERS
         $updateStmt = $pdo->prepare($updateQuery);
+        
         $updateStmt->bindParam(':first_name', $firstName, PDO::PARAM_STR);
         $updateStmt->bindParam(':last_name', $lastName, PDO::PARAM_STR);
         $updateStmt->bindParam(':email', $email, PDO::PARAM_STR);

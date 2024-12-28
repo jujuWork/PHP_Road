@@ -37,6 +37,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
     <header>
         <section class="topbar">
             <ul>
+                <li><a href="index.php">Portfolio</a></li>
                 <li><a href="editprofile.php">Edit Profile</a></li>
                 <li><a href="logout.php">Logout</a></li>
             </ul>

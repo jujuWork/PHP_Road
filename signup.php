@@ -20,20 +20,12 @@ session_start();
     </header>
 
     <?php if (!empty($_SESSION['error'])): ?>
-            <div style="color: red;">
-                <?php
-                    echo $_SESSION['error'];
-                    unset($_SESSION['error']); // CLear the error message
-                ?>
-            </div>
+                    <p style="color: red;"><?php echo htmlspecialchars($_SESSION['error']);?></p>
+                    <?php unset($_SESSION['error']);?>
         <?php endif; ?>
     <?php if (!empty($_SESSION['success'])): ?>
-            <div style="color: green;">
-                <?php
-                    echo $_SESSION['success'];
-                    unset($_SESSION['success']);
-                ?>
-            </div>
+        <p style="color: red;"><?php echo htmlspecialchars($_SESSION['success']);?></p>
+                    <?php unset($_SESSION['success']);?>
         <?php endif; ?>
     
 

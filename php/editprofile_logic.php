@@ -11,13 +11,11 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 $userID = $_SESSION['user_id'];
-// $error = "";
-// $success = "";
 
     // FETCH current user data
 $query = "SELECT * FROM users WHERE id = :user_id";
 $stmt = $pdo->prepare($query);
-$stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
+$stmt->bindParam(':user_id', $userID, PDO::PARAM_INT);
 $stmt->execute();
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -87,16 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $updateStmt->bindParam(':prefecture', $prefecture, PDO::PARAM_STR);
         $updateStmt->bindParam(':city', $city, PDO::PARAM_STR);
         $updateStmt->bindParam(':town', $town, PDO::PARAM_STR);
-        $updateStmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
-
-        // if ($updateStmt->execute()) {
-        //     echo "Profile updated successfully!";
-        //     exit; // Stop execution for testing
-        // } else {
-        //     echo "Failed to update profile.<br>";
-        //     print_r($updateStmt->errorInfo()); // Output SQL error details
-        //     exit;
-        // }
+        $updateStmt->bindParam(':user_id', $userID, PDO::PARAM_INT);
 
 
         if ($password) {

@@ -1,22 +1,22 @@
 <?php
 
-// require_once 'db/db.php';
+require_once __DIR__ . '/../db/db.php';
 
 session_start();
 
-    // Database Configuration
-$host = '127.0.0.1';
-$port = '8889';
-$dbname = 'db_users';
-$username = 'root';
-$password = 'root';
+//     // Database Configuration
+// $host = '127.0.0.1';
+// $port = '8889';
+// $dbname = 'db_users';
+// $username = 'root';
+// $password = 'root';
 
 // $message = "";
 
 try {
-            // Establish database connection
-        $pdo = new PDO ("mysql:host=$host;port=$port;dbname=$dbname", $username, $password);
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        //     // Establish database connection
+        // $pdo = new PDO ("mysql:host=$host;port=$port;dbname=$dbname", $username, $password);
+        // $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             // Handle form submission
         if ($_SERVER['REQUEST_METHOD'] === "POST") {

@@ -1,19 +1,21 @@
 <?php
 
+require_once __DIR__ . '/../db/db.php';
+
 session_start();
 
-    // Database connection
-$host = '127.0.0.1';
-$port = '8889';
-$dbname = 'db_users';
-$username = 'root';
-$password = 'root';
+//     // Database connection
+// $host = '127.0.0.1';
+// $port = '8889';
+// $dbname = 'db_users';
+// $username = 'root';
+// $password = 'root';
 
     // Check if form is submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
-        $pdo = new PDO ("mysql:host=$host;port=$port;dbname=$dbname", $username, $password);
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        // $pdo = new PDO ("mysql:host=$host;port=$port;dbname=$dbname", $username, $password);
+        // $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             // Collect and sanitize form data
         $username = htmlspecialchars($_POST['username']);

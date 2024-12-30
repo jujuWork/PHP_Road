@@ -10,7 +10,7 @@
 <body>
     <div class="leftSide">
         <header>
-            profile pic
+        
         </header>
     </div>
     <div class="rightSide">

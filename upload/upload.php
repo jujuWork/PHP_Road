@@ -12,6 +12,11 @@
 <body>
     
     <?php
+        if(isset($_SESSION['success'])) {
+            echo "<p style='color: red;'>" . $_SESSION['success'] . "</p>";
+            unset($_SESSION['success']);
+        }
+    
         if (isset($_SESSION['error_message'])) {
             echo "<p style='color: red;'>" . $_SESSION['error_message'] . "</p>";
             unset($_SESSION['error_message']); // Clearing message after display

@@ -17,6 +17,7 @@ if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
 
     //Move the upload file to the "Image Folder"
     if (move_uploaded_file($_FILES['image']['tmp_name'], $targetFile)) {
+        $_SESSION['success'] = "Upload Successful!";
         header("Location: upload.php");
         exit;
     } else {
@@ -25,3 +26,6 @@ if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
 } else {
     $_SESSION['error_message'] = "Error: no file uploaded.";
 }
+
+header("Location: upload.php");
+exit;

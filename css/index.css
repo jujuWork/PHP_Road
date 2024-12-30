@@ -13,7 +13,25 @@ body {
 /********* LEFT SIDE *************/
 
 .leftSide {
-    width: 40%;
+    width: 30%;
     height: 100vh;
     background-color: #88AB8E;
+}
+
+.profile_info {
+    text-align: center;
+    padding-top: 30px;
+}
+
+.leftSide img {
+    border-radius: 50%;
+    padding: 3px;
+    box-shadow: -3px -6px 9px 1px #F2F1EB;
+}
+
+.leftSide h1 {
+    letter-spacing: 2px;
+    font-family: "Poppins", serif;
+    font-weight: 900;
+    font-style: normal;
 }

@@ -5,3 +5,15 @@ html, body {
     height: 100vh;
     border: 1px solid #88AB8E;
 }
+
+body {
+    background-color: #F2F1EB;
+}
+
+/********* LEFT SIDE *************/
+
+.leftSide {
+    width: 40%;
+    height: 100vh;
+    background-color: #88AB8E;
+}

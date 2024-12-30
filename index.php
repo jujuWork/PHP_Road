@@ -10,7 +10,10 @@
 <body>
     <div class="leftSide">
         <header>
-        
+            <img src="upload/images/profilepic.jpg" alt="profile" width="120px">
+            <span>
+                <h1>Sanchez Joharry</h1>
+            </span>
         </header>
     </div>
     <div class="rightSide">

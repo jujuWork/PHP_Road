@@ -1,3 +1,27 @@
+<?php
+
+require_once 'db/db.php';
+
+
+session_start();
+
+if (!isset($_SESSION['user_id'])) {
+    $_SESSION['error'] = "Please login to access your profile";
+    header("Location: ../../login.php");
+    exit;
+}
+
+$userId = $_SESSION['user_id'];
+$query = "SELECT * FROM users WHERE id = :user_id";
+$stmt = $pdo->prepare($query);
+$stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
+$stmt->execute();
+
+$user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,24 +48,24 @@
             <div class="contact">
                 <table>
                     <tr>
-                        <td><img src="upload/images/CS.png" alt="contact"></td>
-                        <td>CONTACT ME</td>
+                        <td class="info_img"><img src="upload/images/CS.png" alt="contact"></td>
+                        <td class="info_name">CONTACT ME</td>
                     </tr>
                     <tr>
-                        <td><img src="upload/images/email.png" alt="email"></td>
-                        <td>Email:</td>
+                        <td class="info_img"><img src="upload/images/email.png" alt="email"></td>
+                        <td class="info_name"><?= htmlspecialchars($user['email']) ?></td>
                     </tr>
                     <tr>
-                        <td><img src="upload/images/mobile.png" alt="mobile"></td>
-                        <td>090-9923-3642</td>
+                        <td class="info_img"><img src="upload/images/mobile.png" alt="mobile"></td>
+                        <td class="info_name"><?= htmlspecialchars($user['contact_number']) ?></td>
                     </tr>
                     <tr>
-                        <td><img src="upload/images/linkedin.png" alt="linkedIN"></td>
-                        <td>linkedIN</td>
+                        <td class="info_img"><img src="upload/images/linkedin.png" alt="linkedIN"></td>
+                        <td class="info_name">linkedIN</td>
                     </tr>
                     <tr>
-                        <td><img src="upload/images/location.png" alt="location"></td>
-                        <td>Location:</td>
+                        <td class="info_img"><img src="upload/images/location.png" alt="location"></td>
+                        <td class="info_name">User L</td>
                     </tr>
                 </table>
             

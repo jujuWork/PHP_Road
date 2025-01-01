@@ -15,9 +15,12 @@ body {
 /* PROFILE INFO */
 
 .leftSide {
-    width: 30%;
+    width: 35%;
+    max-width: 300px;
     height: 100vh;
     background-color: #88AB8E;
+    position: relative;
+    overflow: hidden;
 }
 
 .profile_info {
@@ -32,7 +35,7 @@ body {
 
 .leftSide h1 {
     letter-spacing: 2px;
-    font-family: "Poppins", serif;
+    font-family: "Poppins", sans-serif;
     font-weight: 900;
     font-style: normal;
 }
@@ -40,5 +43,28 @@ body {
 /* CONTACT */
 
 .contact {
+    width: 100%;
     margin-top: 5rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    box-sizing: border-box;
+}
+
+.contact table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.contact .info_img {
+    padding-left: 5px;
+    object-fit: cover;
+    max-width: 50px;
+    height: 100%;
+}
+
+.contact .info_name {
+    text-align: center;
+    width: 100%;
+    height: 100%;
 }

@@ -49,7 +49,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
                 <table>
                     <tr>
                         <td class="info_img"><img src="upload/images/CS.png" alt="contact"></td>
-                        <td class="info_name">CONTACT ME</td>
+                        <td class="info_name"><h2>CONTACT ME</h2></td>
                     </tr>
                     <tr>
                         <td class="info_img"><img src="upload/images/email.png" alt="email"></td>
@@ -68,29 +68,6 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
                         <td class="info_name">User L</td>
                     </tr>
                 </table>
-            
-            
-            
-            
-            
-            
-                <!-- <span>
-                    <h2>
-                        <p><img src="upload/images/contact.png" alt="contact"> CONTACT ME</p>
-                    </h2>
-                </span>
-                <span>
-                    <p>090-9923-3642</p>
-                </span>
-                <span>
-                    <p>joharrywork@gmail.com</p>
-                </span>
-                <span>
-                    <p>linkedin</p>
-                </span>
-                <span>
-                    <p>location</p>
-                </span> -->
             </div>
         </header>
     </div>

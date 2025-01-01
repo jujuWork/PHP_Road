@@ -48,6 +48,8 @@ include_once 'php/editprofile_logic.php';
 
                 <input type="text" name="town" placeholder="    Enter Town/Street">
 
+                <input type="text" name="linkedin" placeholder="    Enter LinkedIn">
+
                 <button type="submit" class="btnSave">Save Changes</button>
 
                 <p><a href="../../profile.php">Back</a></p>

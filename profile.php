@@ -93,7 +93,11 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
                     </tr>
                     <tr>
                         <th><strong>Town/Street:</strong></th>
-                            <td><?= htmlspecialchars($user['town'])?></td>
+                            <td><?= htmlspecialchars($user['town']) ?></td>
+                    </tr>
+                    <tr>
+                        <th><strong>LinkedIn:</strong></th>
+                            <td><?= htmlspecialchars($user['linkedin']) ?></td>
                     </tr>
             </table>
                     <?php else: ?>

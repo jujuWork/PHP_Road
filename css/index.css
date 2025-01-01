@@ -1,7 +1,7 @@
 html, body {
     padding: 0;
     margin: 0 auto;
-    max-width: 800px;
+    max-width: 1000px;
     height: 100vh;
     border: 1px solid #88AB8E;
 }
@@ -26,6 +26,11 @@ body {
 .profile_info {
     text-align: center;
     padding-top: 30px;
+}
+
+.profile_info img {
+    width: 200px;
+    height: 200px;
 }
 
 .leftSide img {

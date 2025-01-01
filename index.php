@@ -40,7 +40,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
     <div class="leftSide">
         <header>
             <div class="profile_info">
-                <img src="upload/images/profilepic.jpg" alt="profile" width="150px">
+                <img src="upload/images/profilepic.jpg" alt="profile">
                     <span>
                         <h1>Sanchez <br> Joharry</h1>
                     </span>

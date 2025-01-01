@@ -61,7 +61,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
                     </tr>
                     <tr>
                         <td class="info_img"><img src="upload/images/linkedin.png" alt="linkedIN"></td>
-                        <td class="info_name">linkedIN</td>
+                        <td class="info_name"><?= htmlspecialchars($user['linkedin']) ?></td>
                     </tr>
                     <tr>
                         <td class="info_img"><img src="upload/images/location.png" alt="location"></td>

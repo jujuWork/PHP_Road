@@ -31,6 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $prefecture = htmlspecialchars($_POST['prefecture']);
     $city = htmlspecialchars($_POST['city']);
     $town = htmlspecialchars($_POST['town']);
+    $linkedin = htmlspecialchars($_POST['linkedin']);
     $password = !empty($_POST['password']) ? password_hash($_POST['password'], PASSWORD_BCRYPT) : null;
 
     if (
@@ -41,7 +42,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         empty($prefecture) ||
         empty($city) ||
         empty($town) ||
-        empty($password)
+        empty($password) ||
+        empty($linkedin)
         )
     
     {
@@ -61,6 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             prefecture = :prefecture,
                             city = :city,
                             town = :town,
+                            linkedin = :linkedin,
                             password = :password 
                             WHERE id = :user_id";
         } else {
@@ -72,7 +75,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             contact_number = :contact_number,
                             prefecture = :prefecture,
                             city = :city,
-                            town = :town
+                            town = :town,
+                            linkedin = :linkedin
                             WHERE id = :user_id";
         }
             // PREPARE and BIND PARAMETERS
@@ -85,6 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $updateStmt->bindParam(':prefecture', $prefecture, PDO::PARAM_STR);
         $updateStmt->bindParam(':city', $city, PDO::PARAM_STR);
         $updateStmt->bindParam(':town', $town, PDO::PARAM_STR);
+        $updateStmt->bindParam(':linkedin', $linkedin, PDO::PARAM_STR);
         $updateStmt->bindParam(':user_id', $userID, PDO::PARAM_INT);
 
 

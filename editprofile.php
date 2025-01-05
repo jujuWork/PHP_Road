@@ -50,6 +50,10 @@ include_once 'php/editprofile_logic.php';
 
                 <input type="text" name="linkedin" placeholder="    Enter LinkedIn">
 
+                <input type="text" name="facebook" placeholder="    Enter Facebook">
+
+                <input type="text" name="instagram" placeholder="   Enter Instagram">
+
                 <button type="submit" class="btnSave">Save Changes</button>
 
                 <p><a href="../../profile.php">Back</a></p>

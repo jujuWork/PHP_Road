@@ -99,6 +99,14 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
                         <th><strong>LinkedIn:</strong></th>
                             <td><?= htmlspecialchars($user['linkedin']) ?></td>
                     </tr>
+                    <tr>
+                        <th><strong>Facebook:</strong></th>
+                            <td><?= htmlspecialchars($user['facebook']) ?></td>
+                    </tr>
+                    <tr>
+                        <th><strong>Instagram:</strong></th>
+                            <td><?= htmlspecialchars($user['instagram']) ?></td>
+                    </tr>
             </table>
                     <?php else: ?>
                         <p>No data found in the database.</p>

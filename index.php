@@ -53,21 +53,40 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
                     </tr>
                     <tr>
                         <td class="info_img"><img src="upload/images/email.png" alt="email"></td>
-                        <td class="info_name"><?= htmlspecialchars($user['email']) ?></td>
+                        <td class="info_name">
+                            <?= htmlspecialchars($user['email']) ?></td>
                     </tr>
                     <tr>
                         <td class="info_img"><img src="upload/images/mobile.png" alt="mobile"></td>
-                        <td class="info_name"><?= htmlspecialchars($user['contact_number']) ?></td>
+                        <td class="info_name">
+                            <?= htmlspecialchars($user['contact_number']) ?></td>
+                    </tr>
+                    <tr>
+                        <td class="info_img"><img src="upload/images/location.png" alt="location"></td>
+                        <td class="info_name">
+                            <p><?= htmlspecialchars($user['prefecture']) ?></p>
+                            <p><?= htmlspecialchars($user['city']) ?></p>
+                            <p><?= htmlspecialchars($user['town'])?></p>
+                        </td>
                     </tr>
                     <tr>
                         <td class="info_img"><img src="upload/images/linkedin.png" alt="linkedIN"></td>
                         <td class="info_name">
-                            <a href="www.linkedin.com/in/jujuwork">LinkedIn</a>
+                            <!-- <a href="https://www.linkedin.com/in/jujuwork">LinkedIn</a> -->
+                            <a href="<?= htmlspecialchars($user['linkedin']) ?>">linkedIn</a>
                         </td>
                     </tr>
                     <tr>
-                        <td class="info_img"><img src="upload/images/location.png" alt="location"></td>
-                        <td class="info_name">User L</td>
+                        <td class="info_img"><img src="upload/images/facebook.png" alt="facebook"></td>
+                        <td class="info_name">
+                            <a href="https://www.facebook.com/jujuwork1024/">Facebook</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="info_img"><img src="upload/images/instagram.png" alt="instagram"></td>
+                        <td class="info_name">
+                            <a href="https://www.instagram.com/bb8jujuj/">instagram</a>
+                        </td>
                     </tr>
                 </table>
             </div>

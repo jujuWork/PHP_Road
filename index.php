@@ -92,7 +92,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
         </header>
     </div>
     <div class="rightSide">
-
+            <h1>dwajdoaj</h1>
     </div>
 </body>
 </html>

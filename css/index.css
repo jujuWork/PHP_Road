@@ -8,6 +8,7 @@ html, body {
 
 body {
     background-color: #F2F1EB;
+    display: flex;
 }
 
 /********* LEFT SIDE *************/
@@ -21,6 +22,9 @@ body {
     background-color: #88AB8E;
     position: relative;
     overflow: hidden;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
 }
 
 .profile_info {
@@ -77,3 +81,9 @@ body {
 
 
 /************ RIGHT SIDE **************/
+
+.rightSide {
+    overflow: hidden;
+    display: flex;
+    width: 100%;
+}

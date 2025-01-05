@@ -72,20 +72,19 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
                     <tr>
                         <td class="info_img"><img src="upload/images/linkedin.png" alt="linkedIN"></td>
                         <td class="info_name">
-                            <!-- <a href="https://www.linkedin.com/in/jujuwork">LinkedIn</a> -->
-                            <a href="<?= htmlspecialchars($user['linkedin']) ?>">linkedIn</a>
+                            <a href="<?= htmlspecialchars($user['linkedin']) ?>" target="_blank">linkedIn</a>
                         </td>
                     </tr>
                     <tr>
                         <td class="info_img"><img src="upload/images/facebook.png" alt="facebook"></td>
                         <td class="info_name">
-                            <a href="https://www.facebook.com/jujuwork1024/">Facebook</a>
+                            <a href="<?= htmlspecialchars($user['facebook']) ?>" target="_blank">Facebook</a>
                         </td>
                     </tr>
                     <tr>
                         <td class="info_img"><img src="upload/images/instagram.png" alt="instagram"></td>
                         <td class="info_name">
-                            <a href="https://www.instagram.com/bb8jujuj/">instagram</a>
+                            <a href="<?= htmlspecialchars($user['instagram']) ?>" target="_blank">instagram</a>
                         </td>
                     </tr>
                 </table>

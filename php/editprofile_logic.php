@@ -99,6 +99,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $updateStmt->bindParam(':town', $town, PDO::PARAM_STR);
         $updateStmt->bindParam(':linkedin', $linkedin, PDO::PARAM_STR);
         $updateStmt->bindParam(':facebook', $facebook, PDO::PARAM_STR);
+        $updateStmt->bindParam(':instagram', $instagram, PDO::PARAM_STR);
         $updateStmt->bindParam(':user_id', $userID, PDO::PARAM_INT);
 
 

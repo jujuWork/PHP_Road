@@ -23,7 +23,7 @@ require_once 'php/login_logic.php';
     <!-- Display Error or Success Messages -->
     <?php if (isset($_SESSION['error'])): ?>
         <p style="color: red;"><?php echo htmlspecialchars($_SESSION['error']); ?></p>
-        <?php unset($_SESSION['error']); // Clear the error after displaying ?>
+        <?php unset($_SESSION['error']); // Clear the error after displaying ?>w
     <?php endif; ?>
 
     <?php if (isset($_SESSION['success'])): ?>

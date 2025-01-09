@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 html, body {
     padding: 0;
     margin: 0 auto;
@@ -21,6 +27,7 @@ body {
     display: flex;
     align-items: baseline;
     justify-content: center;
+    flex-grow: 1;
 }
 
 .profile_info {
@@ -79,7 +86,11 @@ body {
 /************ RIGHT SIDE **************/
 
 .rightSide {
-    overflow: hidden;
     display: flex;
+    flex-direction: column;
     width: 100%;
+}
+
+.education {
+    border: 1px solid red;
 }

@@ -87,24 +87,34 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
                             <a href="<?= htmlspecialchars($user['instagram']) ?>" target="_blank">instagram</a>
                         </td>
                     </tr>
-                    <tr>
-                        <td class="info_img"><img src="upload/images/instagram.png" alt="instagram"></td>
-                        <td class="info_name">
-                            <a href="<?= htmlspecialchars($user['instagram']) ?>" target="_blank">instagram</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="info_img"><img src="upload/images/instagram.png" alt="instagram"></td>
-                        <td class="info_name">
-                            <a href="<?= htmlspecialchars($user['instagram']) ?>" target="_blank">instagram</a>
-                        </td>
-                    </tr>
                 </table>
             </div>
         </header>
     </div>
     <div class="rightSide">
+        <div class="education">    
             <h2>Education:</h2>
+            <table>
+                <th>Year</th>
+                <th>School Name</th>
+                <tr>
+                    <td>2002 ~ 2006</td>
+                    <td>Saint Peter's College of Toril, Philippines</td>
+                </tr>
+                <tr>
+                    <td>2006 ~ 2009</td>
+                    <td>STI College of Davao</td>
+                </tr>
+            </table>
+        </div>
+        <div class="Skills">
+            <h2>Skills</h2>
+            <span>dwadadwa</span>
+        </div>
+        <div class="workexp">
+            <h2>Work Experience</h2>
+            <span>hdwpoajdopa</span>
+        </div>
     </div>
 </body>
 </html>

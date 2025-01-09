@@ -87,12 +87,24 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
                             <a href="<?= htmlspecialchars($user['instagram']) ?>" target="_blank">instagram</a>
                         </td>
                     </tr>
+                    <tr>
+                        <td class="info_img"><img src="upload/images/instagram.png" alt="instagram"></td>
+                        <td class="info_name">
+                            <a href="<?= htmlspecialchars($user['instagram']) ?>" target="_blank">instagram</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="info_img"><img src="upload/images/instagram.png" alt="instagram"></td>
+                        <td class="info_name">
+                            <a href="<?= htmlspecialchars($user['instagram']) ?>" target="_blank">instagram</a>
+                        </td>
+                    </tr>
                 </table>
             </div>
         </header>
     </div>
     <div class="rightSide">
-            <h1>dwajdoaj</h1>
+            <h2>Education:</h2>
     </div>
 </body>
 </html>

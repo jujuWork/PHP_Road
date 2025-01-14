@@ -97,19 +97,67 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
             <table>
                 <th>Year</th>
                 <th>School Name</th>
-                <tr>
-                    <td>2002 ~ 2006</td>
-                    <td>Saint Peter's College of Toril, Philippines</td>
-                </tr>
-                <tr>
-                    <td>2006 ~ 2009</td>
-                    <td>STI College of Davao</td>
-                </tr>
+                    <tr>
+                        <td>June 2002 ~ March 2006</td>
+                        <td>Saint Peter's College of Toril, Philippines</td>
+                    </tr>
+                    <tr>
+                        <td>June 2006 ~ Oct. 2009</td>
+                        <td>
+                            <p>STI College of Davao, Philippines</p>
+                            <p>Bachelor of Science in Information Technology</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> Sept. 2024 ~ Dec. 2024</td>
+                        <td>
+                            <p>Future Academy</p>
+                            <p>PHP Course for 3-months</p>
+                        </td>
+                    </tr>
             </table>
         </div>
         <div class="Skills">
             <h2>Skills</h2>
-            <span>dwadadwa</span>
+                <table>
+                    <th></th>
+                    <th></th>
+                        <tr>
+                            <td>HTML</td>
+                            <td>progess bar</td>
+                        </tr>
+                        <tr>
+                            <td>CSS</td>
+                            <td>progess bar</td>
+                        </tr>
+                        <tr>
+                            <td>Javascript</td>
+                            <td>progess bar</td>
+                        </tr>
+                        <tr>
+                            <td>PHP</td>
+                            <td>progess bar</td>
+                        </tr>
+                        <tr>
+                            <td>MySQL</td>
+                            <td>progess bar</td>
+                        </tr>
+                </table>
+        </div>
+        <div>
+            <h2>Tools</h2>
+                <table>
+                        <th></th>
+                        <th></th>
+                            <tr>
+                                <td>Visual Studio Code</td>
+                                <td>progess bar</td>
+                            </tr>
+                            <tr>
+                                <td>Git/Github</td>
+                                <td>progess bar</td>
+                            </tr>
+                    </table>
         </div>
         <div class="workexp">
             <h2>Work Experience</h2>

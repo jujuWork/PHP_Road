@@ -94,40 +94,31 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
     <div class="rightSide">
         <div class="education">    
             <h2>Education:</h2>
-            <div class="column1">
-                <div class="year">
-                   <ul>
-                    <h3>Year</h3>
-                        <li>2009</li>
-                        <li>2024</li>
-                   </ul>
-                </div>
-                <div class="school">
-                    <h3>School</h3>
-                </div>
-            </div>
-            <!-- <table>
+            <table>
                 <th>Year</th>
                 <th>School Name</th>
                     <tr>
                         <td>June 2002 ~ March 2006</td>
-                        <td>Saint Peter's College of Toril, Philippines</td>
+                        <td>
+                            <p>Saint Peter's College of Toril, Philippines</p>
+                            <li>High School</li>
+                        </td>
                     </tr>
                     <tr>
                         <td>June 2006 ~ Oct. 2009</td>
                         <td>
                             <p>STI College of Davao, Philippines</p>
-                            <p>Bachelor of Science in Information Technology</p>
+                            <li>Bachelor of Science in Information Technology</li>
                         </td>
                     </tr>
                     <tr>
                         <td> Sept. 2024 ~ Dec. 2024</td>
                         <td>
                             <p>Future Academy</p>
-                            <p>PHP Course for 3-months</p>
+                            <li>PHP Course for 3-months</li>
                         </td>
                     </tr>
-            </table> -->
+            </table>
         </div>
         <div class="Skills">
             <h2>Skills</h2>

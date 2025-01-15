@@ -114,3 +114,15 @@ body {
     padding: 10px;
     border-bottom: 1px solid #88AB8E;
 }
+
+.skills {
+    margin-top: 30px;
+    width: 100%;
+    font-size: 1.2rem;
+}
+
+.skills h2 {
+    background-color: rgba(136, 171, 142, 0.7);
+    letter-spacing: 1.5px;
+    padding: 20px 20px 20px 15px;
+}

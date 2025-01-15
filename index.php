@@ -120,8 +120,8 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
                     </tr>
             </table>
         </div>
-        <div class="Skills">
-            <h2>Skills</h2>
+        <div class="skills">
+            <h2>Skills:</h2>
                 <table>
                     <th></th>
                     <th></th>

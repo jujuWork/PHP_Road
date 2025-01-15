@@ -94,7 +94,19 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
     <div class="rightSide">
         <div class="education">    
             <h2>Education:</h2>
-            <table>
+            <div class="column1">
+                <div class="year">
+                   <ul>
+                    <h3>Year</h3>
+                        <li>2009</li>
+                        <li>2024</li>
+                   </ul>
+                </div>
+                <div class="school">
+                    <h3>School</h3>
+                </div>
+            </div>
+            <!-- <table>
                 <th>Year</th>
                 <th>School Name</th>
                     <tr>
@@ -115,7 +127,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
                             <p>PHP Course for 3-months</p>
                         </td>
                     </tr>
-            </table>
+            </table> -->
         </div>
         <div class="Skills">
             <h2>Skills</h2>

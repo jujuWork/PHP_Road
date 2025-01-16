@@ -93,7 +93,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
     </div>
     <div class="rightSide">
         <div class="education">    
-            <h2>Education:</h2>
+            <h2>Education</h2>
             <table>
                 <th>Year</th>
                 <th>School Name</th>
@@ -121,7 +121,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
             </table>
         </div>
         <div class="skills">
-            <h2>Skills:</h2>
+            <h2>Skills</h2>
                 <table>
                     <th></th>
                     <th></th>

@@ -51,7 +51,7 @@ try {
                         // echo "Login Successful.";
                         $_SESSION['user_id'] = $user['id']; // Set the logged-in user;s ID
                         // $_SESSION['success'] = "Login Successful.";
-                        header("Location: ../../profile.php");
+                        header("Location: ../../index.php");
                         exit;
                     } else {
                         // $error = "Invalid password.";

@@ -56,7 +56,10 @@ include_once 'php/editprofile_logic.php';
 
                 <button type="submit" class="btnSave">Save Changes</button>
 
-                <p><a href="../../profile.php">Back</a></p>
+                <p class="links">
+                    <a href="../../index.php">Home</a>
+                    <a href="../../profile.php">Profile</a>
+                </p>
                 
             </form>
         </div>

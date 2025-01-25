@@ -44,6 +44,9 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
                     <span>
                         <h1>Sanchez <br> Joharry</h1>
                     </span>
+                    <span>
+                        <a href="editprofile.php">Edit Profile</a>
+                    </span>
             </div>
             <div class="contact">
                 <table>

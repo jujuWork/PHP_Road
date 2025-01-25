@@ -111,18 +111,19 @@ a {
 }
 
 .years {
-    width: 30%;
+    width: 40%;
     text-align: center;
 }
 
-.rightside_second_container {
-    border: 1px solid red;
+.rightside_second_container, .rightside_third_container, .rightside_forth_container {
+    border-top: 1px solid #88AB8E;
+    border-bottom: 1px solid #88AB8E;
     display: flex;
     margin-top: 1.5rem;
 }
 
 .year_dates {
-    width: 30%;
+    width: 40%;
     display: flex;
     align-items: center;
     justify-content: center;

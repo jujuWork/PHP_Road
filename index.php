@@ -114,6 +114,28 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
                 <p>(High School)</p>
             </div>
         </div>
+
+        <div class="rightside_third_container">
+            <div class="year_dates">
+                <span>June 2006 ~ October 2009</span>
+            </div>
+            <div class="school_dates">
+                <span>STI College of Davao</span>
+                <p>Bachelor of Science in Information Technology</p>
+                <p>(College)</p>
+            </div>
+        </div>
+
+        <div class="rightside_forth_container">
+            <div class="year_dates">
+                <span>September 2024 ~ December 2024</span>
+            </div>
+            <div class="school_dates">
+                <span>Future Academy</span>
+                <p>PHP Course</p>
+                <p>(Vocational Course)</p>
+            </div>
+        </div>
             
         <!-- <div class="education">    
             <h2>Education</h2>

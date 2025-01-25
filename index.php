@@ -95,7 +95,27 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
         </header>
     </div>
     <div class="rightSide">
-        <div class="education">    
+
+        <div class="rightside_first_container">
+            <div class="years">
+                <h3>Years</h3>
+            </div>
+            <div class="schools">
+                <h3>Schools</h3>
+            </div>
+        </div>
+
+        <div class="rightside_second_container">
+            <div class="year_dates">
+                <span>June 2002 ~ March 2006</span>
+            </div>
+            <div class="school_dates">
+                <span>Saint Peter's College of Toril</span>
+                <p>(High School)</p>
+            </div>
+        </div>
+            
+        <!-- <div class="education">    
             <h2>Education</h2>
             <table>
                 <th>Year</th>
@@ -122,15 +142,19 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
                         </td>
                     </tr>
             </table>
-        </div>
-        <div class="skills">
+        </div> -->
+        <!-- <div class="skills">
             <h2>Skills</h2>
                 <table>
                     <th></th>
                     <th></th>
                         <tr>
-                            <td>HTML</td>
-                            <td>progess bar</td>
+                            <td>
+                                <img src="upload/images/html-5.png" alt="html">
+                            </td>
+                            <td class="progressbar">
+                                <progress class="htmlbar"></progress>
+                            </td>
                         </tr>
                         <tr>
                             <td>CSS</td>
@@ -157,18 +181,18 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
                         <th></th>
                             <tr>
                                 <td>Visual Studio Code</td>
-                                <td>progess bar</td>
+                                
                             </tr>
                             <tr>
                                 <td>Git/Github</td>
-                                <td>progess bar</td>
+                              
                             </tr>
                     </table>
         </div>
         <div class="workexp">
             <h2>Work Experience</h2>
             <span>hdwpoajdopa</span>
-        </div>
+        </div> -->
     </div>
 </body>
 </html>

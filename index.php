@@ -96,7 +96,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
     </div>
     <div class="rightSide">
 
-        <div class="rightside_first_container">
+        <div class="rightside_first_tab">
             <div class="years">
                 <h3>Years</h3>
             </div>
@@ -105,7 +105,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
             </div>
         </div>
 
-        <div class="rightside_second_container">
+        <div class="rightside_second_tab">
             <div class="year_dates">
                 <span>June 2002 ~ March 2006</span>
             </div>
@@ -115,7 +115,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
             </div>
         </div>
 
-        <div class="rightside_third_container">
+        <div class="rightside_third_tab">
             <div class="year_dates">
                 <span>June 2006 ~ October 2009</span>
             </div>
@@ -126,7 +126,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
             </div>
         </div>
 
-        <div class="rightside_forth_container">
+        <div class="rightside_forth_tab">
             <div class="year_dates">
                 <span>September 2024 ~ December 2024</span>
             </div>
@@ -135,8 +135,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
                 <p>PHP Course</p>
                 <p>(Vocational Course)</p>
             </div>
-        </div>
-            
+        </div>        
     </div>
 </body>
 </html>

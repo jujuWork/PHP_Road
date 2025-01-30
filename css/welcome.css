@@ -28,6 +28,10 @@ header span {
     margin-top: 1.5rem;
 }
 
+.forms {
+    display: flex;
+}
+
 div button {
     margin-top: 1.5rem;
     padding: 5px 4px;

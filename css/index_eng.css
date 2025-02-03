@@ -85,7 +85,12 @@ header {
     gap: 50px;
 }
 
-.personal_information li {
-    list-style: none;
-    
+.personal_information table th {
+    font-size: 2rem;
+    letter-spacing: 2px;
+    display: flex;
+}
+
+table tr {
+    margin-top: 50px;
 }

@@ -82,15 +82,15 @@ header {
 .personal {
     margin: 20px 0 0 200px;
     display: flex;
-    gap: 50px;
+    gap: 30px;
+}
+
+.personal_information {
+    display: flex;
 }
 
 .personal_information table th {
     font-size: 2rem;
     letter-spacing: 2px;
     display: flex;
-}
-
-table tr {
-    margin-top: 50px;
 }

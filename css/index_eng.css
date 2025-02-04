@@ -20,10 +20,12 @@ a {
 nav {
     width: 100%;
     height: 100%;
+    margin-top: 50px;
 }
 
 .top_nav ul {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .top_nav li {
@@ -72,6 +74,8 @@ header {
     height: 100%;
     margin-top: 50px;
     font-family: "Roboto", serif;
+    display: flex;
+    flex-direction: column;
 }
 
 .greetings {
@@ -80,17 +84,32 @@ header {
 }
 
 .personal {
-    margin: 20px 0 0 200px;
+    margin: 100px 0 0 200px;
     display: flex;
-    gap: 30px;
+    gap: 10px;
 }
 
-.personal_information {
-    display: flex;
+.personal table {
+    width: 100%;
 }
 
-.personal_information table th {
+.personal_info {
+    width: 600px;
+}
+
+.info_title {
+    width: 100%;
     font-size: 2rem;
-    letter-spacing: 2px;
-    display: flex;
+}
+
+.personal_info td {
+    padding: 8px 8px;
+}
+
+.info_name {
+    width: 30%;
+}
+
+.info_answer {
+    flex: 1;
 }

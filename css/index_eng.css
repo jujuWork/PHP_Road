@@ -9,19 +9,11 @@ html {
     height: 100%;
     margin: 0 auto;
     background-color: #F8FAFC;
+    scroll-behavior: smooth;
 }
 
 a {
     text-decoration: none;
-}
-
-/******************* First Container *****************/
-
-#first_container {
-    border: 1px solid red;
-    width: 100%;
-    height: 100vh;
-    position: relative;
 }
 
 /******************* TOP NAVIGATION *****************/
@@ -157,4 +149,13 @@ header {
 
 .info_answer {
     flex: 1;
+}
+
+/******************* EXPERIENCE *****************/
+
+#exp {
+    border: 1px solid red;
+    width: 100%;
+    height: 100vh;
+    margin-top: 30px;
 }

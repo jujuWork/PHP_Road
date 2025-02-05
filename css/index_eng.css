@@ -150,6 +150,10 @@ header {
 
 /******************* EXPERIENCE *****************/
 
+section {
+    display: flex;
+}
+
 #work {
     border: 1px solid red;
     width: 100%;
@@ -158,6 +162,28 @@ header {
     margin: 50px auto;
 }
 
+.work_exp {
+    width: 100%;
+}
+
 .work_exp span {
     margin-top: 50px;
+    font-size: 1.1rem;
+}
+
+section .first_container {
+    margin-top: 30px;
+    display: flex;
+    width: 100%;
+}
+
+.company {
+    width: 40%;
+    border-right: 1px solid #9AA6B2;
+    margin-right: 30px;
+}
+
+.company_business {
+    flex: 1;
+    margin-left: 50px;
 }

@@ -155,7 +155,7 @@ section {
 }
 
 #work {
-    border: 1px solid red;
+
     width: 100%;
     max-width: 800px;
     height: 100%;
@@ -178,7 +178,7 @@ section .first_container {
 }
 
 .company {
-    width: 40%;
+    width: 30%;
     margin-right: 30px;
     text-align: center;
 }
@@ -188,6 +188,6 @@ section .first_container {
     margin-left: 50px;
 }
 
-li {
-    list-style: none;
+.company_business li {
+    margin-top: 10px;
 }

@@ -190,3 +190,26 @@ section .container {
 .company_business li {
     margin-top: 10px;
 }
+
+/******************* Skills *****************/
+
+aside {
+    display: flex;
+}
+
+
+#skills {
+    width: 100%;
+    max-width: 800px;
+    height: 100%;
+    margin: 50px auto;
+}
+
+.skills_exp {
+    width: 100%;
+}
+
+.skills_exp span {
+    margin-top: 50px;
+    font-size: 1.1rem;
+}

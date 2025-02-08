@@ -216,14 +216,10 @@ aside {
     font-size: 1.1rem;
 }
 
+/******************* ASIDE SKILLS *****************/
+
 .aside_container {
     display: flex;
-}
-
-.aside_container li {
-    list-style: none;
-    margin-left: 10px;
-    padding: 10px;
 }
 
 aside .prog_container {
@@ -231,6 +227,36 @@ aside .prog_container {
     margin-top: 40px;
     width: 50%;
 }
+
+.skill_container {
+    border: 1px solid green;
+    display: flex;
+}
+
+.skill_set {
+    border: 1px solid red;
+    width: 40%;
+    height: 100%;
+}
+
+.skill_set p {
+    padding: 10px 10px;
+}
+
+.progressbar_container {
+    width: 100%;
+    overflow: hidden;
+    background-color: #9AA6B2;
+    border-radius: 10px;
+}
+
+.progressbar {
+    width: 70%;
+    height: 20px;
+    background-color: #000;
+}
+
+/******************* ASIDE TOOLS *****************/
 
 aside .tools_container {
     border: 1px solid red;

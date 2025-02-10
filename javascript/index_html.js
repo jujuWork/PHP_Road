@@ -3,8 +3,8 @@
 const skillLevels = {
     html: 90,   // 90%
     css: 85,    // 85%
-    php: 60,    // 60%%
-    mysql: 60   // 60%
+    php: 60,    // 60%
+    mysql: 70   // 70%
 };
     // Function to update progress bar dynamically
 function updateProgressBar(skill, value) {

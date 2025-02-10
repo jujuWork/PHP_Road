@@ -223,45 +223,63 @@ aside {
 }
 
 aside .prog_container {
-    border: 1px solid red;
     margin-top: 40px;
+    padding-right: 10px;
     width: 50%;
+    display: flex;  
+    flex-direction: column;
+    border-right: 1px solid #9AA6B2;
 }
 
 .skill_container {
-    border: 1px solid green;
     display: flex;
+    width: 100%;
+    padding: 10px;
 }
 
-.skill_set {
-    border: 1px solid red;
-    width: 40%;
-    height: 100%;
-}
-
-.skill_set p {
-    padding: 10px 10px;
+.skill_name {
+    width: 20%;
+    text-align: center;
 }
 
 .progressbar_container {
     width: 100%;
     overflow: hidden;
-    background-color: #9AA6B2;
     border-radius: 10px;
+    background-color: #ddd;
+    display: flex;
 }
 
 .progressbar {
-    width: 70%;
+    width: 0%;
     height: 20px;
-    background-color: #000;
+    background-color: #4caf50;
+    text-align: center;
+    line-height: 20px;
+    color: white;
+    transition: width 0.5s;
+    font-size: 0.75em;
 }
 
 /******************* ASIDE TOOLS *****************/
 
 aside .tools_container {
-    border: 1px solid red;
     flex: 1;
     width: 100%;
     margin-top: 40px;
+    margin-left: 20px;
 }
 
+.tools_container li {
+    list-style: none;
+}
+
+.tool_container {
+    width: 100%;
+    padding: 10px;
+}
+
+.tool_name {
+    text-align: center;
+    width: 30%;
+}

@@ -1,0 +1,285 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 1200px;
+}
+
+html {
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    background-color: #F8FAFC;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+}
+
+/******************* TOP NAVIGATION *****************/
+
+nav {
+    width: 100%;
+    height: 100%;
+    margin-top: 50px;
+}
+
+.top_nav ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.top_nav li {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.15em;
+    position: relative;
+    padding: 1px 10px;
+        font-size: 1.1em;
+        font-family: "Poppins", serif;
+        font-weight: 200;
+        font-style: normal;      
+}
+
+.top_nav li:first-child {
+    margin-right: auto;
+    font-family: "La Belle Aurore", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2em;
+}
+
+.top_nav li::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;         /* Distance from text */
+    width: 0;            /* Start with no underline */
+    height: 1px;         /* Thickness of the underline */
+    background-color: #000;      /* Color of the underline */
+    transition: 0.3s ease-in-out;     /* Smooth transition */
+}
+
+.top_nav li:hover::after {
+    width: 100%;              /* Full width on hover */
+    text-underline-offset: 5px;
+}
+
+/******************* HEADER *****************/
+
+header {
+    width: 100%;
+    height: 80vh;
+    margin-top: 50px;
+    font-family: "Roboto", serif;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.greetings {
+    font-size: 3.5rem;
+    margin-left: 50px;
+}
+
+.personal {
+    margin: 100px 0 0 200px;
+    display: flex;
+    gap: 10px;
+}
+
+.personal_profile {
+    position: relative;
+    width: 200px;
+}
+
+.personal img {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 200px;
+    height: auto;
+    z-index: 2;
+}
+
+.second_box {
+    background-color: #212121;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 265px;
+}
+
+.third_box {
+    background-color: #9AA6B2;
+    z-index: -1;
+    position: absolute;
+    bottom: -23px;
+    right: -21px;
+    width: 200px;
+    height: 265px;
+}
+
+.personal_info {
+    width: 600px;
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.personal_info h2 {
+    width: 100%;
+    text-align: center;
+}
+
+.personal_info td {
+    margin-top: 5px;
+    padding: 8px 8px;
+    width: 50%;
+    text-align: center;
+}
+
+.line {
+    border: 0.2px solid #9AA6B2;
+    margin-top: 50px;
+}
+
+/******************* EXPERIENCE *****************/
+
+section {
+    display: flex;
+}
+
+#work {
+    width: 100%;
+    max-width: 800px;
+    height: 100%;
+    margin: 50px auto;
+}
+
+.work_exp {
+    width: 100%;
+}
+
+.work_exp span {
+    margin-top: 50px;
+    font-size: 1.1rem;
+}
+
+section .container {
+    margin-top: 30px;
+    display: flex;
+    width: 100%;
+}
+
+.company {
+    width: 30%;
+    margin-right: 30px;
+    text-align: center;
+}
+
+.company_business {
+    flex: 1;
+    margin-left: 50px;
+}
+
+.company_business li {
+    margin-top: 10px;
+}
+
+/******************* Skills *****************/
+
+aside {
+    display: flex;
+}
+
+
+#skills {
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    margin: 50px auto;
+    display: flex;
+}
+
+.skills_exp {
+    width: 100%;
+}
+
+.skills_exp span {
+    margin-top: 100px;
+    font-size: 1.1rem;
+}
+
+/******************* ASIDE SKILLS *****************/
+
+.aside_container {
+    display: flex;
+}
+
+aside .prog_container {
+    margin-top: 40px;
+    padding-right: 10px;
+    width: 50%;
+    display: flex;  
+    flex-direction: column;
+    border-right: 1px solid #9AA6B2;
+}
+
+.skill_container {
+    display: flex;
+    width: 100%;
+    padding: 10px;
+}
+
+.skill_name {
+    width: 20%;
+    text-align: center;
+}
+
+.progressbar_container {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: #ddd;
+    display: flex;
+}
+
+.progressbar {
+    width: 0%;
+    height: 20px;
+    background-color: #4caf50;
+    text-align: center;
+    line-height: 20px;
+    color: white;
+    transition: width 0.5s;
+    font-size: 0.75em;
+}
+
+/******************* ASIDE TOOLS *****************/
+
+aside .tools_container {
+    flex: 1;
+    width: 100%;
+    margin-top: 40px;
+    margin-left: 20px;
+}
+
+.tools_container li {
+    list-style: none;
+}
+
+.tool_container {
+    width: 100%;
+    padding: 10px;
+}
+
+.tool_name {
+    text-align: center;
+    width: 30%;
+}

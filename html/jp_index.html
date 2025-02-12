@@ -1,15 +1,188 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>ポートフォリオ</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/index_jp.css">
+
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=La+Belle+Aurore&family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=La+Belle+Aurore&family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+     <!-- Javascript -->
+    <script src="../javascript/index_html.js"></script>
 </head>
 <body>
-    
+
+    <nav class="top_nav">
+        <ul id="home">
+            <li>ジョハリー・サンチェス</li>
+            <li><a href="#home">ホーム</a></li>
+            <li><a href="#work">職務経歴</a></li>
+            <li><a href="#skills">スキル</a></li>
+            <li><a href="">お問い合わせ</a></li>
+        </ul>
+    </nav>
+
     <header>
-        dwada
+        <div class="greetings">
+            <p>こんにちは！</p>
+            <p>ジョハリー・サンチェス、ジュニアウェブ開発者です。</p>
+            <p>愛知県、日本在住。</p>
+        </div>
+        <div class="personal">
+            <div class="personal_profile">
+                <div class="second_box"></div>
+                <img src="../upload/images/profilepic.jpg" alt="プロフィール写真">
+                <div class="third_box"></div>
+            </div>
+            <div class="personal_info">
+                <span>
+                    <h2>個人情報</h2>
+                </span>
+                <table>
+                    <tr>
+                        <td>名前：</td>
+                        <td>ジョハリー・サンチェス</td>
+                    </tr>
+                    <tr>
+                        <td>生年月日：</td>
+                        <td>1989年10月16日</td>
+                    </tr>
+                    <tr>
+                        <td>メール：</td>
+                        <td>joharrywork@gmail.com</td>
+                    </tr>
+                    <tr>
+                        <td>電話番号：</td>
+                        <td>090-9923-3642</td>
+                    </tr>
+                    <tr>
+                        <td>住所：</td>
+                        <td>愛知県犬山市上野郷1489-19</td>
+                    </tr>
+                    <tr>
+                        <td>ウェブサイト：</td>
+                        <td>www.github.com</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
     </header>
 
+    <div class="line"></div>
+
+    <section id="work">
+        <div class="work_exp">
+            <span>
+                <h2>職務経歴：</h2>
+            </span>
+
+            <div class="container">
+                <div class="company">
+                    <h3>野田プラスチック精工</h3>
+                    <p>2016年7月 ～ 現在</p>
+                </div>
+                <div class="company_business">
+                   <ul>
+                    <h3>仕事内容：</h3>
+                    <li>NC旋盤機の操作およびプログラミング</li>
+                    <li>プラスチック、アルミニウム、真鍮の加工</li>
+                    <li>生産工程の改善提案および実施</li>
+                    <li>チームリーダーとして6ヶ月間の新人研修担当</li>
+                    <li>生産性向上のための新技術導入</li>
+                   </ul>
+                </div>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="container">
+                <div class="company">
+                    <h3>木村メタル</h3>
+                    <p>2015年2月 ～ 2016年6月</p>
+                </div>
+                <div class="company_business">
+                   <ul>
+                    <h3>仕事内容：</h3>
+                    <li>金属構造物の溶接作業</li>
+                    <li>銅線のリサイクル</li>
+                    <li>古いコンピュータ部品の分解および再利用</li>
+                    <li>作業効率向上のための新しいプロセスの提案</li>
+                   </ul>
+                </div>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="container">
+                <div class="company">
+                    <h3>アルバイト</h3>
+                    <p>2011年8月 ～ 2015年1月</p>
+                </div>
+                <div class="company_business">
+                   <ul>
+                    <h3>仕事内容：</h3>
+                    <li>パチンコ会社（検査、組立、梱包）</li>
+                    <li>ビスケット工場（梱包、検査）</li>
+                    <li>自動車部品工場（プレス加工、梱包、検査）</li>
+                   </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="line"></div>
+
+    <aside id="skills">
+        <div class="skills_exp">
+            <span>
+                <h2>スキル：</h2>
+            </span>
+        <div class="aside_container">
+            <div class="prog_container">
+                <h3>プログラミング言語：</h3>
+
+                    <div class="skill_container">
+                        <p class="skill_name">HTML</p>
+                        <div class="progressbar_container">
+                            <div class="progressbar" id="html_bar">0%</div>
+                        </div>
+                    </div>
+                    <div class="skill_container">
+                        <p class="skill_name">CSS</p>
+                        <div class="progressbar_container">
+                            <div class="progressbar" id="css_bar">0%</div>
+                        </div>
+                    </div>
+                    <div class="skill_container">
+                        <p class="skill_name">PHP</p>
+                        <div class="progressbar_container">
+                            <div class="progressbar" id="php_bar">0%</div>
+                        </div>
+                    </div>
+                <h3>データベース：</h3>
+                    <div class="skill_container">
+                        <p class="skill_name">MySQL</p>
+                        <div class="progressbar_container">
+                            <div class="progressbar" id="mysql_bar">0%</div>
+                        </div>
+                    </div>
+            </div>
+            <div class="tools_container">
+                <h3>ツール：</h3>
+                <div class="tool_container">
+                    <p class="tool_name">Visual Studio Code</p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </aside>
 </body>
 </html>

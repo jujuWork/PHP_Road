@@ -3,6 +3,7 @@
 const skillLevels = {
     html: 90,   // 90%
     css: 85,    // 85%
+    js: 10, // 10%
     php: 60,    // 60%
     mysql: 70   // 70%
 };
@@ -17,6 +18,7 @@ function updateProgressBar(skill, value) {
 window.onload = function () {
     updateProgressBar("html", skillLevels.html);
     updateProgressBar("css", skillLevels.css);
+    updateProgressBar("js", skillLevels.js);
     updateProgressBar("php", skillLevels.php);
     updateProgressBar("mysql", skillLevels.mysql);
 };

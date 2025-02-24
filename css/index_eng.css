@@ -158,7 +158,7 @@ section {
 #work {
     width: 100%;
     max-width: 800px;
-    height: 100%;
+    height: 100vh;
     margin: 50px auto;
 }
 
@@ -202,9 +202,11 @@ aside {
 #skills {
     width: 100%;
     max-width: 1200px;
-    height: 100%;
+    height: 100vh;
     margin: 50px auto;
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .skills_exp {
@@ -283,3 +285,35 @@ aside .tools_container {
     text-align: center;
     width: 30%;
 }
+
+/******************* ARTICLE TOOLS *****************/
+
+article {
+    display: flex;
+}
+
+#certificate {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+/* article .article_container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: left;
+    justify-content: space-evenly;
+}
+
+.article_link {
+    margin-top: 1em;
+    text-align: center;
+}
+
+.article_link img {
+    width: 10em;
+    height: 10em;
+    margin-top: 1em;
+} */

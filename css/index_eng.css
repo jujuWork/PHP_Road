@@ -228,7 +228,8 @@ aside .prog_container {
     margin-top: 40px;
     padding-right: 10px;
     width: 50%;
-    display: flex;  
+    display: flex;
+    justify-content: center;
     flex-direction: column;
     border-right: 1px solid #9AA6B2;
 }
@@ -299,21 +300,26 @@ article {
     align-items: center;
 }
 
-/* article .article_container {
+.article_container {
     width: 100%;
-    height: 100%;
+}
+
+.article_title {
+    width: 100%;
+}
+
+.article_content {
+    margin-top: 5rem;
     display: flex;
-    align-items: left;
+    align-items: center;
     justify-content: space-evenly;
+    border: 1px solid red;
 }
 
-.article_link {
-    margin-top: 1em;
-    text-align: center;
+.article_content_title {
+    width: 100%;
 }
 
-.article_link img {
+.article_content_title img {
     width: 10em;
-    height: 10em;
-    margin-top: 1em;
-} */
+}

@@ -153,13 +153,14 @@ header {
 
 section {
     display: flex;
+    align-items: center;
 }
 
 #work {
     width: 100%;
     max-width: 800px;
     height: 100vh;
-    margin: 50px auto;
+    margin: 0 auto;
 }
 
 .work_exp {
@@ -196,6 +197,7 @@ section .container {
 
 aside {
     display: flex;
+    align-items: center;
 }
 
 
@@ -232,7 +234,6 @@ aside .prog_container {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    border-right: 1px solid #9AA6B2;
 }
 
 .skill_container {
@@ -291,6 +292,7 @@ aside .tools_container {
 
 article {
     display: flex;
+    align-items: center;
 }
 
 #certificate {

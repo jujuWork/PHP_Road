@@ -222,6 +222,7 @@ aside {
 
 .aside_container {
     display: flex;
+    gap: 3rem;
 }
 
 aside .prog_container {
@@ -270,7 +271,7 @@ aside .tools_container {
     flex: 1;
     width: 100%;
     margin-top: 40px;
-    margin-left: 20px;
+    border: 1px solid red;
 }
 
 .tools_container li {
@@ -279,12 +280,11 @@ aside .tools_container {
 
 .tool_container {
     width: 100%;
-    padding: 10px;
 }
 
 .tool_name {
-    text-align: center;
     width: 30%;
+    margin-top: 0.5rem;
 }
 
 /******************* ARTICLE TOOLS *****************/

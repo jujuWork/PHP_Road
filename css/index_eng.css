@@ -290,11 +290,6 @@ aside .tools_container {
 
 /******************* ARTICLE TOOLS *****************/
 
-article {
-    display: flex;
-    align-items: center;
-}
-
 #certificate {
     width: 100%;
     height: 100vh;
@@ -331,4 +326,50 @@ article {
 
 .article_content_title h3 {
     font-size: 2rem;
+}
+
+/******************* ARTICLE WORKS *****************/
+
+#works {
+    border: 1px solid red;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+/******************* ARTICLE CONTACT *****************/
+
+#contact {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    height: 30vh;
+    margin-bottom: 3rem;
+    margin-top: 5rem;
+}
+
+.contact_container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    gap: 1rem;
+}
+
+.contact_list {
+    border: 1px solid red;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact_list_info {
+    text-align: center;
+}
+
+.contact_list_info img {
+    padding: 20px;
 }

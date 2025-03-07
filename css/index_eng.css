@@ -359,7 +359,6 @@ aside .tools_container {
 }
 
 .contact_list {
-    border: 1px solid red;
     width: 100%;
     display: flex;
     align-items: center;
@@ -371,5 +370,17 @@ aside .tools_container {
 }
 
 .contact_list_info img {
-    padding: 20px;
+    width: 3rem;
+    height: 100%;
+    font-size: 1.5rem;
+    padding: 3px;
+}
+
+.contact_list_info p {
+    margin-top: 1.5rem;
+}
+
+.contact_name {
+    font-size: 2rem;
+    font-family: "Roboto", serif;
 }

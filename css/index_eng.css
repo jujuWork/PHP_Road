@@ -384,3 +384,14 @@ aside .tools_container {
     font-size: 2rem;
     font-family: "Roboto", serif;
 }
+
+.send_to_email {
+    border: 1px solid red;
+    width: 100%;
+    display: flex;
+}
+
+.STE_info {
+    border: 1px solid blue;
+    width: 100%;
+}

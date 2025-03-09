@@ -9,7 +9,7 @@ const skillLevels = {
     bisaya: 99,         // 99%
     tagalog: 90,        // 80%
     english: 70,        // 60%
-    japanese: 30        // 60%
+    japanese: 40        // 60%
 };
     // Function to update progress bar dynamically
 function updateProgressBar(skill, value) {

@@ -338,7 +338,7 @@ aside .tools_container {
     height: 100vh;
 }
 
-/******************* ARTICLE CONTACT *****************/
+/******************* FOOTER CONTACT *****************/
 
 #contact {
     display: flex;
@@ -385,13 +385,41 @@ aside .tools_container {
     font-family: "Roboto", serif;
 }
 
+/******************* FOOTER FORM *****************/
+
 .send_to_email {
-    border: 1px solid red;
-    width: 100%;
-    display: flex;
+    width: 800px;
+    margin: 0 auto;
 }
 
-.STE_info {
-    border: 1px solid blue;
+.send_to_email form {
     width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 5rem;
+    /* border: 1px solid blue; */
+
+    .STE_info {
+        width: 30rem;
+        height: 100%;
+        margin: 0 auto;
+
+        input {
+            width: 100%;
+            height: 3rem;
+            margin-bottom: 1.1rem;
+        }
+    }
+
+    .STE_textarea {
+        width: 100%;
+        height: 100%;
+
+        textarea {
+            width: 100%;
+            height: 200px;
+        }
+    }
 }
+

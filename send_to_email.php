@@ -15,4 +15,15 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $fullMessage = "<html><body>";
     $fullMessage .= "<p><strong>Name:</strong> $name</p>";
     $fullMessage .= "<p><strong>Email:</strong> $email</p>";
+    $fullMessage .= "<p><strong>Subject:</strong> $subject</p>";
+    $fullMessage .= "<p><strong>Message:</strong> $message</p>";
+    $fullMessage = "</body></html>";
+
+    if (mail($to, $subject, $fullMessage, $headers)) {
+        echo "Message sent successfullly!";
+    } else {
+        echo "Failed to send message.";
+    }
+} else {
+    echo "Invalid request.";
 }

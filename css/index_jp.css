@@ -153,13 +153,14 @@ header {
 
 section {
     display: flex;
+    align-items: center;
 }
 
 #work {
     width: 100%;
     max-width: 800px;
-    height: 100%;
-    margin: 50px auto;
+    height: 100vh;
+    margin: 0 auto;
 }
 
 .work_exp {
@@ -196,15 +197,18 @@ section .container {
 
 aside {
     display: flex;
+    align-items: center;
 }
 
 
 #skills {
     width: 100%;
     max-width: 1200px;
-    height: 100%;
+    height: 100vh;
     margin: 50px auto;
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .skills_exp {
@@ -220,15 +224,16 @@ aside {
 
 .aside_container {
     display: flex;
+    gap: 3rem;
 }
 
 aside .prog_container {
     margin-top: 40px;
     padding-right: 10px;
     width: 50%;
-    display: flex;  
+    display: flex;
+    justify-content: center;
     flex-direction: column;
-    border-right: 1px solid #9AA6B2;
 }
 
 .skill_container {
@@ -267,7 +272,7 @@ aside .tools_container {
     flex: 1;
     width: 100%;
     margin-top: 40px;
-    margin-left: 20px;
+    border: 1px solid red;
 }
 
 .tools_container li {
@@ -276,10 +281,154 @@ aside .tools_container {
 
 .tool_container {
     width: 100%;
-    padding: 10px;
 }
 
 .tool_name {
-    text-align: center;
     width: 30%;
+    margin-top: 0.5rem;
 }
+
+/******************* ARTICLE TOOLS *****************/
+
+#certificate {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.article_container {
+    width: 100%;
+}
+
+.article_title {
+    width: 100%;
+}
+
+.article_content {
+    margin-top: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 1rem;
+}
+
+.article_content_title {
+    width: 100%;
+    text-align: center;
+    border: 1px solid #4caf50;
+    border-radius: 10px;
+}
+
+.article_content_title img {
+    width: 20em;
+}
+
+.article_content_title h3 {
+    font-size: 2rem;
+}
+
+/******************* ARTICLE WORKS *****************/
+
+#works {
+    border: 1px solid red;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+/******************* FOOTER CONTACT *****************/
+
+#contact {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    height: 30vh;
+    margin-bottom: 5rem;
+    margin-top: 5rem;
+}
+
+.contact_container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    gap: 1rem;
+}
+
+.contact_list {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact_list_info {
+    text-align: center;
+}
+
+.contact_list_info img {
+    width: 3rem;
+    height: 100%;
+    font-size: 1.5rem;
+    padding: 3px;
+}
+
+.contact_list_info p {
+    margin-top: 1.5rem;
+}
+
+.contact_name {
+    font-size: 2rem;
+    font-family: "Roboto", serif;
+}
+
+/******************* FOOTER FORM *****************/
+
+/* .send_to_email {
+    width: 400px;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.send_to_email form {
+    width: 100%;
+    height: 10rem;
+    gap: 1rem;
+    margin-bottom: 5rem;
+
+    button {
+        width: 100%;
+        height: 2rem;
+        margin: 0 auto;
+    }
+    
+
+    .STE_info {
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        position: relative;
+
+        input {
+            width: 100%;
+            height: 3rem;
+            margin-bottom: 1.1rem;
+        }
+    }
+
+    .STE_textarea {
+        width: 100%;
+
+        textarea {
+            width: 100%;
+            height: 200px;
+        }
+    } 
+
+    
+}*/
+

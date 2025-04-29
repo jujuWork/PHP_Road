@@ -1,19 +1,22 @@
 * {
     box-sizing: border-box;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
+    max-width: 1200px;
+    border: 1px solid red;
 }
 
-body {
+/* body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 100vh);
     gap: 10px;
     height: auto;
-    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-header,
+/* header,
 nav,
 section,
 article,
@@ -25,4 +28,5 @@ footer {
     align-items: center;
     font-size: 2rem;
     border: 2px solid #333;
-}
+    width: 100%; 
+} */

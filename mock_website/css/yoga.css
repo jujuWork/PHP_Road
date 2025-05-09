@@ -10,17 +10,18 @@ body {
     max-width: 1200px;
 }
 
+/************   HEADER  ****************/
+
 header {
     display: flex;
     flex-direction: column;
-    border: 1px solid red;
-    width: 100dvh;
+    width: 100%;
     height: 100dvh;
     margin-top: 1rem;
     margin-bottom: 1rem;
     flex: 1;
     
-    .container {
+    .header_container {
         position: relative;
         width: 100%;
         display: flex;
@@ -57,7 +58,7 @@ header ul li:nth-child(4) {
     transform: translateX(-50%);
 }
 
-.container_2 {
+.header_container_2 {
     width: 100%;
     height: 100dvh;
     max-height: 100vh;
@@ -71,7 +72,41 @@ header ul li:nth-child(4) {
             width: 100dvh;
             font-size: 3em;
             position: absolute;
-            bottom: 1rem;
+            bottom: 0.1rem;
             text-align: center;
         }
+}
+
+/************   NAVIGATION  ****************/
+
+nav {
+    width: 100%;
+    height: 3rem;
+    position: absolute;
+    top: 14rem;
+
+    .nav_container {
+        width: 100%;
+        height: 100%;
+
+        ul {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            gap: 0.5rem;
+
+            li {
+                border: 1px solid blue;
+                width: 100%;
+                height: 100%;
+                list-style: none;
+                text-align: center;
+                font-size: 1.3em;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+    }
 }

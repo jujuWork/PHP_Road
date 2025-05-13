@@ -28,6 +28,8 @@
                 todos.push({ text:text, done:false });
                 todoInput.value = '';
 
+                render();
+
         });
 
 function render(){
@@ -35,7 +37,7 @@ function render(){
     todoList.innerHTML = '';
     todos.forEach((todo,index) => {
         const html = `<li><span style ="text-decoration:${todo.done ? 'line-through' : 'none'}">
-            </span>
+            ${todo.text}</span>
                 <button class="done" data-index="${index}">Done</button>
                 <button class="delete" data-index="${index}">Delete</button>  
             </li>`;
@@ -54,7 +56,7 @@ function render(){
     });
 
     document.querySelectorAll('.delete').forEach(btn => {
-        btn.addEventListener('click', ()=> {
+        btn.addEventListener('click',()=> {
             const i = Number(btn.dataset.index);
             todos.splice(i,1);
 
@@ -63,6 +65,8 @@ function render(){
     });
 
 }
+
+render();
     </script>
 </body>
 </html>

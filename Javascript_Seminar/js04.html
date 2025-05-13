@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Todo list</h2>
+    <input type="text" id="todoInput" placeholder="List">
+    <button id="addButton">Add</button>
+    <ul id="todoList"></ul>
+
+    <script>
+        const todos = [];
+        const todoInput = document.querySelector('#todoInput');
+        const addButton = document.querySelector('#addButton');
+        const todoList = document.querySelector('#todoList');
+
+        addButton.addEventListener('click', () => {
+
+            const text = todoInput.value.trim();
+
+                if(!text){
+                    alert('no input');
+                    return;
+                }
+                todos.push({ text:text, done:false });
+                todoInput.value = '';
+
+        });
+
+function render(){
+
+    todoList.innerHTML = '';
+    todos.forEach((todo,index) => {
+        const html = `<li><span style ="text-decoration:${todo.done ? 'line-through' : 'none'}">
+            </span>
+                <button class="done" data-index="${index}">Done</button>
+                <button class="delete" data-index="${index}">Delete</button>  
+            </li>`;
+            todoList.insertAdjacentHTML('beforeend' ,html);
+        
+    });
+
+
+    document.querySelectorAll('.done').forEach(btn => {
+        btn.addEventListener('click', ()=> {
+            const i = Number(btn.dataset.index);
+            todos[i].done = !todos[i].done;
+
+            render();
+        });
+    });
+
+    document.querySelectorAll('.delete').forEach(btn => {
+        btn.addEventListener('click', ()=> {
+            const i = Number(btn.dataset.index);
+            todos.splice(i,1);
+
+            render();
+        });
+    });
+
+}
+    </script>
+</body>
+</html>

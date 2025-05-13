@@ -16,11 +16,16 @@
             {name: 'Orange', price: 80}
         ];
 
+        document.querySelector('input').addEventListener('focusout' , (e) => {
+            price = Number(e.currentTarget.value);
+            document.querySelector('ul').innerHTML = '';
+
             const highprice = items.filter((p) => {return p.price >= price })
 
             const itemTag = highprice.map((item) => { return `<li>${item.name}</li>` }).join('');
             const ultag = document.querySelector('ul');
             ultag.insertAdjacentHTML('afterbegin', itemTag);
+        });
 
 
     </script>

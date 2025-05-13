@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul></ul>
+    <script>
+        const items = [
+            {name: 'Apple', price: 100},
+            {name: 'Peach', price: 150},
+            {name: 'Orange', price: 80}
+        ];
+        const highprice = items.filter((p) => {return p.price >= 100 })
+
+        const itemTag = highprice.map((item) => { return `<li>${item.name}</li>` }).join('');
+        const ultag = document.querySelector('ul');
+        ultag.insertAdjacentHTML('afterbegin', itemTag);
+    </script>
+</body>
+</html>

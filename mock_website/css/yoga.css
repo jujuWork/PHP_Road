@@ -111,13 +111,11 @@ nav {
                 align-items: center;
                 justify-content: center;
 
-                a {
-                    font-size: clamp(0.8rem, 2.5vw, 1.5rem);
-                    color: #000;
-                    text-decoration: none;
-                }
-
-                
+                    a {
+                        font-size: clamp(0.8rem, 2.5vw, 1.5rem);
+                        color: #000;
+                        text-decoration: none;
+                    } 
 
                 }
 
@@ -125,5 +123,4 @@ nav {
         }
 
     }
-}
 

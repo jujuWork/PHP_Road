@@ -352,20 +352,193 @@ header {
 }
 
 /* Works Section */
-#works {
-    padding: 4rem 5%;
-    background-color: #f8f9fa;
+/* Project Slider Styles */
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
 }
 
-.projects-container {
-    text-align: center;
-    padding: 3rem 0;
+.slider-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.coming-soon {
+.slider-dot.active {
+    background-color: #3498db;
+}
+
+/* Responsive Styles */
+
+.projects-slider {
+    display: flex;
+    transition: transform 0.4s ease-in-out;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.project-card {
+    min-width: calc(33.33% - 20px);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex-shrink: 0;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.project-thumbnail {
+    height: 200px;
+    overflow: hidden;
+}
+
+.project-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-thumbnail img {
+    transform: scale(1.05);
+}
+
+.project-info {
+    padding: 20px;
+}
+
+.project-info h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
     font-size: 1.2rem;
+    color: #333;
+}
+
+.project-info p {
+    margin-bottom: 15px;
     color: #666;
-    font-style: italic;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+.project-tags span {
+    background-color: #f0f0f0;
+    color: #555;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+.project-link {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.project-link:hover {
+    background-color: #2980b9;
+}
+
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    transition: background-color 0.3s ease;
+}
+
+.slider-arrow:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.prev-arrow {
+    left: 10px;
+}
+
+.next-arrow {
+    right: 10px;
+}
+
+/* Make slider container handle overflow properly */
+.projects-slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px; /* Increased padding to accommodate arrows */
+    overflow: hidden;
+}
+@media (max-width: 992px) {
+    .project-card {
+        min-width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-slider {
+        gap: 15px;
+    }
+    
+    .project-card {
+        min-width: calc(100% - 20px);
+    }
+    
+    .project-thumbnail {
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .projects-slider-container {
+        padding: 0 10px;
+    }
+    
+    .project-info {
+        padding: 15px;
+    }
+    
+    .project-info h3 {
+        font-size: 1.1rem;
+    }
+    
+    .slider-arrow {
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
+    }
 }
 
 /* Contact Section */

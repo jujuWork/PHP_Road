@@ -88,3 +88,213 @@ window.addEventListener('scroll', function() {
         }
     });
 });
+
+// Project Slider Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Select slider elements
+    const slider = document.querySelector('.projects-slider');
+    const prevArrow = document.querySelector('.prev-arrow');
+    const nextArrow = document.querySelector('.next-arrow');
+    const dotsContainer = document.querySelector('.slider-dots');
+    
+    // Get all project cards
+    const projectCards = document.querySelectorAll('.project-card');
+    const totalProjects = projectCards.length;
+    
+    // Clone cards for infinite loop
+    setupInfiniteLoop();
+    
+    // Initialize slider state
+    let currentIndex = 0;
+    let projectsPerView = getProjectsPerView();
+    let isTransitioning = false;
+    
+    // Setup slider
+    setupSlider();
+    
+    // Recalculate on window load to ensure images are loaded
+    window.addEventListener('load', function() {
+        // Brief delay to ensure all calculations are accurate
+        setTimeout(() => {
+            // Disable transition, update position, then re-enable
+            slider.style.transition = 'none';
+            currentIndex = totalProjects; // Reset to first slide of original set
+            updateSliderPosition(false);
+            
+            setTimeout(() => {
+                slider.style.transition = 'transform 0.4s ease-in-out';
+                updateDots();
+            }, 50);
+        }, 100);
+    });
+    
+    // Function to clone cards for infinite loop
+    function setupInfiniteLoop() {
+        // Clone first and last cards for infinite loop effect
+        projectCards.forEach(card => {
+            const clone = card.cloneNode(true);
+            slider.appendChild(clone);
+        });
+        
+        // Clone another set at the beginning
+        Array.from(projectCards).reverse().forEach(card => {
+            const clone = card.cloneNode(true);
+            slider.insertBefore(clone, slider.firstChild);
+        });
+    }
+    
+    // Setup slider
+    function setupSlider() {
+        // Set initial position to show original cards (skip clones)
+        currentIndex = totalProjects;
+        updateSliderPosition(false);
+        
+        // Generate dots based on original cards count
+        generateDots();
+        updateDots();
+        
+        // Add event listeners
+        prevArrow.addEventListener('click', goToPrevSlide);
+        nextArrow.addEventListener('click', goToNextSlide);
+        
+        // Add transition end event
+        slider.addEventListener('transitionend', handleTransitionEnd);
+        
+        // Handle responsiveness
+        window.addEventListener('resize', handleResize);
+    }
+    
+    // Get number of projects per view based on screen width
+    function getProjectsPerView() {
+        if (window.innerWidth > 992) {
+            return 3;
+        } else if (window.innerWidth > 768) {
+            return 2;
+        } else {
+            return 1;
+        }
+    }
+    
+    // Generate pagination dots
+    function generateDots() {
+        dotsContainer.innerHTML = '';
+        const numberOfDots = Math.ceil(totalProjects / projectsPerView);
+        
+        for (let i = 0; i < numberOfDots; i++) {
+            const dot = document.createElement('div');
+            dot.classList.add('slider-dot');
+            dot.dataset.index = i;
+            dot.addEventListener('click', () => {
+                if (!isTransitioning) {
+                    goToSlide(i * projectsPerView + totalProjects);
+                }
+            });
+            dotsContainer.appendChild(dot);
+        }
+    }
+    
+    // Update slider position
+    function updateSliderPosition(withTransition = true) {
+        const allCards = document.querySelectorAll('.project-card');
+        const cardWidth = allCards[0].offsetWidth + 20; // Width + gap
+        
+        if (withTransition) {
+            slider.style.transition = 'transform 0.4s ease-in-out';
+            isTransitioning = true;
+        } else {
+            slider.style.transition = 'none';
+        }
+        
+        // Calculate position with centering adjustment
+        const position = currentIndex * cardWidth;
+        slider.style.transform = `translateX(-${position}px)`;
+    }
+    
+    // Handle transition end
+    function handleTransitionEnd() {
+        isTransitioning = false;
+        
+        const allCards = document.querySelectorAll('.project-card');
+        
+        // If we've scrolled to the cloned items at the end
+        if (currentIndex >= totalProjects * 2) {
+            currentIndex = totalProjects;
+            updateSliderPosition(false);
+        }
+        
+        // If we've scrolled to the cloned items at the beginning
+        if (currentIndex < totalProjects) {
+            currentIndex = totalProjects;
+            updateSliderPosition(false);
+        }
+        
+        updateDots();
+    }
+    
+    // Update dots
+    function updateDots() {
+        const dots = document.querySelectorAll('.slider-dot');
+        const normalizedIndex = (currentIndex - totalProjects) % totalProjects;
+        const activeIndex = Math.floor(normalizedIndex / projectsPerView);
+        
+        dots.forEach((dot, index) => {
+            const dotIndex = parseInt(dot.dataset.index);
+            dot.classList.toggle('active', dotIndex === activeIndex);
+        });
+    }
+    
+    // Go to previous slide
+    function goToPrevSlide() {
+        if (!isTransitioning) {
+            currentIndex--;
+            updateSliderPosition();
+        }
+    }
+    
+    // Go to next slide
+    function goToNextSlide() {
+        if (!isTransitioning) {
+            currentIndex++;
+            updateSliderPosition();
+        }
+    }
+    
+    // Go to specific slide
+    function goToSlide(index) {
+        currentIndex = index;
+        updateSliderPosition();
+    }
+    
+    // Handle window resize
+    function handleResize() {
+        // Disable transitions during resize to prevent jumping
+        slider.style.transition = 'none';
+        
+        const newProjectsPerView = getProjectsPerView();
+        const allCards = document.querySelectorAll('.project-card');
+        const cardWidth = allCards[0].offsetWidth + 20; // Width + gap
+        
+        // If the number of visible projects changes, update the slider
+        if (projectsPerView !== newProjectsPerView) {
+            projectsPerView = newProjectsPerView;
+            
+            // Recalculate the proper position based on the active slide
+            const normalizedIndex = (currentIndex - totalProjects) % totalProjects;
+            const activePageIndex = Math.floor(normalizedIndex / projectsPerView);
+            currentIndex = totalProjects + (activePageIndex * projectsPerView);
+            
+            // Update dots based on new configuration
+            generateDots();
+            updateSliderPosition(false);
+            updateDots();
+        } else {
+            // Just update position in case card sizes changed
+            updateSliderPosition(false);
+        }
+        
+        // Re-enable transitions after a brief delay
+        setTimeout(() => {
+            slider.style.transition = 'transform 0.4s ease-in-out';
+        }, 50);
+    }
+});

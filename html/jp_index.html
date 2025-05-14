@@ -3,26 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ポートフォリオ</title>
+    <title>サンチェス・ジョハリー - ポートフォリオ</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="../css/index_eng.css">
+    <link rel="stylesheet" href="../css/index_jp.css">
 
-    <!-- フォント -->
+    <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=La+Belle+Aurore&family=Poppins&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=La+Belle+Aurore&family=Poppins:wght@200&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=La+Belle+Aurore&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,300&display=swap" rel="stylesheet">
 
     <!-- Javascript -->
-    <script src="../javascript/index_html.js"></script>
+
+    <script src="../javascript/index_html_jp.js"></script>
 </head>
 <body>
-
-    <nav class="top_nav">
-        <ul id="home">
-            <li>ジョハリー・サンチェス</li>
+    <nav class="top-nav">
+        <div class="logo">サンチェス・ジョハリー</div>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <label for="nav-toggle" class="nav-toggle-label">
+            <span></span>
+        </label>
+        <ul class="nav-menu">
             <li><a href="#home">ホーム</a></li>
             <li><a href="#work">職歴</a></li>
             <li><a href="#skills">スキル</a></li>
@@ -32,26 +35,24 @@
         </ul>
     </nav>
 
-    <header>
+    <header id="home">
         <div class="greetings">
-            <p>こんにちは！</p>
-            <p>ジョハリー・サンチェスです。ジュニアWeb開発者</p>
-            <p>日本、愛知県在住</p>
+            <p class="greeting-text">こんにちは！</p>
+            <h1>サンチェス・ジョハリーです。<span>ジュニアウェブ開発者</span></h1>
+            <p>愛知県在住</p>
         </div>
         <div class="personal">
-            <div class="personal_profile">
-                <div class="second_box"></div>
-                <img src="../upload/images/profilepic.jpg" alt="プロフィール写真">
-                <div class="third_box"></div>
+            <div class="personal-profile">
+                <div class="second-box"></div>
+                <img src="../upload/images/profilepic.jpg" alt="サンチェス・ジョハリーのプロフィール写真">
+                <div class="third-box"></div>
             </div>
-            <div class="personal_info">
-                <span>
-                    <h2>個人情報</h2>
-                </span>
+            <div class="personal-info">
+                <h2>個人情報</h2>
                 <table>
                     <tr>
                         <td>名前：</td>
-                        <td>ジョハリー・サンチェス</td>
+                        <td>サンチェス・ジョハリー</td>
                     </tr>
                     <tr>
                         <td>生年月日：</td>
@@ -67,7 +68,7 @@
                     </tr>
                     <tr>
                         <td>住所：</td>
-                        <td>愛知県犬山市上野郷1489-19</td>
+                        <td>愛知県犬山市上野1489-19</td>
                     </tr>
                     <tr>
                         <td>ウェブサイト：</td>
@@ -83,219 +84,213 @@
     <div class="line"></div>
 
     <section id="work">
-        <div class="work_exp">
-            <span>
-                <h2>職歴：</h2>
-            </span>
+        <h2 class="section-title">職歴</h2>
 
-            <div class="container">
-                <div class="company">
-                    <h3>野田プラスチック精工</h3>
-                    <p>2016年7月 ～ 現在</p>
-                </div>
-                <div class="company_business">
-                    <ul>
-                        <h3>仕事内容：</h3>
-                        <li>NC旋盤の操作およびプログラミング</li>
-                        <li>プラスチック、アルミ、真鍮の加工</li>
-                        <li>生産工程の改善提案と実施</li>
-                        <li>チームリーダーとして半年間、新人教育を担当</li>
-                        <li>生産性向上のための新技術導入</li>
-                    </ul>
-                </div>
+        <div class="experience-container">
+            <div class="company">
+                <h3>野田プラスチック精工</h3>
+                <p>2016年7月 〜 現在</p>
             </div>
-
-            <div class="line"></div>
-
-            <div class="container">
-                <div class="company">
-                    <h3>木村金属</h3>
-                    <p>2015年2月 ～ 2016年6月</p>
-                </div>
-                <div class="company_business">
-                    <ul>
-                        <h3>仕事内容：</h3>
-                        <li>金属構造物の溶接作業</li>
-                        <li>銅線のリサイクル</li>
-                        <li>古いパソコン部品の分解および再利用</li>
-                        <li>作業効率向上のための工程改善提案</li>
-                    </ul>
-                </div>
+            <div class="company-business">
+               <h3>業務内容：</h3>
+               <ul>
+                <li>NCフライス盤の操作とプログラミング</li>
+                <li>プラスチック、アルミニウム、真鍮の加工</li>
+                <li>生産プロセスの改善の提案と実施</li>
+                <li>チームリーダーとして6ヶ月間、新入社員の研修を担当</li>
+                <li>生産性向上のための新技術の導入</li>
+               </ul>
             </div>
+        </div>
 
-            <div class="line"></div>
+        <div class="line"></div>
 
-            <div class="container">
-                <div class="company">
-                    <h3>アルバイト</h3>
-                    <p>2011年8月 ～ 2015年1月</p>
-                </div>
-                <div class="company_business">
-                    <ul>
-                        <h3>仕事内容：</h3>
-                        <li>パチンコ会社（検査、組立、梱包）</li>
-                        <li>ビスケット工場（梱包、検査）</li>
-                        <li>自動車部品工場（プレス、梱包、検査）</li>
-                    </ul>
-                </div>
+        <div class="experience-container">
+            <div class="company">
+                <h3>木村金属</h3>
+                <p>2015年2月 〜 2016年6月</p>
             </div>
+            <div class="company-business">
+               <h3>業務内容：</h3>
+               <ul>
+                <li>金属構造物の溶接作業</li>
+                <li>銅線のリサイクル</li>
+                <li>古いコンピューター部品の解体と再利用</li>
+                <li>作業効率向上のための新プロセスの提案</li>
+               </ul>
+            </div>
+        </div>
 
+        <div class="line"></div>
+
+        <div class="experience-container">
+            <div class="company">
+                <h3>アルバイト</h3>
+                <p>2011年8月 〜 2015年1月</p>
+            </div>
+            <div class="company-business">
+               <h3>業務内容：</h3>
+               <ul>
+                <li>パチンコ会社（検査、組立、梱包）</li>
+                <li>ビスケット工場（梱包、検査）</li>
+                <li>自動車部品工場（プレス、梱包、検査）</li>
+               </ul>
+            </div>
         </div>
     </section>
 
     <div class="line"></div>
 
-    <aside id="skills">
-        <div class="skills_exp">
-            <span>
-                <h2>スキル：</h2>
-            </span>
-            <div class="aside_container">
-                <div class="prog_container">
-                    <h3>プログラミング言語：</h3>
+    <section id="skills">
+        <h2 class="section-title">スキル</h2>
+        
+        <div class="skills-container">
+            <div class="skill-group">
+                <h3>プログラミング言語</h3>
 
-                    <div class="skill_container">
-                        <p class="skill_name">HTML</p>
-                        <div class="progressbar_container">
-                            <div class="progressbar" id="html_bar">0%</div>
-                        </div>
+                <div class="skill-item">
+                    <p class="skill-name">HTML</p>
+                    <div class="progressbar-container">
+                        <div class="progressbar" data-percent="85"></div>
                     </div>
-                    <div class="skill_container">
-                        <p class="skill_name">CSS</p>
-                        <div class="progressbar_container">
-                            <div class="progressbar" id="css_bar">0%</div>
-                        </div>
+                </div>
+                
+                <div class="skill-item">
+                    <p class="skill-name">CSS</p>
+                    <div class="progressbar-container">
+                        <div class="progressbar" data-percent="75"></div>
                     </div>
-                    <div class="skill_container">
-                        <p class="skill_name">Javascript</p>
-                        <div class="progressbar_container">
-                            <div class="progressbar" id="js_bar">0%</div>
-                        </div>
+                </div>
+                
+                <div class="skill-item">
+                    <p class="skill-name">Javascript</p>
+                    <div class="progressbar-container">
+                        <div class="progressbar" data-percent="60"></div>
                     </div>
-                    <div class="skill_container">
-                        <p class="skill_name">PHP</p>
-                        <div class="progressbar_container">
-                            <div class="progressbar" id="php_bar">0%</div>
-                        </div>
-                    </div>
-
-                    <h3>データベース：</h3>
-
-                    <div class="skill_container">
-                        <p class="skill_name">MySQL</p>
-                        <div class="progressbar_container">
-                            <div class="progressbar" id="mysql_bar">0%</div>
-                        </div>
+                </div>
+                
+                <div class="skill-item">
+                    <p class="skill-name">PHP</p>
+                    <div class="progressbar-container">
+                        <div class="progressbar" data-percent="40"></div>
                     </div>
                 </div>
 
-                <div class="prog_container">
-                    <h3>言語：</h3>
-
-                    <div class="skill_container">
-                        <p class="skill_name">ビサヤ語</p>
-                        <div class="progressbar_container">
-                            <div class="progressbar" id="bisaya_bar">0%</div>
-                        </div>
-                    </div>
-                    <div class="skill_container">
-                        <p class="skill_name">タガログ語</p>
-                        <div class="progressbar_container">
-                            <div class="progressbar" id="tagalog_bar">0%</div>
-                        </div>
-                    </div>
-                    <div class="skill_container">
-                        <p class="skill_name">英語</p>
-                        <div class="progressbar_container">
-                            <div class="progressbar" id="english_bar">0%</div>
-                        </div>
-                    </div>
-                    <div class="skill_container">
-                        <p class="skill_name">日本語</p>
-                        <div class="progressbar_container">
-                            <div class="progressbar" id="japanese_bar">0%</div>
-                        </div>
+                <h3>データベース</h3>
+                <div class="skill-item">
+                    <p class="skill-name">MySQL</p>
+                    <div class="progressbar-container">
+                        <div class="progressbar" data-percent="50"></div>
                     </div>
                 </div>
-
             </div>
-        </div>
-    </aside>
 
-    <div class="line"></div>
-
-    <article id="certificate">
-        <div class="article_container">
-            <div class="article_title">
-                <h2>資格：</h2>
-            </div>
-            <div class="article_content">
-                <div class="article_content_title">
-                    <h3>FreeCodeCamp</h3>
-                    <a href="https://www.freecodecamp.org/certification/fcc9b66b169-c41e-47cc-a48a-a7011e85fc88/responsive-web-design" target="_blank">
-                        <img src="../upload/images/FCC_Certificate.png" alt="FreeCodeCamp">
-                    </a>
+            <div class="skill-group">
+                <h3>言語</h3>
+                
+                <div class="skill-item">
+                    <p class="skill-name">ビサヤ語</p>
+                    <div class="progressbar-container">
+                        <div class="progressbar" data-percent="100"></div>
+                    </div>
                 </div>
-                <div class="article_content_title">
-                    <h3>未来塾</h3>
-                    <a href="https://lienschool.com/" target="_blank">
-                        <img src="" alt="">準備中...
-                    </a>
+                
+                <div class="skill-item">
+                    <p class="skill-name">タガログ語</p>
+                    <div class="progressbar-container">
+                        <div class="progressbar" data-percent="90"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-item">
+                    <p class="skill-name">英語</p>
+                    <div class="progressbar-container">
+                        <div class="progressbar" data-percent="85"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-item">
+                    <p class="skill-name">日本語</p>
+                    <div class="progressbar-container">
+                        <div class="progressbar" data-percent="70"></div>
+                    </div>
                 </div>
             </div>
         </div>
-    </article>
+    </section>
 
     <div class="line"></div>
 
-    <article id="works">
-        作品
-    </article>
+    <section id="certificate">
+        <h2 class="section-title">資格</h2>
+        
+        <div class="certificates-container">
+            <div class="certificate-item">
+                <h3>FreeCodeCamp</h3>
+                <a href="https://www.freecodecamp.org/certification/fcc9b66b169-c41e-47cc-a48a-a7011e85fc88/responsive-web-design" target="_blank">
+                    <img src="../upload/images/FCC_Certificate.png" alt="FreeCodeCamp 証明書">
+                </a>
+            </div>
+            
+            <div class="certificate-item">
+                <h3>未来塾</h3>
+                <a href="https://lienschool.com/" target="_blank">
+                    <div class="placeholder-image">準備中...</div>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <div class="line"></div>
+
+    <section id="works">
+        <h2 class="section-title">制作実績</h2>
+        <div class="projects-container">
+            <p class="coming-soon">プロジェクト準備中...</p>
+        </div>
+    </section>
 
     <div class="line"></div>
 
     <footer id="contact">
-        <div class="contact_container">
-            <div class="contact_list">
-                <div class="contact_list_info">
-                    <img src="../upload/images/call.png" alt="電話">
-                    <p>090-9923-3642</p>
-                </div>
+        <h2 class="section-title">お問い合わせ</h2>
+        
+        <div class="contact-container">
+            <div class="contact-item">
+                <img src="../upload/images/call.png" alt="電話">
+                <p>090-9923-3642</p>
             </div>
-            <div class="contact_list">
-                <div class="contact_list_info">
-                    <a href="https://mail.google.com/mail/u/0/#inbox?compose=new" target="_blank">
-                        <img src="../upload/images/email.png" alt="メール">
-                        <p>joharrywork@gmail.com</p>
-                    </a>
-                </div>
+            
+            <div class="contact-item">
+                <a href="mailto:joharrywork@gmail.com">
+                    <img src="../upload/images/email.png" alt="メール">
+                    <p>joharrywork@gmail.com</p>
+                </a>
             </div>
-            <div class="contact_list">
-                <div class="contact_list_info">
-                    <a href="https://www.linkedin.com/in/jujuwork/" target="_blank">
-                        <img src="../upload/images/linkedin.png" alt="LinkedIn">
-                        <p>LinkedIn</p>
-                    </a>
-                </div>
+            
+            <div class="contact-item">
+                <a href="https://www.linkedin.com/in/jujuwork/" target="_blank">
+                    <img src="../upload/images/linkedin.png" alt="LinkedIn">
+                    <p>LinkedIn</p>
+                </a>
             </div>
-            <div class="contact_list">
-                <div class="contact_list_info">
-                    <a href="https://www.facebook.com/jujuwork1024/" target="_blank">
-                        <img src="../upload/images/facebook.png" alt="Facebook">
-                        <p>Facebook</p>
-                    </a>
-                </div>
+            
+            <div class="contact-item">
+                <a href="https://www.facebook.com/jujuwork1024/" target="_blank">
+                    <img src="../upload/images/facebook.png" alt="Facebook">
+                    <p>Facebook</p>
+                </a>
             </div>
-            <div class="contact_list">
-                <div class="contact_list_info">
-                    <a href="https://www.instagram.com/bb8juju/" target="_blank">
-                        <img src="../upload/images/instagram.png" alt="Instagram">
-                        <p>Instagram</p>
-                    </a>
-                </div>
+            
+            <div class="contact-item">
+                <a href="https://www.instagram.com/bb8juju/" target="_blank">
+                    <img src="../upload/images/instagram.png" alt="Instagram">
+                    <p>Instagram</p>
+                </a>
             </div>
         </div>
     </footer>
+
 
 </body>
 </html>

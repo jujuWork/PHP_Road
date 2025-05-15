@@ -19,12 +19,12 @@ $total_posts = $stmt->fetchColumn();
 // Calculate the number of page (ページ数を計算する)
 $total_pages = ceil($total_posts / $posts_per_page);
 
-// Fixing the current page if its greater than the total page
+// Fixing the current page if its greater than the total page (現在のページが合計ページより大きい場合は修正します)
 if ($current_page > $total_pages && $total_pages > 0) {
     $current_page = $total_pages;
 }
 
-// Calculating OFFset
+// Calculating OFFset (オフセットの計算)
 $offset = ($current_page - 1) * $post_per_page;
 
-// Post Data (newest first)
+// Post Data (newest first) (投稿データ（最新順）)

@@ -99,8 +99,8 @@ if(isset($_SESSION['message'])) {
                     <div class="post-header">
                         <h3 class="post-title"><?php echo htmlspecialchars($post['title']); ?></h3>
                         <div class="post-meta">
-                            <span>Posted By: <?php echo htmlspecialchars(['poster_name']); ?></span>
-                            <span>Time and Date Posted: <?php echo htmlspecialchars('post_date'); ?></span>
+                            <span>Posted By: <?php echo htmlspecialchars($post['poster_name']); ?></span>
+                            <span>Time and Date Posted: <?php echo htmlspecialchars($post['post_date']); ?></span>
                         </div>
                     </div>
 
@@ -119,6 +119,6 @@ if(isset($_SESSION['message'])) {
     </div>
 
 
-
+    <!-- Pagination -->
 </body>
 </html>

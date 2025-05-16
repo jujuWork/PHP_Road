@@ -68,6 +68,7 @@ if(isset($_SESSION['message'])) {
     <!-- Submission Form (投稿フォーム) -->
     <div class="post-form">
         <h2>New Post</h2>
+
         <form action="post.php" method="post">
             <div class="form-group">
                 <label for="poster_name">Name:</label>
@@ -87,5 +88,35 @@ if(isset($_SESSION['message'])) {
             <button type="submit" class="submit-btn">Post</button>
         </form>
     </div>
+
+    <!-- List of Post -->
+    <div class="posts-container">
+        <h2>List of Post</h2>
+
+        <?php if (count($post) > 0): ?>
+            <?php foreach ($post as $post): ?>
+                <div class="post">
+                    <div class="post-header">
+                        <h3 class="post-title"><?php echo htmlspecialchars($post['title']); ?></h3>
+                        <div class="post-meta">
+                            <span>Posted By: <?php echo htmlspecialchars(['poster_name']); ?></span>
+                            <span>Time and Date Posted: <?php echo htmlspecialchars('post_date'); ?></span>
+                        </div>
+                    </div>
+
+                    <div class="post-content">
+                        <?php echo nl2br(htmlspecialchars($post['content'])); ?>
+                    </div>
+                    <form action="delete.php" method="post" onsubmit="return confirm('Are you sure to delete this?');">
+                        <input type="hidden" name="post_id" value="<?php echo $post['post_id']; ?>">
+                    </form>
+
+
+                </div>
+            <?php endforeach; ?>
+    </div>
+
+
+
 </body>
 </html>

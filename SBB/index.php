@@ -66,7 +66,7 @@ if(isset($_SESSION['message'])) {
     <?php endif; ?>
 
     <!-- Submission Form (投稿フォーム) -->
-     <div class="post-form">
+    <div class="post-form">
         <h2>New Post</h2>
         <form action="post.php" method="post">
             <div class="form-group">
@@ -85,9 +85,7 @@ if(isset($_SESSION['message'])) {
             </div>
 
             <button type="submit" class="submit-btn">Post</button>
-
-
         </form>
-     </div>
+    </div>
 </body>
 </html>

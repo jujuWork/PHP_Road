@@ -28,3 +28,66 @@ if ($current_page > $total_pages && $total_pages > 0) {
 $offset = ($current_page - 1) * $post_per_page;
 
 // Post Data (newest first) (投稿データ（最新順）)
+$stmt = $pdo->prepare('SELECT * FROM posts ORDER BY post_date DESC LIMIT :limit OFFSET :offset');
+$stmt->bindParam(':limit', $post_per_page, PDO::PARAM_INT);
+$stmt->bindParam(':offset', $offset, PDO::PARAM_INT);
+$stmt->execute();
+$posts = $stmt->fetchAll();
+
+// Flash Message (フラッシュメッセージ)
+$message = '';
+$message_type = '';
+
+if(isset($_SESSION['message'])) {
+    $message = $_SESSION['message'];
+    $message_type = $_SESSION['message_type'];
+
+    // Delete message after viewing (メッセージを表示したら削除)
+    unset($_SESSION['message']);
+    unset($_SESSION['message_type']);
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Board(掲示板)</title>
+</head>
+<body>
+    
+    <h1>Message Board(掲示板)</h1>
+
+    <?php if ($message): ?>
+        <div class="message <?php echo $message_type ?>">
+            <?php echo htmlspecialchars($message); ?>
+        </div>
+    <?php endif; ?>
+
+    <!-- Submission Form (投稿フォーム) -->
+     <div class="post-form">
+        <h2>New Post</h2>
+        <form action="post.php" method="post">
+            <div class="form-group">
+                <label for="poster_name">Name:</label>
+                <input type="text" name="poster_name" id="poster_name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="title">Title:</label>
+                <input type="text" name="title" id="title" required>
+            </div>
+
+            <div class="form-group">
+                <label for="content">Content:</label>
+                <textarea name="content" id="content" required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Post</button>
+
+
+        </form>
+     </div>
+</body>
+</html>

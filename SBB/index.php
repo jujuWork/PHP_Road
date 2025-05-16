@@ -109,11 +109,13 @@ if(isset($_SESSION['message'])) {
                     </div>
                     <form action="delete.php" method="post" onsubmit="return confirm('Are you sure to delete this?');">
                         <input type="hidden" name="post_id" value="<?php echo $post['post_id']; ?>">
+                        <button type="submit" class="delete-btn">Delete</button>
                     </form>
-
-
                 </div>
             <?php endforeach; ?>
+        <?php else: ?>
+            <p>There is no post yet.</p>
+        <?php endif; ?>
     </div>
 
 

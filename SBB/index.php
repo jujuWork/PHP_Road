@@ -7,7 +7,7 @@ require_once 'config.php';
 $post_per_page = 20;
 
 // Current page number, default is 1 (現在のページ番号、デフォルトは1)
-$current_page = isset($_get['page']) ? (int)$_GET['page'] : 1;
+$current_page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
     if ($current_page < 1) {
         $current_page = 1;
     }
@@ -17,7 +17,7 @@ $stmt = $pdo->query('SELECT COUNT(*) FROM posts');
 $total_posts = $stmt->fetchColumn();
 
 // Calculate the number of page (ページ数を計算する)
-$total_pages = ceil($total_posts / $posts_per_page);
+$total_pages = ceil($total_posts / $post_per_page);
 
 // Fixing the current page if its greater than the total page (現在のページが合計ページより大きい場合は修正します)
 if ($current_page > $total_pages && $total_pages > 0) {
@@ -54,6 +54,8 @@ if(isset($_SESSION['message'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Message Board(掲示板)</title>
+
+    <link rel="stylesheet" href="../SBB/styles.css">
 </head>
 <body>
     
@@ -93,8 +95,8 @@ if(isset($_SESSION['message'])) {
     <div class="posts-container">
         <h2>List of Post</h2>
 
-        <?php if (count($post) > 0): ?>
-            <?php foreach ($post as $post): ?>
+        <?php if (count($posts) > 0): ?>
+            <?php foreach ($posts as $post): ?>
                 <div class="post">
                     <div class="post-header">
                         <h3 class="post-title"><?php echo htmlspecialchars($post['title']); ?></h3>
@@ -120,5 +122,35 @@ if(isset($_SESSION['message'])) {
 
 
     <!-- Pagination -->
+    <?php if ($total_pages > 1): ?>
+        <div class="pagination">
+            <?php if ($current_page > 1): ?>
+                <a href="?page=<?php echo $current_page - 1 ?>">Back</a>
+            <?php endif; ?>
+
+            <?php
+                // Page link
+                $range = 2;
+
+                for ($i = 1; $i <= $total_pages; $i++) {
+                    // Dispaly within $range before and after 
+                    if ($i <= $range || $i > $total_pages - $range || abs($i - $current_page) <= $range) {
+                        if ($i == $current_page) {
+                            echo "<span class=\"active\"></span>";
+                        } else {
+                            echo "<a href=\"?page=$i\">$i</a>";
+                        }
+                    } else if ($i == $range + 1 || $i == $total_pages - $range) {
+                        echo "<span>...</span>";
+                    }
+                }
+            ?>
+
+            <?php if ($current_page < $total_pages): ?>
+                <a href="?page=<?php echo $current_page + 1; ?>">Next</a>
+            <?php endif; ?>
+        </div>
+    <?php endif; ?>
+
 </body>
 </html>

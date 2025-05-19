@@ -1,0 +1,22 @@
+body {
+    font-family: 'Hiragino Kaku Gothic Pro', 'メイリオ', sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1 {
+    color: #4a4a4a;
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+/* form style */
+.post-form {
+    background-color: #fff;
+}

@@ -101,7 +101,7 @@ if(isset($_SESSION['message'])) {
                     <div class="post-header">
                         <h3 class="post-title"><?php echo htmlspecialchars($post['title']); ?></h3>
                         <div class="post-meta">
-                            <span>Posted By: <?php echo htmlspecialchars($post['poster_name']); ?></span>
+                            <span>Posted By: <?php echo htmlspecialchars($post['poster_name']); ?></span> <br>
                             <span>Time and Date Posted: <?php echo htmlspecialchars($post['post_date']); ?></span>
                         </div>
                     </div>

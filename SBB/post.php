@@ -28,11 +28,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $result = $stmt->execute();
 
         if ($result) {
+            // IF POSTING IS COMPLETED
             $_SESSION['message'] = 'Posting Completed / 投稿が完了しました';
+            $_SESSION['message_type'] = 'Success';
+        } else {
+            // IF POSTING IS FAILED
+            $_SESSION['message'] = 'Posting Failed, Please try again / 投稿に失敗しました. もう一度お試しください.';
+            $_SESSION['message_type'] = 'Error';
         }
     }
 
-    catch {
-
+    catch (PDOException $e) {
+        $_SESSION['message'] = 'Database Error: ' . $e->getMessage();
+        $_SESSION['message_type'] = 'Error';
     }
+} else {
+    $_SESSION['message'] = 'Unauthorized Acess / 不正なアクセスです';
+    $_SESSION['message_type'] = 'error';
 }
+
+header('Location: index.php');
+exit;

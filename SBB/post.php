@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Data checker
     if (empty($poster_name) || empty($title) || empty($content)) {
         // If empty error message will appear
-        $_SESSION['message'] = 'Please Enter all fields / 全ての項目を入力してください。';
+        $_SESSION['message'] = 'Please enter all fields / 全ての項目を入力してください。';
         $_SESSION['message_type'] = 'error';
         header('Location: index.php');
         exit;

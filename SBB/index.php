@@ -74,17 +74,17 @@ if(isset($_SESSION['message'])) {
         <form action="post.php" method="post">
             <div class="form-group">
                 <label for="poster_name">Name:</label>
-                <input type="text" name="poster_name" id="poster_name" required>
+                <input type="text" name="poster_name" id="poster_name">
             </div>
 
             <div class="form-group">
                 <label for="title">Title:</label>
-                <input type="text" name="title" id="title" required>
+                <input type="text" name="title" id="title">
             </div>
 
             <div class="form-group">
                 <label for="content">Content:</label>
-                <textarea name="content" id="content" required></textarea>
+                <textarea name="content" id="content"></textarea>
             </div>
 
             <button type="submit" class="submit-btn">Post</button>

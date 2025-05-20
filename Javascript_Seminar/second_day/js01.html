@@ -26,6 +26,9 @@
                 const dateTime = data.reportDatetime;
                 const text = data.text.replace(/\n/g, '<br>');
                 document.querySelector('main').innerHTML = dateTime+'<br>'+text;
+            })
+            .catch(error => {
+                alert('there is an error' +error);
             });
     </script>
 

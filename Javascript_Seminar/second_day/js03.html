@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <main>
+
+    </main>
+
+    <script>
+        const url = 'https://geolonia.github.io/japanese-addresses/api/ja/';
+
+        getAddress();
+
+        async function getAddress() {
+            try {
+                let addresses = '';
+                const query = '愛知県/犬山市'; // Name of the place
+                const geturl = url+query+'.json';
+                const response = await fetch(geturl);
+                    if(!response.ok) {
+                        throw new Error ('HTTP ERROR');
+                    }
+                    const data = await response.json();
+                    console.log(data);
+
+                        for (const address of data) {
+                            addresses += address.town+'<br>';
+                        }
+
+                            document.querySelector('main').innerHTML = addresses;
+            }
+            catch(error) {
+                alert ('THERE IS AN ERROR');
+            }
+        }
+    </script>
+</body>
+</html>

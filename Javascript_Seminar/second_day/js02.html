@@ -13,6 +13,7 @@
 
     <script>
         const url = 'https://www.jma.go.jp/bosai/forecast/data/overview_forecast/130000.json';
+        fetchWeather(); // CALL
 
         async function fetchWeather(){
             try {
@@ -22,7 +23,7 @@
                     // if response is not true, there is an error
                     throw new Error('HTTP ERROR'); // catch if error
                 }
-                const date = await response.json();  
+                const data = await response.json();  
                 
                 const dateTime = data.reportDatetime;
                 const text = data.text.replace(/\n/g, '<br>');

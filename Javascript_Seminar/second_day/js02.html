@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <main>
+
+    </main>
+
+    <script>
+        const url = 'https://www.jma.go.jp/bosai/forecast/data/overview_forecast/130000.json';
+
+        async function fetchWeather(){
+            try {
+                const response = await fetch(url); //await have time before it finish
+
+                if(!response.ok) {
+                    // if response is not true, there is an error
+                    throw new Error('HTTP ERROR'); // catch if error
+                }
+                const date = await response.json();  
+                
+                const dateTime = data.reportDatetime;
+                const text = data.text.replace(/\n/g, '<br>');
+                document.querySelector('main').innerHTML = dateTime+'<br>'+text;
+            }
+            catch (error) {
+                alert('there is an error' +error);
+            }
+        }
+
+        // fetch(url)
+        //     .then((response) => {
+        //         if(!response.ok) {
+        //             // if response is not true, there is an error
+        //             throw new Error('HTTP ERROR'); // catch if error
+        //         }
+        //         return response.json(); // JSON data
+        //     })
+        //     .then((data) => {
+        //         const dateTime = data.reportDatetime;
+        //         const text = data.text.replace(/\n/g, '<br>');
+        //         document.querySelector('main').innerHTML = dateTime+'<br>'+text;
+        //     })
+        //     .catch(error => {
+        //         alert('there is an error' +error);
+        //     });
+    </script>
+
+</body>
+</html>

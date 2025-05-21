@@ -3,138 +3,266 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Serene Yoga Studio</title>
+    <title>Portfolio Projects</title>
     <link rel="stylesheet" href="z1test.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">Serene Yoga</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#classes">Classes</a></li>
-                <li><a href="#teachers">Teachers</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="burger">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
+    <section id="works">
+        <h2 class="section-title">My Projects</h2>
+        
+        <div class="portfolio-container">
+            <!-- Left Side Menu Bar -->
+            <div class="category-menu">
+                <h3>Categories</h3>
+                <ul>
+                    <li class="category-item active" data-category="personal-portfolio">Personal Portfolio</li>
+                    <li class="category-item" data-category="landing-pages">Landing Pages</li>
+                    <li class="category-item" data-category="home-pages">Home Pages</li>
+                    <li class="category-item" data-category="php-websites">PHP Websites</li>
+                </ul>
             </div>
-        </nav>
-    </header>
-
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>Find Your Balance</h1>
-            <p>Join our yoga community and transform your body and mind</p>
-            <a href="#classes" class="cta-button">Explore Classes</a>
-        </div>
-    </section>
-
-    <section class="benefits">
-        <h2>Why Practice Yoga With Us?</h2>
-        <div class="benefits-container">
-            <div class="benefit-card">
-                <i class="fas fa-heart"></i>
-                <h3>Improve Health</h3>
-                <p>Enhance your physical and mental wellbeing with our tailored yoga programs.</p>
-            </div>
-            <div class="benefit-card">
-                <i class="fas fa-users"></i>
-                <h3>Community</h3>
-                <p>Join a supportive community of like-minded individuals on their wellness journey.</p>
-            </div>
-            <div class="benefit-card">
-                <i class="fas fa-award"></i>
-                <h3>Expert Teachers</h3>
-                <p>Learn from certified instructors with years of experience in various yoga styles.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="classes" id="classes">
-        <h2>Our Classes</h2>
-        <div class="class-container">
-            <div class="class-card">
-                <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Hatha Yoga">
-                <h3>Hatha Yoga</h3>
-                <p>A traditional form of yoga focusing on physical postures and breathing techniques.</p>
-                <a href="#" class="class-button">Learn More</a>
-            </div>
-            <div class="class-card">
-                <img src="https://images.unsplash.com/photo-1545389336-cf090694435e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Vinyasa Flow">
-                <h3>Vinyasa Flow</h3>
-                <p>A dynamic style of yoga that links movement with breath in a continuous flow.</p>
-                <a href="#" class="class-button">Learn More</a>
-            </div>
-            <div class="class-card">
-                <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Yin Yoga">
-                <h3>Yin Yoga</h3>
-                <p>A slow-paced style with postures held for longer periods to target deep connective tissues.</p>
-                <a href="#" class="class-button">Learn More</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="testimonials">
-        <h2>What Our Students Say</h2>
-        <div class="testimonial-container">
-            <div class="testimonial-card">
-                <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah J.">
-                <p>"Serene Yoga has transformed my life. The teachers are incredible and the community is so welcoming."</p>
-                <h4>Sarah J.</h4>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
+            
+            <!-- Right Side Project Display -->
+            <div class="projects-display">
+                <!-- Project Carousel Container -->
+                <div class="projects-carousel">
+                    <!-- Personal Portfolio Projects -->
+                    <div class="category-projects" id="personal-portfolio">
+                        <div class="project-slide">
+                            <div class="project-card">
+                                <div class="project-thumbnail">
+                                    <img src="../upload/images/portfolio1.jpg" alt="Portfolio Project 1">
+                                </div>
+                                <div class="project-info">
+                                    <h3>Personal Portfolio - Basic</h3>
+                                    <p>A clean and minimalist portfolio website for beginners.</p>
+                                    <div class="project-tags">
+                                        <span>HTML</span>
+                                        <span>CSS</span>
+                                    </div>
+                                    <a href="#" class="project-link">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-slide">
+                            <div class="project-card">
+                                <div class="project-thumbnail">
+                                    <img src="../upload/images/portfolio2.jpg" alt="Portfolio Project 2">
+                                </div>
+                                <div class="project-info">
+                                    <h3>Personal Portfolio - Interactive</h3>
+                                    <p>A portfolio with interactive elements and animations.</p>
+                                    <div class="project-tags">
+                                        <span>HTML</span>
+                                        <span>CSS</span>
+                                        <span>JavaScript</span>
+                                    </div>
+                                    <a href="#" class="project-link">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-slide">
+                            <div class="project-card">
+                                <div class="project-thumbnail">
+                                    <img src="../upload/images/portfolio3.jpg" alt="Portfolio Project 3">
+                                </div>
+                                <div class="project-info">
+                                    <h3>Personal Portfolio - Advanced</h3>
+                                    <p>A full-featured portfolio with dark/light mode switch.</p>
+                                    <div class="project-tags">
+                                        <span>HTML</span>
+                                        <span>CSS</span>
+                                        <span>JavaScript</span>
+                                    </div>
+                                    <a href="#" class="project-link">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Landing Pages Projects -->
+                    <div class="category-projects" id="landing-pages" style="display: none;">
+                        <div class="project-slide">
+                            <div class="project-card">
+                                <div class="project-thumbnail">
+                                    <img src="../upload/images/landing1.jpg" alt="Landing Page 1">
+                                </div>
+                                <div class="project-info">
+                                    <h3>Product Landing Page</h3>
+                                    <p>A conversion-focused landing page for product promotion.</p>
+                                    <div class="project-tags">
+                                        <span>HTML</span>
+                                        <span>CSS</span>
+                                        <span>JavaScript</span>
+                                    </div>
+                                    <a href="#" class="project-link">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-slide">
+                            <div class="project-card">
+                                <div class="project-thumbnail">
+                                    <img src="../upload/images/landing2.jpg" alt="Landing Page 2">
+                                </div>
+                                <div class="project-info">
+                                    <h3>App Landing Page</h3>
+                                    <p>A modern landing page for mobile application promotion.</p>
+                                    <div class="project-tags">
+                                        <span>HTML</span>
+                                        <span>CSS</span>
+                                        <span>JavaScript</span>
+                                    </div>
+                                    <a href="#" class="project-link">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-slide">
+                            <div class="project-card">
+                                <div class="project-thumbnail">
+                                    <img src="../upload/images/landing3.jpg" alt="Landing Page 3">
+                                </div>
+                                <div class="project-info">
+                                    <h3>Event Landing Page</h3>
+                                    <p>A countdown-enabled landing page for event promotion.</p>
+                                    <div class="project-tags">
+                                        <span>HTML</span>
+                                        <span>CSS</span>
+                                        <span>JavaScript</span>
+                                    </div>
+                                    <a href="#" class="project-link">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Home Pages Projects -->
+                    <div class="category-projects" id="home-pages" style="display: none;">
+                        <div class="project-slide">
+                            <div class="project-card">
+                                <div class="project-thumbnail">
+                                    <img src="../upload/images/home1.jpg" alt="Home Page 1">
+                                </div>
+                                <div class="project-info">
+                                    <h3>Business Homepage</h3>
+                                    <p>A professional homepage for small businesses.</p>
+                                    <div class="project-tags">
+                                        <span>HTML</span>
+                                        <span>CSS</span>
+                                        <span>JavaScript</span>
+                                    </div>
+                                    <a href="#" class="project-link">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-slide">
+                            <div class="project-card">
+                                <div class="project-thumbnail">
+                                    <img src="../upload/images/home2.jpg" alt="Home Page 2">
+                                </div>
+                                <div class="project-info">
+                                    <h3>Creative Agency Homepage</h3>
+                                    <p>A visually stunning homepage for creative agencies.</p>
+                                    <div class="project-tags">
+                                        <span>HTML</span>
+                                        <span>CSS</span>
+                                        <span>JavaScript</span>
+                                    </div>
+                                    <a href="#" class="project-link">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-slide">
+                            <div class="project-card">
+                                <div class="project-thumbnail">
+                                    <img src="../upload/images/home3.jpg" alt="Home Page 3">
+                                </div>
+                                <div class="project-info">
+                                    <h3>Restaurant Homepage</h3>
+                                    <p>An appetizing homepage design for restaurants.</p>
+                                    <div class="project-tags">
+                                        <span>HTML</span>
+                                        <span>CSS</span>
+                                        <span>JavaScript</span>
+                                    </div>
+                                    <a href="#" class="project-link">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- PHP Websites Projects -->
+                    <div class="category-projects" id="php-websites" style="display: none;">
+                        <div class="project-slide">
+                            <div class="project-card">
+                                <div class="project-thumbnail">
+                                    <img src="../upload/images/php1.jpg" alt="PHP Website 1">
+                                </div>
+                                <div class="project-info">
+                                    <h3>Simple Blog Platform</h3>
+                                    <p>A PHP-based blog platform with admin panel.</p>
+                                    <div class="project-tags">
+                                        <span>HTML</span>
+                                        <span>CSS</span>
+                                        <span>JavaScript</span>
+                                        <span>PHP</span>
+                                        <span>MySQL</span>
+                                    </div>
+                                    <a href="#" class="project-link">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-slide">
+                            <div class="project-card">
+                                <div class="project-thumbnail">
+                                    <img src="../upload/images/php2.jpg" alt="PHP Website 2">
+                                </div>
+                                <div class="project-info">
+                                    <h3>E-commerce Platform</h3>
+                                    <p>A basic e-commerce website with shopping cart.</p>
+                                    <div class="project-tags">
+                                        <span>HTML</span>
+                                        <span>CSS</span>
+                                        <span>JavaScript</span>
+                                        <span>PHP</span>
+                                        <span>MySQL</span>
+                                    </div>
+                                    <a href="#" class="project-link">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-slide">
+                            <div class="project-card">
+                                <div class="project-thumbnail">
+                                    <img src="../upload/images/php3.jpg" alt="PHP Website 3">
+                                </div>
+                                <div class="project-info">
+                                    <h3>Portfolio CMS</h3>
+                                    <p>A content management system for portfolios.</p>
+                                    <div class="project-tags">
+                                        <span>HTML</span>
+                                        <span>CSS</span>
+                                        <span>JavaScript</span>
+                                        <span>PHP</span>
+                                        <span>MySQL</span>
+                                    </div>
+                                    <a href="#" class="project-link">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Carousel Navigation -->
+                <div class="carousel-navigation">
+                    <button class="carousel-btn prev-btn" aria-label="Previous project">❮</button>
+                    <div class="carousel-dots">
+                        <!-- Dots will be generated by JavaScript -->
+                    </div>
+                    <button class="carousel-btn next-btn" aria-label="Next project">❯</button>
                 </div>
             </div>
-            <div class="testimonial-card">
-                <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Michael T.">
-                <p>"As a beginner, I was nervous to start yoga, but the instructors made me feel comfortable right away."</p>
-                <h4>Michael T.</h4>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-            </div>
         </div>
     </section>
-
-    <section class="contact" id="contact">
-        <h2>Get In Touch</h2>
-        <div class="contact-container">
-            <div class="contact-info">
-                <h3>Contact Information</h3>
-                <p><i class="fas fa-map-marker-alt"></i> 123 Peaceful Lane, Serenity City</p>
-                <p><i class="fas fa-phone"></i> (123) 456-7890</p>
-                <p><i class="fas fa-envelope"></i> info@sereneyoga.com</p>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-            <form class="contact-form">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea placeholder="Your Message" required></textarea>
-                <button type="submit" class="submit-button">Send Message</button>
-            </form>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2023 Serene Yoga Studio. All rights reserved.</p>
-    </footer>
 
     <script src="z1test.js"></script>
 </body>

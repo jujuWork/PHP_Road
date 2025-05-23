@@ -243,107 +243,120 @@
     
     <div class="line"></div>
 
-<section id="works">
-    <h2 class="section-title">My Projects</h2>
-    
-    <div class="projects-slider-container">
-        <button class="slider-arrow prev-arrow" aria-label="Previous projects">❮</button>
-        
-        <div class="projects-slider">
-            <!-- Original project cards -->
-            <div class="project-card">
-                <div class="project-thumbnail">
-                    <img src="../upload/images/project1.jpg" alt="Project 1">
-                </div>
-                <div class="project-info">
-                    <h3>Personal Portfolio</h3>
-                    <p>A responsive portfolio website built with HTML, CSS, and JavaScript.</p>
-                    <div class="project-tags">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
-                    </div>
-                    <a href="#" class="project-link">View Project</a>
-                </div>
+    <section id="works">
+        <h2 class="section-title">My Projects</h2>
+
+        <div class="portfolio-container">
+            <!-- Left side menu bar -->
+            <div class="category-menu">
+                <h3>Categories</h3>
+                <ul>
+                    <li class="category-item active" data-category="personal-portfolio">Personal Portfolio</li>
+                    <li class="category-item" data-category="landing-pages">Landing Pages</li>
+                    <li class="category-item" data-category="home-pages">Home Pages</li>
+                    <li class="category-item" data-category="php-websites">PHP Websites</li>
+                </ul>
             </div>
-            
-            <div class="project-card">
-                <div class="project-thumbnail">
-                    <img src="../upload/images/project2.jpg" alt="Project 2">
-                </div>
-                <div class="project-info">
-                    <h3>E-commerce Template</h3>
-                    <p>A responsive e-commerce website template with product filtering.</p>
-                    <div class="project-tags">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
+
+            <!-- Right Side Project Display -->
+            <div class="projects-display">
+                <!-- Project Carousel Container -->
+                 <div class="catergory-projects" id="personal-portfolio">
+                    <div class="project-slide">
+                        <div class="project-card">
+                            <div class="project-thumbnail">
+                                <img src="portfolio.jp" alt="Portfolio Project 1">
+                            </div>
+                            <div class="project-info">
+                                <h3>Personal Portfolio - Interactive</h3>
+                                <p>A portfolio with interactive elements.</p>
+                                <div class="project-tags">
+                                    <span>HTML</span>
+                                    <span>CSS</span>
+                                    <span>Javascript</span>
+                                </div>
+                                <a href="#" class="project-link">View Project</a>
+                            </div>
+                        </div>
                     </div>
-                    <a href="#" class="project-link">View Project</a>
-                </div>
-            </div>
-            
-            <div class="project-card">
-                <div class="project-thumbnail">
-                    <img src="../upload/images/project3.jpg" alt="Project 3">
-                </div>
-                <div class="project-info">
-                    <h3>Todo List App</h3>
-                    <p>A simple task management application with local storage.</p>
-                    <div class="project-tags">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
+                    <div class="project-slide">
+                        <div class="project-card">
+                            <div class="project-thumbnail">
+                                <img src="portfolio.jp" alt="Portfolio Project 2">
+                            </div>
+                            <div class="project-info">
+                                <h3>Personal Portfolio - Advance</h3>
+                                <p>A portfolio with interactive elements and Animations.</p>
+                                <div class="project-tags">
+                                    <span>HTML</span>
+                                    <span>CSS</span>
+                                    <span>Javascript</span>
+                                </div>
+                                <a href="#" class="project-link">View Project</a>
+                            </div>
+                        </div>
                     </div>
-                    <a href="#" class="project-link">View Project</a>
-                </div>
+                 </div>
             </div>
-            
-            <div class="project-card">
-                <div class="project-thumbnail">
-                    <img src="../upload/images/project4.jpg" alt="Project 4">
-                </div>
-                <div class="project-info">
-                    <h3>Weather Dashboard</h3>
-                    <p>A weather application that fetches and displays forecast data.</p>
-                    <div class="project-tags">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
-                        <span>API</span>
+
+            <!-- Landing Pages Projects -->
+             <div class="catergory-projects" id="landing-pages" style="display: none;">
+                <div class="project-slide">
+                    <div class="project-card">
+                        <div class="project-thubmnail">
+                            <img src="landingpage1.jpg" alt="Landing Page 1">
+                        </div>
+                        <div class="project-info">
+                            <h3>Profuct Landing Page</h3>
+                            <p>A conversion-focused on landing page for product promotion.</p>
+                            <div class="project-tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>Javascript</span>
+                            </div>
+                            <a href="#" class="project-link">View Project</a>
+                        </div>
                     </div>
-                    <a href="#" class="project-link">View Project</a>
                 </div>
-            </div>
-            
-            <div class="project-card">
-                <div class="project-thumbnail">
-                    <img src="../upload/images/project5.jpg" alt="Project 5">
-                </div>
-                <div class="project-info">
-                    <h3>Blog Platform</h3>
-                    <p>A simple blog platform with PHP and MySQL backend.</p>
-                    <div class="project-tags">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
-                        <span>PHP</span>
-                        <span>MySQL</span>
+                                <div class="project-slide">
+                    <div class="project-card">
+                        <div class="project-thubmnail">
+                            <img src="landingpage2.jpg" alt="Landing Page 2">
+                        </div>
+                        <div class="project-info">
+                            <h3>Profuct Landing Page</h3>
+                            <p>A conversion-focused on landing page for product promotion.</p>
+                            <div class="project-tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>Javascript</span>
+                            </div>
+                            <a href="#" class="project-link">View Project</a>
+                        </div>
                     </div>
-                    <a href="#" class="project-link">View Project</a>
                 </div>
-            </div>
-            
-            <!-- The clones will be dynamically added by JavaScript -->
+             </div>
+
+             <!-- Home Pages Projects -->
+              <div class="catergory-projects" id="home-pages" style="display: none;">
+                <div class="project-slide">
+                    <div class="project-card">
+                        <div class="project-thumbnail">
+                            <img src="home1.jph" alt="Home Page 1">
+                        </div>
+                    </div>
+                </div>
+              </div>
+
+
+
+
+
+
+
+
         </div>
-        
-        <button class="slider-arrow next-arrow" aria-label="Next projects">❯</button>
-    </div>
-    
-    <div class="slider-dots">
-        <!-- Dots will be dynamically generated by JavaScript -->
-    </div>
-</section>
+    </section>
 
     <div class="line"></div>
 

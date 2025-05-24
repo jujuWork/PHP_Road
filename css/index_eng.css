@@ -491,12 +491,51 @@ header {
 }
 
 .project-link {
-    border: 1px solid red;
     display: inline-block;
     background-color: #3498db;
     color: white;
     padding: 8px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    align-self: flex-start;
+
+    &:hover {
+        background-color: #2980b9;
+    }
 }
+
+/* Carousel Styling */
+.projects-carousel {
+    position: relative;
+    overflow: hidden;
+    min-height: 400px;
+}
+
+.catergory-projects {
+    width: 100%;
+}
+
+.project-slide {
+    width: 100%;
+    display: none;
+    padding: 0 10px;
+
+    &.active {
+        border: 1px solid red;
+        display: block;
+        animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0;}
+        to { opacity: 1;}
+    }
+}
+
+/* Carousel Navigation */
+
 
 /* Contact Section */
 #contact {

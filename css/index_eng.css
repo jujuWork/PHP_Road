@@ -523,7 +523,6 @@ header {
     padding: 0 10px;
 
     &.active {
-        border: 1px solid red;
         display: block;
         animation: fadeIn 0.5s ease-in-out;
     }
@@ -535,7 +534,72 @@ header {
 }
 
 /* Carousel Navigation */
+.carousel-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
 
+.carousel-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+        background-color: #2980b9;
+    }
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 0 20px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &.active {
+        background-color: #3498db;
+    }
+}
+
+/* Responsive Styles for My Projects */
+@media (max-width: 768px) {
+    .portfolio-container {
+        flex-direction: column;
+    }
+
+    .category-menu {
+        flex: 0 0 auto;
+        margin-bottom: 20px;
+
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+    }
+    .category-item {
+        margin-bottom: 0;
+    }
+}
 
 /* Contact Section */
 #contact {

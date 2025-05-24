@@ -358,13 +358,14 @@ header {
     max-width: 1200px;
     margin: 40px auto;
     padding: 20px;
-}
 
-.section-title {
-    text-align: center;
-    margin-bottom: 40px;
-    font-size: 2.5rem;
-    color: #2c3e50;
+
+    .section-title {
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 2.5rem;
+        color: #2c3e50;
+    }
 }
 
 /* Layout Container */
@@ -395,7 +396,6 @@ header {
 }
 
 .category-item {
-    border: 1px solid red;
     padding: 12px 15px;
     margin-bottom: 10px;
     border-radius: 6px;
@@ -407,6 +407,95 @@ header {
         background-color: #f0f0f0;
         color: #3498db;
     }
+
+    &.active {
+        background-color: #3498db;
+        color: white;
+    }
+}
+
+/* Project Display Area */
+.projects-display {
+    flex: 1;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    position: relative;
+}
+
+/* Project Cards */
+.project-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    height: 100%;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+.project-thubmnail {
+    height: 200px;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition:  transform 0.5s ease;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+}
+
+.project-info {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+
+    h3 {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+        color: #2c3e50;
+    }
+
+    p {
+        margin-bottom: 15px;
+        flex-grow: 1;
+        color: #7f8c8d;
+    }
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+
+    span {
+        background-color: #ecf0f1;
+        color: #2c3e50;
+        padding: 4px 10px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 500;
+    }
+}
+
+.project-link {
+    border: 1px solid red;
+    display: inline-block;
+    background-color: #3498db;
+    color: white;
+    padding: 8px 20px;
 }
 
 /* Contact Section */

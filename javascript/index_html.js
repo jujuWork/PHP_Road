@@ -89,7 +89,7 @@ window.addEventListener('scroll', function() {
     });
 });
 
-
+// Javascript for My Projects Carousel
 // Wait for the DOM to be fully loaded before running the script
 document.addEventListener('DOMContentLoaded', function() {
     //----------------------

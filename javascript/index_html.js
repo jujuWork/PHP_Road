@@ -147,8 +147,28 @@ document.addEventListener('DOMContentLoaded', function() {
     function updateDots() {
         const dots = carouselDots.querySelectorAll('.dots');
         dots.forEach((dot, index) => {
-
+            if (index === currentSlideIndex) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
         });
+    }
+
+    //Update slides based on current index
+    function updateSlides() {
+        const activeCategory = document.getElementById(currentCategory);
+        const slides = activeCategory.querySelectorAll('.project-slide');
+
+        // Hide all slide
+        slides.forEach(slide => {
+            slide.classList.remove('active');
+        })
+
+        // Show current slide
+        slide[currentSlideIndex].classList.add('active');
+
+        updateDots();
     }
 
 

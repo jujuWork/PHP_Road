@@ -96,7 +96,60 @@ document.addEventListener('DOMContentLoaded', function() {
     //  Get DOM Elements
     //----------------------
     const categoryItems = document.querySelectorAll('.category-item');
+    const categoryProjects = document.querySelectorAll('.category-projects');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    const carouselDots = document.querySelector('.carousel-dots');
 
+    // Current active category and slide
+    let currentCategory = 'personal-portfolio';
+    let currentSlideIndex = 0;
+
+    // Initialize the carousel
+    function initializeCarousel() {
+        // Active category  (Personal Portfolio)
+        const activeCategory = document.getElementById(currentCategory);
+        const slides = activeCategory.querySelectorAll('.project-slide');
+
+        // Create dots for active category
+        createDots(slides.length);
+
+        // Show the first slide
+        if (slides.length > 0) {
+            slides[0].classList.add('active');
+        }
+
+        updateDots();
+    }
+
+    // Create Dots for carousel Navigation
+    function createDots (numSlides){
+        // clear existing dots
+        carouselDots.innerHTML = '';
+
+        // create new dots
+        for (let i = 0; i < numSlides; i++) {
+            const dot = document.createElement('div');
+            dot.className = 'dot';
+            dot.dataset.index = 1;
+
+            // ADd click event to each dot
+            dot.addEventListener('click', function() {
+                currentSlideIndex = parseInt(this.dataset.index);
+                updateSlides();
+            });
+
+            carouselDots.appendChild(dot);
+        }
+    }
+
+    // Update the dots to show active state
+    function updateDots() {
+        const dots = carouselDots.querySelectorAll('.dots');
+        dots.forEach((dot, index) => {
+
+        });
+    }
 
 
 });

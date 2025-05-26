@@ -215,6 +215,39 @@ document.addEventListener('DOMContentLoaded', function() {
     prevBtn.addEventListener('click', function() {
         const activeCategory = document.getElementById(currentCategory);
         const slides = activeCategory.querySelectorAll('.project-slide');
-    })
+
+        // Decrease the index, loop back to the end if needed
+        currentSlideIndex--;
+        if (currentSlideIndex <0 ){
+            currentSlideIndex = slides.length - 1;
+        }
+
+        updateSlides();
+    });
+
+    // Event: next button click
+    nextBtn.btn.addEventListener('click', function() {
+        const activeCategory = document.getElementById(currentCategory);
+        const slides = activeCategory.querySelectorAll('.project-slide');
+
+        // Increase the index, looop back to the beginning if needed
+        currentSlideIndex++;
+        if (currentSlideIndex >= slides.length) {
+            currentSlideIndex = 0;
+        }
+
+        updateSlides();
+    });
+
+    // keyboard navigation 
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'ArrowLeft') {
+            prevBtn.click();
+        } else if (event.key === 'ArrowhRight') {
+            nextBtn.click();
+        }
+    });
+
+    initializeCarousel();
 
 });

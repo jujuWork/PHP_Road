@@ -171,5 +171,50 @@ document.addEventListener('DOMContentLoaded', function() {
         updateDots();
     }
 
+    // Switch to a different category
+    function switchCategory (categoryId) {
+        // Update currentCategory
+        currentCategory = categoryId;
+
+        // Hide all Category projects
+        categoryProjects.forEach(category => {
+            category.style.display = 'none';
+        });
+        
+        // Show selected category
+        const activeCategory = document.getElementById(categoryId);
+        activeCategory.style.dispaly = 'block';
+
+        // reset all slide
+        currentSlideIndex = 0;
+
+        // Create new dots for this category
+        const slides = activeCategory.querySelectorAll('.project-slide');
+        createDots(slides.length);
+
+        // Update slides to show the frist one
+        updateSlides();
+    }
+
+    //Event: Category item click
+    categoryItems.forEach(items => {
+        items.addEventListener('click', function() {
+            // remove active class from items
+            categoryItems.forEach(cat => cat.classList.remove('active'));
+
+            // Add active class to clicked item
+            this.classList.add('active');
+
+            // Switch to the selected category
+            const categoryId = this.getAttribute('date-category');
+            switchCategory(categoryId);
+        });
+    });
+
+    // Event: Previous button click
+    prevBtn.addEventListener('click', function() {
+        const activeCategory = document.getElementById(currentCategory);
+        const slides = activeCategory.querySelectorAll('.project-slide');
+    })
 
 });

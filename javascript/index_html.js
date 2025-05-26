@@ -90,6 +90,7 @@ window.addEventListener('scroll', function() {
 });
 
 // Javascript for My Projects Carousel
+
 // Wait for the DOM to be fully loaded before running the script
 document.addEventListener('DOMContentLoaded', function() {
     //----------------------
@@ -131,9 +132,9 @@ document.addEventListener('DOMContentLoaded', function() {
         for (let i = 0; i < numSlides; i++) {
             const dot = document.createElement('div');
             dot.className = 'dot';
-            dot.dataset.index = 1;
+            dot.dataset.index = i;
 
-            // ADd click event to each dot
+            // Add click event to each dot
             dot.addEventListener('click', function() {
                 currentSlideIndex = parseInt(this.dataset.index);
                 updateSlides();
@@ -145,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Update the dots to show active state
     function updateDots() {
-        const dots = carouselDots.querySelectorAll('.dots');
+        const dots = carouselDots.querySelectorAll('.dot');
         dots.forEach((dot, index) => {
             if (index === currentSlideIndex) {
                 dot.classList.add('active');
@@ -166,7 +167,7 @@ document.addEventListener('DOMContentLoaded', function() {
         })
 
         // Show current slide
-        slide[currentSlideIndex].classList.add('active');
+        slides[currentSlideIndex].classList.add('active');
 
         updateDots();
     }
@@ -183,7 +184,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Show selected category
         const activeCategory = document.getElementById(categoryId);
-        activeCategory.style.dispaly = 'block';
+        activeCategory.style.display = 'block';
 
         // reset all slide
         currentSlideIndex = 0;
@@ -206,7 +207,7 @@ document.addEventListener('DOMContentLoaded', function() {
             this.classList.add('active');
 
             // Switch to the selected category
-            const categoryId = this.getAttribute('date-category');
+            const categoryId = this.getAttribute('data-category');
             switchCategory(categoryId);
         });
     });
@@ -226,11 +227,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Event: next button click
-    nextBtn.btn.addEventListener('click', function() {
+    nextBtn.addEventListener('click', function() {
         const activeCategory = document.getElementById(currentCategory);
         const slides = activeCategory.querySelectorAll('.project-slide');
 
-        // Increase the index, looop back to the beginning if needed
+        // Increase the index, loop back to the beginning if needed
         currentSlideIndex++;
         if (currentSlideIndex >= slides.length) {
             currentSlideIndex = 0;
@@ -243,7 +244,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('keydown', function(event) {
         if (event.key === 'ArrowLeft') {
             prevBtn.click();
-        } else if (event.key === 'ArrowhRight') {
+        } else if (event.key === 'ArrowRight') {
             nextBtn.click();
         }
     });

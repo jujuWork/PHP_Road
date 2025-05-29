@@ -190,7 +190,6 @@ body {
 }
 
 .hero-content {
-    border: 1px solid red;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
@@ -283,4 +282,59 @@ body {
     background: rgba(255, 255, 255, 0.1);
     border-color: var(--primary-color);
     transform: translateY(-2px);
+}
+
+.hero-stats {
+    display: flex;
+    gap: 3rem;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    line-height: 1;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-white);
+    opacity: 0.7;
+    margin-top: 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.hero-image {
+    position: relative;
+    animation: slideInRight 1s ease-out;
+}
+
+.car-image {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: var(--shadow-xl);
+    transition: transform 0.3s ease;
+}
+
+.car-image:hover {
+    transform: scale(1.02);
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(220, 38, 38, 0.1) 0%, transparent 50%);
+    border-radius: 20px;
+    pointer-events: none;
 }

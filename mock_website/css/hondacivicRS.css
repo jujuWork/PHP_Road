@@ -166,3 +166,10 @@ body {
 .hamburger.active span:nth-child(3) {
     transform: rotate(-45deg) translate(7px , -6px);
 }
+
+/* HERO SECTION */
+
+.hero {
+    border: 1px solid red;
+    min-height: 100vh;
+}

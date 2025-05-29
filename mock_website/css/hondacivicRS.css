@@ -33,9 +33,9 @@ body {
 }
 
 .container {
-   max-width: 12000px;
-   margin: 0 auto;
-   padding: 0 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
 }
 
 /* Navigation */
@@ -93,6 +93,7 @@ body {
 }
 
 .nav-link {
+    color: var(--text-white);
     text-decoration: none;
     font-weight: 500;
     transition: all 0.3s ease;
@@ -337,4 +338,22 @@ body {
     background: linear-gradient(45deg, rgba(220, 38, 38, 0.1) 0%, transparent 50%);
     border-radius: 20px;
     pointer-events: none;
+}
+
+.scroll-indicator {
+
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    animation: bounce 2s infinite;
+}
+
+.scroll-arrow {
+        border: 1px solid red;
+    width: 25px;
+    height: 24px;
+    border-right: 2px solid var(--text-white);
+    border-bottom: 2px solid var(--text-white);
+    transform: rotate(45deg);
+    opacity: 0.6;
 }

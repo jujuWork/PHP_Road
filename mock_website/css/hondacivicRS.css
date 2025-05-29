@@ -141,6 +141,8 @@ body {
     display: none;
 }
 
+/* HAMBURGER */
+
 .hamburger {
     display: none;
     flex-direction: column;
@@ -349,7 +351,8 @@ body {
 }
 
 .scroll-arrow {
-    width: 25px;
+    border: 1px solid red;
+    width: 24px;
     height: 24px;
     border-right: 2px solid var(--text-white);
     border-bottom: 2px solid var(--text-white);

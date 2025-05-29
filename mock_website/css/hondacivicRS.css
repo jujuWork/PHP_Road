@@ -170,6 +170,42 @@ body {
 /* HERO SECTION */
 
 .hero {
-    border: 1px solid red;
     min-height: 100vh;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 70%, rgba(220, 38, 38, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.hero-content {
+    border: 1px solid red;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-text {
+    animation: slideInLeft is ease-out;
+}
+
+.hero-title {
+    margin-bottom: 1.5rem;
 }

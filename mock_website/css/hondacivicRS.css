@@ -341,15 +341,14 @@ body {
 }
 
 .scroll-indicator {
-
     position: absolute;
     bottom: 2rem;
     left: 50%;
+    transform: translateX(-50%);
     animation: bounce 2s infinite;
 }
 
 .scroll-arrow {
-        border: 1px solid red;
     width: 25px;
     height: 24px;
     border-right: 2px solid var(--text-white);

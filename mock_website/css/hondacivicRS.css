@@ -424,7 +424,50 @@ body {
     line-height: 1.7;
 }
 
+/* Specification Section */
+.specs {
+    padding: 8rem 0;
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+}
 
+.specs-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.specs .section-title {
+    color: var(--text-white);
+    margin-bottom: 3rem;
+}
+
+.specs-grid {
+    display: grid;
+    gap: 2rem;
+}
+
+.spec-group h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.spec-list {
+    list-style: none;
+    display: grid;
+    gap: 0.75rem;
+}
+
+.spec-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
 
 
 

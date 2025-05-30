@@ -469,6 +469,87 @@ body {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.spec-list li span:first-child {
+    font-weight: 500;
+    color: var(--text-white);
+}
+
+.spec-list li span:last-child {
+    font-weight: 600;
+    color: var(--accent-color);
+}
+
+.specs-image {
+    position: relative;
+}
+
+.spec-img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+}
+
+/* Gallery Section */
+.gallery {
+    padding: 8rem 0;
+    background: var(--bg-light);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 200px);
+    gap: 1rem;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.gallery-item.large {
+    grid-row: span 2;
+    grid-column: span 2;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.4);
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
+    display: flex;
+    align-items: flex-end;
+    padding: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-text {
+    color: var(--text-white);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
 
 
 
@@ -483,11 +564,23 @@ body {
 
 /* Animation */
 
-/* slideInLeft */
+/* SLIDE IN LEFT */
 @keyframes slideInLeft {
     from {
         opacity: 0;
         transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* SLIDE IN RIGHT */
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
     }
     to {
         opacity: 1;

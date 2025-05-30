@@ -1,7 +1,7 @@
 /* Animation */
 
 /* slideInLeft */
-@keyfram slideInLeft {
+@keyframe slideInLeft {
     from {
         opacity: 0;
         transform: translateX(-50px);

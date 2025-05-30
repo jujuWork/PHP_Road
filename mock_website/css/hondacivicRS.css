@@ -205,7 +205,7 @@ body {
 }
 
 .hero-text {
-    animation: slideInLeft is ease-out;
+    animation: slideInLeft 1s ease-out;
 }
 
 .hero-title {
@@ -358,4 +358,10 @@ body {
     border-bottom: 2px solid var(--text-white);
     transform: rotate(45deg);
     opacity: 0.6;
+}
+
+
+/* Featured Section */
+.features {
+    padding: 8rem 0;
 }

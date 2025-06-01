@@ -2,6 +2,12 @@
 
 session_start(); // Starting session to save error message
 
+ini_set('upload_max_filesize', '20M');
+ini_set('post_max_size', '25M');
+ini_set('memory_limit', '64M');
+ini_set('max_execution_time', '300'); // 5 minutes
+ini_set('max_input_time', '300');
+
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 

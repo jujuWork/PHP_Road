@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p></p>
+    <script>
+        class Character {
+            constructor(name, hp) {
+                this.name = name;
+                this.hp = hp;
+                this.ptag = document.querySelector('p');  
+            }
+            addMessage(message) {
+                this.ptag.insertAdjacentHTML('beforeend',message+'<br>');
+            }
+            takeDamage(amount) {
+                this.hp -= amount;
+                this.addMessage(`${this.name}は${amount}のダメージを受けた（残りHP：${this.hp})`);
+            }
+            attack(target) {
+                this.addMessage(`${this.name}`);
+                target.takeDamage(10);
+            }
+        }
+
+        const hero = new Character("Grey", 100);
+        const enemy = new Character("Mama", 80);
+
+        hero.attack(enemy);
+        enemy.attack(hero);
+    </script>
+</body>
+</html>

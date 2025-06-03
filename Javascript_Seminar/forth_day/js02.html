@@ -11,6 +11,13 @@
     <button id="success">Success</button>
     <div id="output"></div>
 
+    <!--
+        This script defines a simple message display system using ES6 classes.
+        - The base class `Message` handles generic message display in a DOM element with id "output".
+        - `InfoMessage`, `ErrorMessage`, and `SuccessMessage` extend `Message` to display messages in blue, red, and green colors respectively.
+        - Event listeners are attached to buttons with ids "info", "error", and "success" to show the corresponding message type when clicked.
+        - Each message type sets the text and color of the output element when shown.
+    -->
     <script>
         class Message {
             constructor(text) {

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="info">Information</button>
+    <button id="error">Error</button>
+    <button id="success">Success</button>
+    <div id="output"></div>
+
+    <script>
+        class Message {
+            constructor(text) {
+                this.text = text;
+                this.outputEL = document.querySelector("#output");
+            }
+            show(){
+                this.outputEL.textContent = this.text;
+
+                this.outputEL.style.color = "black";
+            }
+        }
+
+        class InfoMessage extends Message {
+            constructor (text) {
+                super(text);
+            }
+            show() {
+                this.outputEL.textContent = this.text;
+                this.outputEL.style.color = "blue";
+            }
+        }
+
+        class ErrorMessage extends Message {
+            constructor (text) {
+                super(text);
+            }
+            show() {
+                this.outputEL.textContent = this.text;
+                this.outputEL.style.color = "red";
+            }
+        }
+
+        class SuccessMessage extends Message {
+            constructor (text) {
+                super(text);
+            }
+            show() {
+                this.outputEL.textContent = this.text;
+                this.outputEL.style.color = "green";
+            }
+        }
+
+        const info = document.querySelector("#info");
+        const error = document.querySelector("#error");
+        const success = document.querySelector("#success");
+
+        info.addEventListener("click",()=>{
+            const infoMsg = new InfoMessage('Information Message');
+            infoMsg.show();
+        });
+
+        error.addEventListener("click",()=>{
+            const errorMsg = new ErrorMessage('Error Message');
+            errorMsg.show();
+        });
+        
+        success.addEventListener("click",()=>{
+            const successMsg = new SuccessMessage('Error Message');
+            successMsg.show();
+        });
+    </script>
+</body>
+</html>

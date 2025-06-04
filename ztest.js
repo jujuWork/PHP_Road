@@ -1,300 +1,120 @@
-// Initialize progress bars when page loads
+// Wait for the page to load completely
 document.addEventListener('DOMContentLoaded', function() {
-    // Set progress bar values
-    initProgressBars();
     
-    // Add smooth scrolling for navigation links
-    addSmoothScrolling();
-});
-
-// Initialize progress bars with animation
-function initProgressBars() {
-    const progressBars = document.querySelectorAll('.progressbar');
-    
-    // Create an Intersection Observer
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            // When progress bar section is visible
-            if (entry.isIntersecting) {
-                const progressBar = entry.target;
-                const percent = progressBar.getAttribute('data-percent');
-                
-                // Animate the progress bar after a small delay
-                setTimeout(() => {
-                    progressBar.style.width = percent + '%';
-                }, 300);
-                
-                // Stop observing this element after animation
-                observer.unobserve(progressBar);
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
             }
         });
-    }, { threshold: 0.1 });
-    
-    // Observe all progress bars
-    progressBars.forEach(bar => {
-        observer.observe(bar);
     });
-}
 
-// Add smooth scrolling for navigation links
-function addSmoothScrolling() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+    // Fade in animation on scroll
+    function fadeInOnScroll() {
+        const elements = document.querySelectorAll('.fade-in');
+        
+        elements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const elementVisible = 150;
+            
+            if (elementTop < window.innerHeight - elementVisible) {
+                element.classList.add('show');
+            }
+        });
+    }
+
+    // Run fade in animation on scroll and page load
+    window.addEventListener('scroll', fadeInOnScroll);
+    window.addEventListener('load', fadeInOnScroll);
+    
+    // Run once immediately in case elements are already visible
+    fadeInOnScroll();
+
+    // Contact form handling
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Get the target element
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
+            // Get form data
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
             
-            if (targetElement) {
-                // Add offset for fixed header
-                const headerOffset = 70;
-                const elementPosition = targetElement.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                
-                // Smooth scroll to the target
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-                
-                // Close mobile menu if open
-                document.getElementById('nav-toggle').checked = false;
+            // Simple validation
+            if (!name || !email) {
+                alert('Please fill in your name and email address.');
+                return;
             }
+            
+            // Email validation (basic)
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+            
+            // Show success message (in a real site, you'd send this to a server)
+            alert(`Thank you, ${name}! We'll contact you soon at ${email} to discuss your auto detailing needs.`);
+            
+            // Reset form
+            contactForm.reset();
+        });
+    }
+
+    // Header background change on scroll
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('.header');
+        if (window.scrollY > 100) {
+            header.style.background = 'rgba(30, 60, 114, 0.95)';
+            header.style.backdropFilter = 'blur(10px)';
+        } else {
+            header.style.background = 'linear-gradient(135deg, #1e3c72, #2a5298)';
+            header.style.backdropFilter = 'none';
+        }
+    });
+
+    // Add hover effect to service cards
+    const serviceCards = document.querySelectorAll('.service-card');
+    serviceCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-10px)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(-5px)';
         });
     });
-}
 
-// Add active class to navigation links based on scroll position
-window.addEventListener('scroll', function() {
-    const sections = document.querySelectorAll('header, section');
-    const navLinks = document.querySelectorAll('.nav-menu a');
-    
-    let current = '';
-    
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100;
-        const sectionHeight = section.clientHeight;
-        
-        if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
-            current = section.getAttribute('id');
-        }
-    });
-    
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === '#' + current) {
-            link.classList.add('active');
-        }
-    });
-});
-
-// Project Slider Functionality
-document.addEventListener('DOMContentLoaded', function() {
-    // Select slider elements
-    const slider = document.querySelector('.projects-slider');
-    const prevArrow = document.querySelector('.prev-arrow');
-    const nextArrow = document.querySelector('.next-arrow');
-    const dotsContainer = document.querySelector('.slider-dots');
-    
-    // Get all project cards
-    const projectCards = document.querySelectorAll('.project-card');
-    const totalProjects = projectCards.length;
-    
-    // Clone cards for infinite loop
-    setupInfiniteLoop();
-    
-    // Initialize slider state
-    let currentIndex = 0;
-    let projectsPerView = getProjectsPerView();
-    let isTransitioning = false;
-    
-    // Setup slider
-    setupSlider();
-    
-    // Recalculate on window load to ensure images are loaded
-    window.addEventListener('load', function() {
-        // Brief delay to ensure all calculations are accurate
-        setTimeout(() => {
-            // Disable transition, update position, then re-enable
-            slider.style.transition = 'none';
-            currentIndex = totalProjects; // Reset to first slide of original set
-            updateSliderPosition(false);
+    // Add click effect to CTA button
+    const ctaButton = document.querySelector('.cta-button');
+    if (ctaButton) {
+        ctaButton.addEventListener('click', function(e) {
+            // Create ripple effect
+            const ripple = document.createElement('span');
+            const rect = this.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            const x = e.clientX - rect.left - size / 2;
+            const y = e.clientY - rect.top - size / 2;
+            
+            ripple.style.width = ripple.style.height = size + 'px';
+            ripple.style.left = x + 'px';
+            ripple.style.top = y + 'px';
+            ripple.classList.add('ripple');
+            
+            this.appendChild(ripple);
             
             setTimeout(() => {
-                slider.style.transition = 'transform 0.4s ease-in-out';
-                updateDots();
-            }, 50);
-        }, 100);
-    });
-    
-    // Function to clone cards for infinite loop
-    function setupInfiniteLoop() {
-        // Clone first and last cards for infinite loop effect
-        projectCards.forEach(card => {
-            const clone = card.cloneNode(true);
-            slider.appendChild(clone);
-        });
-        
-        // Clone another set at the beginning
-        Array.from(projectCards).reverse().forEach(card => {
-            const clone = card.cloneNode(true);
-            slider.insertBefore(clone, slider.firstChild);
+                ripple.remove();
+            }, 600);
         });
     }
-    
-    // Setup slider
-    function setupSlider() {
-        // Set initial position to show original cards (skip clones)
-        currentIndex = totalProjects;
-        updateSliderPosition(false);
-        
-        // Generate dots based on original cards count
-        generateDots();
-        updateDots();
-        
-        // Add event listeners
-        prevArrow.addEventListener('click', goToPrevSlide);
-        nextArrow.addEventListener('click', goToNextSlide);
-        
-        // Add transition end event
-        slider.addEventListener('transitionend', handleTransitionEnd);
-        
-        // Handle responsiveness
-        window.addEventListener('resize', handleResize);
-    }
-    
-    // Get number of projects per view based on screen width
-    function getProjectsPerView() {
-        if (window.innerWidth > 992) {
-            return 3;
-        } else if (window.innerWidth > 768) {
-            return 2;
-        } else {
-            return 1;
-        }
-    }
-    
-    // Generate pagination dots
-    function generateDots() {
-        dotsContainer.innerHTML = '';
-        const numberOfDots = Math.ceil(totalProjects / projectsPerView);
-        
-        for (let i = 0; i < numberOfDots; i++) {
-            const dot = document.createElement('div');
-            dot.classList.add('slider-dot');
-            dot.dataset.index = i;
-            dot.addEventListener('click', () => {
-                if (!isTransitioning) {
-                    goToSlide(i * projectsPerView + totalProjects);
-                }
-            });
-            dotsContainer.appendChild(dot);
-        }
-    }
-    
-    // Update slider position
-    function updateSliderPosition(withTransition = true) {
-        const allCards = document.querySelectorAll('.project-card');
-        const cardWidth = allCards[0].offsetWidth + 20; // Width + gap
-        
-        if (withTransition) {
-            slider.style.transition = 'transform 0.4s ease-in-out';
-            isTransitioning = true;
-        } else {
-            slider.style.transition = 'none';
-        }
-        
-        // Calculate position with centering adjustment
-        const position = currentIndex * cardWidth;
-        slider.style.transform = `translateX(-${position}px)`;
-    }
-    
-    // Handle transition end
-    function handleTransitionEnd() {
-        isTransitioning = false;
-        
-        const allCards = document.querySelectorAll('.project-card');
-        
-        // If we've scrolled to the cloned items at the end
-        if (currentIndex >= totalProjects * 2) {
-            currentIndex = totalProjects;
-            updateSliderPosition(false);
-        }
-        
-        // If we've scrolled to the cloned items at the beginning
-        if (currentIndex < totalProjects) {
-            currentIndex = totalProjects;
-            updateSliderPosition(false);
-        }
-        
-        updateDots();
-    }
-    
-    // Update dots
-    function updateDots() {
-        const dots = document.querySelectorAll('.slider-dot');
-        const normalizedIndex = (currentIndex - totalProjects) % totalProjects;
-        const activeIndex = Math.floor(normalizedIndex / projectsPerView);
-        
-        dots.forEach((dot, index) => {
-            const dotIndex = parseInt(dot.dataset.index);
-            dot.classList.toggle('active', dotIndex === activeIndex);
-        });
-    }
-    
-    // Go to previous slide
-    function goToPrevSlide() {
-        if (!isTransitioning) {
-            currentIndex--;
-            updateSliderPosition();
-        }
-    }
-    
-    // Go to next slide
-    function goToNextSlide() {
-        if (!isTransitioning) {
-            currentIndex++;
-            updateSliderPosition();
-        }
-    }
-    
-    // Go to specific slide
-    function goToSlide(index) {
-        currentIndex = index;
-        updateSliderPosition();
-    }
-    
-    // Handle window resize
-    function handleResize() {
-        // Disable transitions during resize to prevent jumping
-        slider.style.transition = 'none';
-        
-        const newProjectsPerView = getProjectsPerView();
-        const allCards = document.querySelectorAll('.project-card');
-        const cardWidth = allCards[0].offsetWidth + 20; // Width + gap
-        
-        // If the number of visible projects changes, update the slider
-        if (projectsPerView !== newProjectsPerView) {
-            projectsPerView = newProjectsPerView;
-            
-            // Recalculate the proper position based on the active slide
-            const normalizedIndex = (currentIndex - totalProjects) % totalProjects;
-            const activePageIndex = Math.floor(normalizedIndex / projectsPerView);
-            currentIndex = totalProjects + (activePageIndex * projectsPerView);
-            
-            // Update dots based on new configuration
-            generateDots();
-            updateSliderPosition(false);
-            updateDots();
-        } else {
-            // Just update position in case card sizes changed
-            updateSliderPosition(false);
-        }
-        
-        // Re-enable transitions after a brief delay
-        setTimeout(() => {
-            slider.style.transition = 'transform 0.4s ease-in-out';
-        }, 50);
-    }
+
 });

@@ -87,7 +87,7 @@ if(isset($_SESSION['message'])) {
                 <textarea name="content" id="content" required></textarea>
             </div>
 
-            <button type="submit" class="submit-btn">Post</button>
+            <button type="submit" class="submit-btn">Posthwsgqsgjq</button>
         </form>
     </div>
 

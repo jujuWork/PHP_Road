@@ -4,7 +4,7 @@
 require_once 'config.php';
 
 // Number of post per page (１ページあたりの投稿数表ジース)
-$post_per_page = 20;
+$post_per_page = 2;
 
 // Current page number, default is 1 (現在のページ番号、デフォルトは1)
 $current_page = isset($_GET['page']) ? (int)$_GET['page'] : 1;

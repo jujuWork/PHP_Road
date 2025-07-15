@@ -6,16 +6,12 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <form action="includes/signup.inc.php" method="post"></form>
+        <input type="text" name="username">
+        <input type="password" name="pwd">
+        <button>Signup</button>
 
 <?php
-require_once 'Classes/Car.php';
-
-$car01 = new Car("BMW", "green");
-
-$car01->setColor("white");
-echo $car01->getColor();
-
 ?>
 
 </body>

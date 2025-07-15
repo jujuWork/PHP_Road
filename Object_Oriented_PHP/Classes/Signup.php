@@ -32,7 +32,7 @@ class Signup extends Dbh // this means that the DBH is the parent class and the 
         }
     }
 
-    private function signupUser() {
+    public function signupUser() {
         // ERROR HANDLERS
         // If there is a error this code will run
         if ($this->isEmptySubmit()) {
